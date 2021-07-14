@@ -6,7 +6,7 @@
 - PRIMER DIA
 #### Realize la vista de la pagina de inicio, el menu desplegable de tutorials y en proceso la pagina aprender HTML.
 - SEGUNDO DIA
-#### Realize la vista de la pagina de referencia, ejemplo y termine la pagina aprender HTML, tambien cree interacciones entre las paginas y esta en proceso la pagina ejemplo.
+#### Realize la vista de la pagina de referencia, termine la pagina aprender HTML, tambien cree interacciones entre las paginas y esta en proceso la pagina ejemplo.
 #### Me base en este tutorial https://www.youtube.com/watch?v=MqYK5Kmj4Ho para lograr hacer el efecto hover que tenia el boton Tutorials.
 
 
