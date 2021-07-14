@@ -1,6 +1,6 @@
 # Semillero
 ## Proyecto figma
-#### Se desea aprender a realizar una correcta maquetacion, utilizando el programa figma. Esto nos ayudara a la hora de codificar que logremos estructurar todo mejor.
+#### Se desea aprender a realizar una correcta maquetacion web, utilizando el programa figma. 
 #### La pagina que tome como referencia para recreare el diseño es: https://www.w3schools.com/html/default.asp
 #### El proceso de mi proyecto en figma es: https://www.figma.com/file/JBMjFBGKdt0AaGEWaQg4Uq/pagina-figma?node-id=0%3A1
 - PRIMER DIA
