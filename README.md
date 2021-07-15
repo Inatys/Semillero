@@ -8,6 +8,8 @@
 - SEGUNDO DIA
 #### Realize la vista de la pagina de referencia, termine la pagina aprender HTML, tambien cree interacciones entre las paginas y esta en proceso la pagina ejemplo.
 #### Me base en este tutorial https://www.youtube.com/watch?v=MqYK5Kmj4Ho para lograr hacer el efecto hover que tenia el boton Tutorials.
+- TERCER DIA
+#### Realize la vista de la pagina seleccionar idioma, cursos, login y ejemplo. Tambien realize todos los botones con el efecto hover de la pagina inicio. Cree interacciones entre las paginas.
 
 
 
