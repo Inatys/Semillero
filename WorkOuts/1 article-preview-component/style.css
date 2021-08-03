@@ -1,16 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Manrope);
+
 body{
     background-color: #edf2f8;
     display:flex;
     justify-content: center; /*alinea izquierda, centro o derecha*/
     align-items: center;   /*alinea arriba, centro o abajo*/
-    height:700px    
+    height:487px;    
 }
 
 main{    
     border-radius: 8%;
     background-color: white;
-    width: 70%;
+    width: 60%;
     height: 70%;
     font-family: 'Manrope';
 }
@@ -18,31 +19,31 @@ main{
 main img{
     border-radius: 8% 0% 0% 8%;
     width: 40%;
-    height: 470px;
+    height: 340px;
 }
 
 h3{
     color: #6d7f97;
-    font-size: 30px;
-    margin: 0px 0px 0px 0px;
+    font-size: 23px;
+    margin: 0px;
 }
 
 p{
     color: #6d7f97;
-    font-size: 19px;
+    font-size: 14px;
     margin: 20px 0px 5px 0px;
     }
 
 h5{
     color: #49566b;
-    font-size: 18px;
+    font-size: 13px;
     margin: 10px 0px 10px 0px;
 }
 
 h6{
     color: #9eafc2;
-    font-size: 17px;
-    margin: 20px 0px 10px 0px;
+    font-size: 11px;
+    margin: 15px 0px 10px 0px;
     }
 
 .texto{  
@@ -60,7 +61,8 @@ section{
     border-radius: 4%;
     background-color: white;
     float: right;   
-    width: 58%;    
+    width: 52%;    
+    margin: 10px 30px 10px 10px;
     margin-top: 40px;
 }
 
@@ -73,26 +75,27 @@ section{
 
 .perfil img{
     border-radius: 50%;
-    width: 52px;
-    height: 52px;
+    width: 48px;
+    height: 48px;
     float: left;
     position: absolute; 
 
 }
 
 button{    
-    width: 42px;
-    height: 42px; 
+    width: 37px;
+    height: 37px; 
     border-radius: 50%;  
     float: right;
     position: absolute;
+    border:none;
     right:10px;
     background-color: #edf3f8;
 }  
 
 button img{    
-    width: 21px;
-    height: 25px;
+    width: 16px;
+    height: 18px;
 }
 
 .overlay{
@@ -117,30 +120,29 @@ button img{
 .redes img{
    width: 15px;
    height: 15px;
-float: right;
-margin: 1px 3px 1px 3px;
+   float: right;
+   margin: 1px 3px 1px 3px;
 }
 
 .boton:hover .redes{
     opacity: 1;
 }
 
-@media screen and (max-width:878px){
+@media screen and (max-width:988px){
     body{
         background-color: #edf2f8;
         display:flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Manrope';
-       
+        justify-content: center; /*alinea izquierda, centro o derecha*/
+        align-items: center;   /*alinea arriba, centro o abajo*/
+        height:800px  
     }
     
     main{    
         border-radius: 8%;
         background-color: white;
-        width: 70%;
-        height: 70%;
+        width: 41%;
+        height: 75%;
+        font-family: 'Manrope';
     }
     
     main img{
@@ -151,29 +153,29 @@ margin: 1px 3px 1px 3px;
     
     h3{
         color: #6d7f97;
-        font-size: 15px;
+        font-size: 19px;
     
     }
     
     p{
         color: #6d7f97;
-        font-size: 13px;
+        font-size: 16px;
         }
     
     h5{
         color: #49566b;
-        font-size: 12px;
+        font-size: 14px;
         margin: 30px 0px 10px 0px;
     }
     
     h6{
         color: #9eafc2;
-        font-size: 11px;
-        margin: 16px 0px 10px 0px;
+        font-size: 13px;
+        margin: 20px 0px 10px 0px;
         }
     
     .texto{  
-        width: 90%;
+        width: 95%;
         margin-bottom: 5px;
     
     }
@@ -186,8 +188,7 @@ margin: 1px 3px 1px 3px;
     section{
         border-radius: 4%;
         background-color: white;
-        margin-top: 2px;
-        width: 90%;    
+        width: 85%;    
         margin-top: 10px;
     }
     
@@ -246,11 +247,11 @@ margin: 1px 3px 1px 3px;
     .redes img{
        width: 15px;
        height: 15px;
-    float: right;
-    margin: 1px 3px 1px 3px;
+       float: right;
+       margin: 1px 3px 1px 3px;
     }
     
     .boton:hover .redes{
-        opacity: 1;
+       opacity: 1;
     }
 }
