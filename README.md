@@ -1,4 +1,5 @@
 # Semillero
+
 ## Proyecto figma
 #### Se desea aprender a realizar una correcta maquetacion web, utilizando el programa figma. 
 #### La pagina que tome como referencia para recrear el diseño es: https://www.w3schools.com/default.asp
@@ -16,6 +17,12 @@
 #### Realize un infograma sobre la evolucion que tuvo la web. Busque videos tambien las definiciones en wikipedia para lograr entender cada uno de los conceptos. Me parecio interesante este ejercicio, porque yo mencionaba los terminos, pero en realidad no tiene claro sus significados, ni toda la historia que hay detras de lo que actualmente es el internet y la web.
 #### El infograma en figma es: https://www.figma.com/file/ua28O0KD4FwNCoWhsxaBjB/Evoluci%C3%B3n-web?node-id=0%3A1 
 #### La imagen del infograma esta en: https://github.com/Inatys/Semillero/blob/main/evolucion.png
+
+## Creacion paginas en Figma
+- Menu restaurante
+#### La pagina del menu restaurante es: https://www.figma.com/file/RY9uaVVOG1xix2F0lpto31/menu-restaurante
+- To do list
+#### La pagina de mi To do list es: https://www.figma.com/file/8Z5IBROZrfMLpulVnmBaOp/to-do-list
 
 
 
