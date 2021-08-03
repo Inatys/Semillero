@@ -20,8 +20,10 @@
 
 ## Creacion paginas en Figma
 - Menu restaurante
+#### Cree un menu para restaurante el cual esta asociado con un codigo QR que esta en cada mesa, de ahi las personas puedan pedir su comida desde el celular.
 #### La pagina del menu restaurante es: https://www.figma.com/file/RY9uaVVOG1xix2F0lpto31/menu-restaurante
 - To do list
+#### Cree una aplicacion de tareas que permite ordenar las tareas creadas por medio de categorias que asigna el usuario.
 #### La pagina de mi To do list es: https://www.figma.com/file/8Z5IBROZrfMLpulVnmBaOp/to-do-list
 
 
