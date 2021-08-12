@@ -1,21 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins);
-
-body{
-    
+body{    
     background-color: #fafafa;
     display:flex;
     justify-content: center; /*alinea izquierda, centro o derecha*/
     align-items: center;   /*alinea arriba, centro o abajo*/
     font-family: 'Poppins';
-    height: 630px;
+    height: 629px;
 }
-
 main{
     width: 865px;
     height: 612px;
     position: relative;
 }
-
 .titulo{
     text-align: center;
     width: 400px;
@@ -23,8 +19,6 @@ main{
     left: 229px;
     position: absolute;
 }
-
-
 .caja1{
     background-image: url(./img/caja1.svg);
     background-size:cover;
@@ -76,8 +70,7 @@ main{
     height: 117px;
     box-shadow: 0px 22px 20px -10px rgba(95, 136, 202, 0.255);
 }
-h1{
-   
+h1{   
     font-weight: normal;
     font-size: 26px;
     line-height: 52px;
@@ -85,19 +78,16 @@ h1{
     margin: 15px 0px 15px 0px;
     line-height: 42px;
 }
-b{
-    
+b{    
     font-weight: 900;
     letter-spacing: 0.03em;
 }
-h3{
-    
+h3{    
     font-weight: normal;
     font-size: 12px;
     line-height: 22px;
     margin: 0px;
-    color: #a3a5ae;
-    
+    color: #a3a5ae;    
 }
 .descripcion{
     width: 197px;
@@ -114,7 +104,6 @@ h3{
     width: 40px;
     height: 40px;
 }
-
 h5{
     font-weight: 900;
     font-size: 11px;
@@ -129,150 +118,41 @@ h6{
     letter-spacing: 0.04em;
     color: #a3a5ae;
 }
-@media screen and (max-width:915px){
-
-body{    
-    background-color: #efeff4;
-    display:flex;
-    justify-content: center; /*alinea izquierda, centro o derecha*/
-    align-items: center;   /*alinea arriba, centro o abajo*/
-    font-family: 'Poppins';
-    height: 615px;
- }
-    
+@media screen and (max-width:915px){   
 main{        
     width: 330px;
-    position: relative;
     height: 595px;
     overflow-y: auto;
-}
-   
+}   
 main::-webkit-scrollbar{ /*el estilo de la barra*/
     width: 5px;
     background-color: #ddd;
 }
-
 .titulo{
-    text-align: center;
     width: 262px;
     height: 180px;      
     top: 14px;
     float: left;
     left: 26px;
-    position: absolute;
-    }
-    
-    
-    .caja1{
-    background-image: url(./img/caja1.svg);
-    background-size:cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    float: left;
+    }       
+.caja1{
     left: 26px;
     top: 212px;
-    padding: 20px;
-    width: 223px;
-    height: 117px;
-    box-shadow: 0px 22px 20px -10px rgba(95, 136, 202, 0.255);
-    }
-    .caja2{
-    background-image: url(./img/caja2.svg);
-    background-size:cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    float: left;
+}
+.caja2{
     left: 26px;
     top: 390px;
-    padding: 20px;
-    width: 223px;
-    height: 117px;
-    box-shadow: 0px 22px 20px -10px rgba(95, 136, 202, 0.255);
-    }
-    .caja3{
-    background-image: url(./img/caja3.svg);
-    background-size:cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    float: left;
+}
+.caja3{
     left: 26px;
     top: 570px;
-    padding: 20px;
-    width: 223px;
-    height: 117px;
-    box-shadow: 0px 22px 20px -10px rgba(95, 136, 202, 0.255);
-    }
+}
 .caja4{
-    background-image: url(./img/caja4.svg);
-    background-size:cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    float: inline-end;
-    bottom: 5px;
-    float: left;
     left: 26px;
     top: 750px;
-    padding: 20px;
-    width: 223px;
-    height: 117px;
-    box-shadow: 0px 22px 20px -10px rgba(95, 136, 202, 0.255);
-    }
-
+}
 h1{       
-    font-weight: normal;
     font-size: 20px;
-    line-height: 52px;
-    color: #4c4e61;
     margin: 0px;
-    line-height: 42px;
-}
-
-b{
-       
-    font-weight: 900;
-    letter-spacing: 0.03em;
-}
-
-h3{        
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 22px;
-    margin: 0px;
-    color: #a3a5ae;
-    letter-spacing: 0.01em;        
-}
-
-.descripcion{
-    width: 197px;
-    height: 51px;
-    left: 577px;
-    top: 663px;
-    margin: 0px;
-}
-
-img{
-    top: 90px;
-    float: right;
-    right: 21px;
-    position: absolute;
-    width: 40px;
-    height: 40px;
-}
-    
-h5{
-    font-weight: 900;
-    font-size: 11px;
-    margin: 0px;
-    margin-bottom: 8px;
-    color: #4c4e61;
-}
-
-h6{
-    font-weight: normal;
-    font-size: 9px;
-    margin: 0px;
-    letter-spacing: 0.04em;
-    color: #a3a5ae;
-}
-    
+}     
 }
