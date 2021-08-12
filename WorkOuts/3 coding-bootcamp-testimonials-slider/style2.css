@@ -1,7 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Inter);
 
-body{
-    
+body{    
     background-image: url(./images/fondo_desktop.svg);
     background-size:cover; 
     background-repeat: no-repeat;
@@ -9,25 +8,23 @@ body{
     justify-content: center; /*alinea izquierda, centro o derecha*/
     align-items: center;   /*alinea arriba, centro o abajo*/
     font-family: 'Inter';
-    height: 630px;
+    height: 629px;
 }
-
 main{
     background-color: transparent;
     width: 785px;
 height: 422px;
     position: relative;
 }
-
 .foto1{
     position: absolute;
     width: 382px;
     height: 376px;
     float:right;
 right: 0px;    
-border-radius: 5px;box-shadow: 0px 58px 40px -25px rgba(58, 46, 121, 0.58);
+border-radius: 5px;
+box-shadow: 0px 58px 40px -25px rgba(58, 46, 121, 0.58);
 }
-
 .perfil{
     width: 440px;
     height: 205px;
@@ -38,14 +35,12 @@ border-radius: 5px;box-shadow: 0px 58px 40px -25px rgba(58, 46, 121, 0.58);
     position: absolute;
     font-weight: normal;
 }
-
 .datos1{
     position: absolute;
     height:25px;
     width: 189px;
     top:280px;
 }
-
 h4{    
     color: #202046;
     margin: 0px;
@@ -53,9 +48,7 @@ h4{
     font-weight: normal;
     line-height: 25px;
 letter-spacing: 0.04em;
-border: solid ;
 }
-
 h5{
     color: #202046;
     float:left;
@@ -63,9 +56,8 @@ h5{
 font-size: 13px;
 font-weight: 900;
 letter-spacing: 0.04em;
-text-align: center;border: solid ;
+text-align: center;
 }
-
 h6{
     color: #babacf;
     float:right;
@@ -73,9 +65,7 @@ h6{
 font-size: 13px;
 font-weight: normal;
 letter-spacing: 0.04em;
-border: solid ;
 }
-
 .botones{
     padding: 10px;
     background-color: white;
@@ -92,16 +82,15 @@ position: absolute;
 .siguiente{
     float: right;
 }
-
 .foto2{
     position: absolute;
     width: 382px;
     height: 376px;
     float:right;
 right: 0px;    
-border-radius: 5px;box-shadow: 0px 58px 40px -25px rgba(58, 46, 121, 0.58);
+border-radius: 5px;
+box-shadow: 0px 58px 40px -25px rgba(58, 46, 121, 0.58);
 }
-
 .perfil2{
     width: 440px;
     height: 205px;
@@ -118,16 +107,15 @@ border-radius: 5px;box-shadow: 0px 58px 40px -25px rgba(58, 46, 121, 0.58);
     height:25px;
     width: 284px;
 }
-
 .foto3{
     position: absolute;
     width: 382px;
     height: 376px;
     float:right;
 right: 0px;    
-border-radius: 5px;box-shadow: 0px 58px 40px -25px rgba(58, 46, 121, 0.58);
+border-radius: 5px;
+box-shadow: 0px 58px 40px -25px rgba(58, 46, 121, 0.58);
 }
-
 .perfil3{
     width: 440px;
     height: 205px;
@@ -146,148 +134,74 @@ border-radius: 5px;box-shadow: 0px 58px 40px -25px rgba(58, 46, 121, 0.58);
 }
 @media screen and (max-width:815px){
 
-    body{
-    
-        background-image: url(./images/fondo_mobile.svg);
-        background-size:cover; 
-        background-repeat: no-repeat;
-        display:flex;
-        justify-content: center; /*alinea izquierda, centro o derecha*/
-        align-items: center;   /*alinea arriba, centro o abajo*/
-        font-family: 'Inter';
-        height: 629px;
-    }
-    
+    body{    
+        background-image: url(./images/fondo_mobile.svg);        
+    }    
     main{
-        background-color: transparent;
         width: 321px;
     height: 528px;
-        position: relative;
-        border: solid;
-    }
-   
+    }   
     .foto1{
-        position: absolute;
         width: 255px;
         left: 30px;
 height: 252px;
-    border-radius: 5px;box-shadow: 0px 58px 40px -25px rgba(58, 46, 121, 0.58);
-    }
-    
+    }    
     .perfil{
         width: 315px;
-        height: 205px;
-        left: 0px;
         top: 332px;
         text-align: center;
-        font-size: 20px;
-        position: absolute;
-    }
-    
+    }    
     .datos1{
         top:480px;
-        position: absolute;
         height:45px;
         left: 59px;
         width: 201px;
-        border: solid;
-    }
-    
+    }    
     h4{    
-        color: #202046;
-        margin: 0px;
         font-size: 16px;
-        font-weight: normal;
 line-height: 18px;
-    }
-    
+    }    
     h5{
-        color: #202046;
-        margin: 0px;
-    font-size: 13px;
-    font-weight: 900;
-    letter-spacing: 0.04em;
     width: 195px;
-    text-align: center;
-    }
-    
+    }    
     h6{        
         width: 195px;
-        color: #babacf;
-        margin: 0px;
-    font-size: 13px;
-    font-weight: normal;
-    letter-spacing: 0.04em;
     text-align: center;
-    }
-    
+    }    
     .botones{
-        padding: 10px;
-        background-color: white;
-        width: 60px;
-    height: 17px;
     left: 117px;
     top: 238px;
-    border-radius: 17px;
-    position: absolute;
     }
-    .anterior{
-        float: left;
-    }
-    .siguiente{
-        float: right;
-    }
-    
     .foto2{
-        position: absolute;
         width: 255px;
         left: 30px;
 height: 252px;
-    border-radius: 5px;box-shadow: 0px 58px 40px -25px rgba(58, 46, 121, 0.58);
-   }
-    
+}    
     .perfil2{
         width: 315px;
-        height: 205px;
-        left: 0px;
         top: 332px;
         text-align: center;
-        font-size: 20px;
-        position: absolute;
     }
     .datos2{
         top:480px;
-        position: absolute;
         height:45px;
         left: 59px;
         width: 201px;
-        border: solid;
-    }
-    
+    }    
     .foto3{
-        position: absolute;
         width: 255px;
         left: 30px;
 height: 252px;
-    border-radius: 5px;box-shadow: 0px 58px 40px -25px rgba(58, 46, 121, 0.58);
-  }
-    
+}    
     .perfil3{
         width: 315px;
-        height: 205px;
-        left: 0px;
         top: 332px;
         text-align: center;
-        font-size: 20px;
-        position: absolute;
    }
     .datos3{
         top:480px;
-        position: absolute;
         height:45px;
         left: 59px;
         width: 201px;
-        border: solid;
     }
-
 }
