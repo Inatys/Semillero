@@ -1,0 +1,132 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+body{
+    font-family: 'Poppins'; 
+    background: #FF7978;
+    display:flex;
+    justify-content: center;/*alinea izquierda, centro o derecha*/  
+    align-items: center;/*alinea arriba, centro o abajo*/      
+}
+.imagen img{    
+    left: 0px;
+    margin: 0px;
+    top:0px;
+    width: 100%;
+    height: 622px;
+    background: #FF7978;
+    position: absolute;
+    animation: mover 2s infinite;
+}
+@keyframes mover {
+    0% {top: 5px; }
+    50% {top: 15px; }
+    100% {top: 5px; }
+  }
+main{ 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    width: 1085px;
+    height: 620px;
+    z-index: 1;
+}
+.texto{
+    width: 465px;
+    height: 248px;
+    color: #FFFFFF;
+}
+h1{
+    margin: 0px;
+    font-size: 45px;
+}
+h4{
+font-weight: 500;
+font-size: 15px;
+}
+.suscribir{
+    width: 475px;
+    height: 555px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.promocion{
+    width: 475px;
+    height: 57px;
+    background: #5D54A3;
+    border-radius: 7px;
+    box-shadow:0px 5px 0px rgba(151, 129, 129, 0.56);
+}
+h5{
+    font-weight: normal;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin: 20px;
+    text-align: center;
+}
+form{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;/*alinea izquierda, centro o derecha*/  
+    align-content:space-around;
+    width: 455px;
+    height: 455px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow:0px 5px 0px rgba(151, 129, 129, 0.56);
+}
+input{
+    width: 421px;
+    height: 53px;
+    border: 1px solid #DFDFDF;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 10px;
+    outline: none;
+}
+::placeholder{
+    color: #747378;
+    font-size: 15px;
+}
+button{
+    width: 421px;
+    height: 53px;
+    background: #37CC8A;
+    border-radius: 4px;  
+    border: none;
+    filter: drop-shadow(0px 3px 0px rgba(69, 181, 135, 0.99));
+    color: #FFFFFF;
+}
+button:hover{
+    background: #6ce8b0;
+}
+input:invalid{
+    border-color:  red;   
+}
+.terminos{
+    text-align: center;
+    font-style: normal;
+    font-size: 10px;
+    color: #BCBAC5;
+}
+.terminos b{
+    color: #FF7978;
+}
+@media screen and (max-width:980px){ 
+    main{ 
+        align-content:stretch;
+        width: 501px;
+        height: 997px;
+    }
+    .imagen img{       
+        height: 990px;
+    }
+    .texto{
+    text-align: center;
+    }
+}
