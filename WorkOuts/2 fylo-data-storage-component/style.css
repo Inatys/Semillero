@@ -9,9 +9,8 @@ body{
     justify-content: center; /*alinea izquierda, centro o derecha*/
     align-items: center;   /*alinea arriba, centro o abajo*/
     font-family: 'Raleway';
-    height: 630px;
+    height: 620px;
 }
-
 main{
     background-color: transparent;
     width: 780px;
@@ -36,7 +35,6 @@ main{
     border-radius: 8px 70px 8px 8px;
     box-shadow: 2px 2px 10px #0c122c;
 }
-
 .opciones{
     margin-top: 10px;
     position: absolute;
@@ -50,8 +48,6 @@ main{
     height: 35px;
     margin-right: 7px;
 }
-
-
 .color{
     margin-top: 34px;
     background-color: #1e2d69;
@@ -65,7 +61,6 @@ main{
     padding: 28px 20px 28px 20px;
     box-shadow: 2px 2px 10px #0c122c;
 }
-
 .barra{
     background-color: #0c122c;
     width: 353px;
@@ -75,7 +70,6 @@ main{
     top: 51px;
     border-radius: 10px;
 }
-
 .punto{
     background-color: white;
     width: 11px;
@@ -83,7 +77,6 @@ main{
     border-radius: 50%;
     float: right;
 }
-
 .degradado{
     width: 97%;
     height: 10px;
@@ -94,12 +87,10 @@ main{
     border-radius: 10px;
     animation: cambio_color 10s;
 }
-
 @keyframes cambio_color {
   from  {width: 4%;}
   to    {width: 97%;}
 }
-
 .texto{
     position: absolute;
     left: 29px;
@@ -126,140 +117,6 @@ b{
     font-size: 10px;
     font-weight: 600;
 }
-
-.mensaje{
-background-color: white;
-position: absolute;
-width: 140px;
-height: 60px;
-top:-30px;
-left:241px;
-border-radius: 10px;
-color:black;
-}
-
-.cero{
-    top: 5px;
-    position: absolute;
-    left: 6px;
-    float: left;
-    margin: 0px;
-}
-.mil{
-    top: 5px;
-    position: absolute;
-    float: right;
-    right: 6px;
-    margin: 0px;
-}
-
-.GB{
-    top: 69px;
-    height: 20px;
-    left: 23px;
-    position: absolute;
-    width: 369px;
-
-}
-
-
-@media screen and (max-width:880px){
-
-body{
-    background-image: url(./images/bg-mobile.png);
-    background-size:cover; 
-    background-repeat: no-repeat;
-   background-color: white;
-    display:flex;
-    justify-content: center; /*alinea izquierda, centro o derecha*/
-    align-items: center;   /*alinea arriba, centro o abajo*/
-    font-family: 'Raleway';
-    height: 620px;
-}
-
-main{
-width: 240px;
-height: 320px;
-padding: 10px 10px 10px 10px;
-position: relative;
-}
-.logo{
-    margin-bottom: 10px;
-    width: 112px;
-    height: 36px;
-}
-.encabezado{
-    margin-top: 0px;
-    padding: 30px 5px 30px 25px;
-    width: 200px;
-    height: 100px;
-    left: 10px;
-    position: absolute;
-    background-color: #1e2d69;
-    box-shadow: 2px 2px 10px #0c122c;
-    border-radius: 8px 70px 8px 8px;
-}
-
-.opciones{
-    position: absolute;
-    background-color: #1e2d69;
-    width: 165px;
-    height: 45px;
-}
-.opciones img{
-    background-color: #1e2d69;
-    width: 35px;
-    height: 35px;
-    margin-right: 7px;
-}
-
-
-.color{
-    margin-top: 180px;
-    background-color: #1e2d69;
-    border-radius: 8px;
-    color: white;
-    position: absolute;
-    left: 10px;
-    width: 210px;
-    height: 78px;
-    box-shadow: 2px 2px 10px #0c122c;
-    padding: 30px 10px 10px 10px;
-}
-
-.barra{
-    background-color: #0c122c;
-    width: 194px;
-    height: 16px;
-    left: 17px;
-    position: absolute;
-    top: 53px;
-    border-radius: 10px;
-}
-
-.punto{
-    background-color: white;
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    float: right;
-}
-
-
-.texto{
-    position: absolute;
-    left: 34px;
-    margin: 0px;
-}
-h5{
-    font-size: 10px;
-    font-weight: 500;
-}
-b{
-    font-size: 10px;
-    font-weight: 600;
-}
-
 .cero{
     top: 5px;
     position: absolute;
@@ -274,22 +131,58 @@ b{
     right: 6px;
     margin: 0px;
 }
-
 .GB{
-    top: 72px;
+    top: 69px;
     height: 20px;
-    left: 8px;
+    left: 23px;
     position: absolute;
-    width: 209px;
+    width: 369px;
 }
 .mensaje{
     background-color: white;
     position: absolute;
     width: 140px;
     height: 60px;
-    top:100px;
-    left:41px;
+    top:-30px;
+    left:241px;
     border-radius: 10px;
     color:black;
+    }
+@media screen and (max-width:880px){
+
+body{
+    background-image: url(./images/bg-mobile.png);  
+}
+main{
+width: 240px;
+height: 320px;
+padding: 10px 10px 10px 10px;
+}
+.encabezado{
+    width: 200px;
+    height: 100px;
+    left: 10px;
+}
+.color{
+    margin-top: 180px;
+    left: 10px;
+    width: 210px;
+    height: 78px;
+}
+.barra{
+    width: 194px;
+    left: 17px;
+    top: 53px;
+}
+.texto{
+    left: 34px;
+}
+.GB{
+    left: 8px;
+    width: 209px;
+}
+.mensaje{
+    top:100px;
+    left:41px;
     }
 }
