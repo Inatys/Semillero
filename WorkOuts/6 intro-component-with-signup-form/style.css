@@ -4,22 +4,14 @@ body{
     background: #FF7978;
     display:flex;
     justify-content: center;/*alinea izquierda, centro o derecha*/  
-    align-items: center;/*alinea arriba, centro o abajo*/      
-}
-.imagen{   
+    align-items: center;/*alinea arriba, centro o abajo*/     
     background-image: url(./images/bg-intro-desktop.png);
-    background-size: cover;
-    left: 0px;
-    margin: 0px;
-    top:0px;
-    width: 100%;
-    height: 97%;
-    position: absolute;
-    animation: mover 1s infinite;
+    background-size: cover; 
+    animation: mover 10s infinite;
 }
 @keyframes mover {
-    0%, 100% {top: 5px; }
-    50% {top: 15px; }
+    0%, 100% {background-position: top; }
+    50% {background-position: bottom; }
   }
 main{ 
     display: flex;
@@ -30,7 +22,6 @@ main{
     align-content: center;
     width: 1085px;
     height: 620px;
-    z-index: 1;
 }
 .texto{
     width: 465px;
@@ -121,6 +112,10 @@ input:invalid{
     color: #FF7978;
 }
 @media screen and (max-width:980px){ 
+    body{   
+        background-image: url(./images/bg-intro-mobile.png);
+        animation: mover 25s infinite;
+    }
     main{ 
         align-content:stretch;
         width: 501px;
@@ -128,8 +123,5 @@ input:invalid{
     }      
     .texto{
     text-align: center;
-    }
-    .imagen{   
-        height: 100%;
     }
 }
