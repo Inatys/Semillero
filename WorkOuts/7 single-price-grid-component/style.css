@@ -1,0 +1,167 @@
+@import url(https://fonts.googleapis.com/css?family=Karla);
+body {
+	font-family: "Karla";
+	background: #e6eff6;
+	height: 572px;
+	display: flex;
+	justify-content: center; /*alinea izquierda, centro o derecha*/
+	align-items: center; /*alinea arriba, centro o abajo*/
+}
+main {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center; /*alinea arriba, centro o abajo*/
+	width: 600px;
+	height: 450px;
+	border-radius: 5px;
+	box-shadow: 0px 7px 20px -5px rgba(69, 135, 192, 0.36),
+		0px 1.4px 3.25px -500px rgba(69, 135, 192, 0.18);
+}
+.comunidad {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	align-content: center; /*alinea arriba, centro o abajo*/
+	width: 100%;
+	height: 205px;
+	background: #ffffff;
+	border-radius: 5px 5px 0px 0px;
+}
+h2 {
+	margin: 0px;
+	font-weight: bold;
+	font-size: 22px;
+	color: #42aaad;
+}
+h3 {
+	margin: 0px;
+	font-weight: bold;
+	font-size: 17px;
+	line-height: 20px;
+	color: #bfdf32;
+}
+h5 {
+	margin: 0px;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 22px;
+	color: #abb2bc;
+}
+.texto {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+	align-items: stretch;
+	width: 85%;
+	height: 70%;
+}
+
+.inscribirse {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: space-around; /*alinea arriba, centro o abajo*/
+	width: 300px;
+	height: 246px;
+	background: #2bb3b1;
+	border-radius: 0px 0px 0px 5px;
+}
+.texto2 {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-around;
+	width: 72%;
+	height: 50%;
+}
+h4 {
+	margin: 0px;
+	font-weight: bold;
+	font-size: 17px;
+	color: #ffffff;
+}
+h1 {
+	margin: 0px;
+	font-weight: bold;
+	font-size: 30px;
+	color: #ffffff;
+}
+p {
+	margin-top: 5px;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 20px;
+	color: #c4ffff;
+}
+h6 {
+	margin: 0px;
+	font-style: normal;
+	font-size: 14px;
+	color: #ffffff;
+}
+button {
+	width: 225px;
+	height: 46px;
+	background: #bfdf34;
+	border-radius: 5px;
+	filter: drop-shadow(
+		0px 4px 7px rgba(0, 0, 0, 0.25)
+	);
+	color: white;
+	border: none;
+}
+button:hover {
+	background: #d3ed63;
+}
+.beneficios {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center; /*alinea arriba, centro o abajo*/
+	width: 300px;
+	height: 246px;
+	background: #4abebd;
+	border-radius: 0px 0px 5px 0px;
+}
+.texto3 {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-around;
+	width: 72%;
+	height: 85%;
+}
+@media screen and (max-width: 700px) {
+	body {
+		height: 864px;
+	}
+	main {
+		width: 300px;
+		height: 762px;
+	}
+	.inscribirse {
+		border-radius: 0px;
+	}
+	.comunidad {
+		height: 269px;
+		border-radius: 5px 5px 0px 0px;
+	}
+	.beneficios {
+		border-radius: 0px 0px 5px 5px;
+	}
+	.texto {
+		width: 77%;
+	}
+	h2 {
+		font-size: 19px;
+	}
+	h3 {
+		font-size: 14px;
+	}
+	h5 {
+		font-size: 12px;
+	}
+}
