@@ -42,7 +42,11 @@
 
 #### El mapa mental en Figma es:  https://www.figma.com/file/FUih47mTAUcIIAVKCpHbGf/Mapa-mental 
 
- 
+- SEPTIMO DIA 
+
+#### Realice un mapa mental con todos los conocimientos adquiridos en CSS.   
+
+#### El mapa mental en Figma es:  https://www.figma.com/file/AzPIGQP6Mk0CjTY499Nf1J/mapa-mental-css?node-id=0%3A1 
 
  
 
