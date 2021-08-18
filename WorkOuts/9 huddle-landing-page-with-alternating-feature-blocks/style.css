@@ -1,0 +1,521 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+body {
+	font-family: "Poppins", sans-serif;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	align-content: space-between;
+	width: 1330px;
+	height: 2300px;
+}
+
+header {
+	background-image: url("./images/bg-hero-desktop.svg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-wrap: wrap;
+	height: 590px;
+	width: 1330px;
+	flex-direction: column;
+}
+
+nav {
+	width: 99%;
+	height: 140px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.backGround {
+	width: 390px;
+	height: 135px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.btnUpperTry {
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	width: 390px;
+	height: 135px;
+}
+
+.btnNav {
+	width: 200px;
+	height: 50px;
+	background-color: #fff;
+	border-radius: 25px;
+	border-style: none;
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px
+		2.6px;
+	font-weight: bold;
+}
+.btnNav:hover{
+    background-color: #fe52c0;
+    color: white;
+}
+.mainContainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
+	width: 99%;
+	height: 72%;
+}
+
+.left {
+	width: 566px;
+	display: flex;
+	height: 320px;
+	flex-direction: column;
+	justify-content: space-between;
+	align-content: space-between;
+}
+
+.right {
+	width: 520px;
+	height: 380px;
+}
+.right img {
+	width: 100%;
+	height: 100%;
+}
+
+.text {
+	width: 84%;
+	font-size: 20px;
+	color: #01232b;
+}
+
+.text p {
+	font-size: 15.5px;
+}
+
+.btnHeader {
+	width: 280px;
+	height: 45px;
+	background-color: #fe52c0;
+	border-radius: 20px;
+	border-style: none;
+	font-weight: bold;
+	color: white;
+	box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.61);
+}
+.btnHeader:hover{
+    background-color: #fff;
+    color: black;
+}
+.contenedores {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-content: space-between;
+	justify-content: space-between;
+	height: 970px;
+	width: 1330px;
+}
+.contenedor2 {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
+	border-radius: 15px;
+	height: 300px;
+	width: 1060px;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.61);
+}
+.texto {
+	width: 92%;
+	font-size: 20px;
+}
+h3 {
+	margin: 0px;
+}
+.texto p {
+	font-size: 14px;
+}
+.informacion {
+	width: 450px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.ilustracion {
+	width: 40%;
+	height: 80%;
+}
+.ilustracion img {
+	width: 100%;
+	height: 100%;
+}
+
+footer {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	text-align: center;
+	width: 1330px;
+	height: 500px;
+}
+.card {
+	top: 10px;
+	background-color: white;
+	position: absolute;
+	text-align: center;
+	border-radius: 10px;
+	width: 43%;
+	height: 29%;
+	z-index: 2;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.61);
+}
+h2 {
+	font-size: 24px;
+}
+.contactenos {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	text-align: left;
+	font-size: 9px;
+	background-color: #01232b;
+	color: white;
+	height: 390px;
+	width: 1330px;
+	z-index: 1;
+}
+.logo-footer {
+	width: 830px;
+}
+.logo-footer img {
+	width: 160px;
+	height: 50px;
+}
+.cajas {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	text-align: left;
+	font-size: 9px;
+	background-color: #01232b;
+	color: white;
+	height: 200px;
+	width: 830px;
+}
+.logos {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 6%;
+}
+.logos img {
+	width: 12px;
+	height: 12px;
+}
+.logo2 {
+	width: 40%;
+	height: 10%;
+}
+.izquierda {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 230px;
+	height: 66%;
+}
+.datoscontacto {
+	display: flex;
+	flex-direction: column;
+	width: 200px;
+}
+.mitad {
+	height: 40%;
+}
+.mitad2 {
+	height: 40%;
+}
+.derecha {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: left;
+	height: 82%;
+}
+.derecha img {
+	width: 80px;
+}
+@media screen and (max-width: 1091px) {
+	body {
+		width: 436px;
+		height: 2900px;
+	}
+
+	header {
+		background-image: url("./images/bg-hero-mobile.svg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		justify-content: space-around;
+		display: flex;
+		height: 670px;
+		width: 430px;
+		flex-direction: column;
+	}
+
+	nav {
+		width: 99%;
+		height: 50px;
+		display: flex;
+
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	.backGround {
+		width: 190px;
+		height: 45px;
+		align-items: flex-start;
+		justify-content: space-around;
+		display: flex;
+	}
+
+	.backGround img {
+		width: 160px;
+		height: 34px;
+		display: flex;
+	}
+
+	.btnUpperTry {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-around;
+		width: 140px;
+		height: 45px;
+	}
+
+	.btnNav {
+		width: 130px;
+		height: 40px;
+		background-color: #fff;
+		border-radius: 25px;
+		border-style: none;
+		box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px
+			2.6px;
+		font-weight: bold;
+	}
+
+	.mainContainer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		align-content: center;
+		width: 425px;
+		height: 560px;
+	}
+
+	.left {
+		width: 360px;
+		display: flex;
+		height: 277px;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		align-content: space-between;
+	}
+
+	.right {
+		width: 330px;
+		height: 220px;
+	}
+	.right img {
+		width: 100%;
+		height: 100%;
+	}
+
+	.text {
+		width: 289px;
+		font-size: 20px;
+		color: #01232b;
+		text-align: center;
+	}
+	h1 {
+		font-size: 24px;
+	}
+	.text p {
+		font-size: 14px;
+	}
+
+	.btnHeader {
+		width: 230px;
+		height: 45px;
+		background-color: #fe52c0;
+		border-radius: 20px;
+		border-style: none;
+		font-weight: bold;
+		color: white;
+		box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.61);
+	}
+	.contenedores {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		align-content: space-between;
+		justify-content: space-between;
+		height: 1270px;
+		width: 430px;
+	}
+	.contenedor2 {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		border-radius: 15px;
+		height: 400px;
+		width: 360px;
+		box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.61);
+	}
+	.texto {
+		width: 235px;
+
+		text-align: center;
+	}
+	h3 {
+		font-size: 20px;
+		margin: 0px;
+	}
+	.texto p {
+		font-size: 12px;
+		color: grey;
+	}
+	.informacion {
+		width: 450px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.ilustracion {
+		width: 240px;
+		height: 48%;
+	}
+	.ilustracion img {
+		width: 100%;
+		height: 100%;
+	}
+
+	footer {
+		display: flex;
+		position: relative;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: center;
+		text-align: center;
+		width: 430px;
+		height: 800px;
+	}
+	.card {
+		top: 10px;
+		background-color: white;
+		position: absolute;
+		text-align: center;
+		border-radius: 10px;
+		width: 370px;
+		height: 140px;
+		z-index: 2;
+		box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.61);
+	}
+	h2 {
+		font-size: 21px;
+	}
+	.contactenos {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: center;
+		text-align: left;
+		background-color: #01232b;
+		color: white;
+		height: 690px;
+		width: 430px;
+		z-index: 1;
+        
+	}
+	.logo-footer {
+		width: 350px;
+	}
+	.logo-footer img {
+		width: 160px;
+		height: 50px;
+	}
+	.cajas {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+		text-align: left;
+		font-size: 9px;
+		background-color: #01232b;
+		color: white;
+		height: 446px;
+		font-size: 10px;
+		width: 350px;
+	}
+	.logos {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		width: 6%;
+	}
+	.logos img {
+		width: 12px;
+		height: 12px;
+	}
+	.logo2 {
+		width: 40%;
+		height: 10%;
+	}
+	.izquierda {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 260px;
+		height: 42%;
+	}
+	.datoscontacto {
+		display: flex;
+		flex-direction: column;
+		width: 219px;
+		height: 145px;
+	}
+	.mitad {
+		height: 16%;
+	}
+	.mitad2 {
+		height: 32%;
+	}
+	.derecha {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: left;
+		height: 22%;
+	}
+	.derecha img {
+		width: 80px;
+	}
+}
