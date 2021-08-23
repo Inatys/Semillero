@@ -48,14 +48,15 @@ div_overlay.setAttribute("class", "overlay");
 
 let div_redes = document.createElement("div");
 div_redes.setAttribute("class", "redes");
+div_redes.style.display = "none";
 
 let p_share = document.createElement("p");
 p_share.setAttribute("class", "share");
 p_share.innerText = "SHARE";
 
-let img_boton_compartir = document.createElement("img");
-img_boton_compartir.setAttribute("class", "boton_compartir");
-img_boton_compartir.src = "images/icono_compartir.svg";
+let img_boton_compartir2 = document.createElement("img");
+img_boton_compartir2.setAttribute("class", "boton_compartir2");
+img_boton_compartir2.src = "images/icon-share2.svg";
 
 let img_pinterest = document.createElement("img");
 img_pinterest.src = "images/icon-pinterest.svg";
@@ -82,9 +83,38 @@ div_compartir.append(div_boton);
 div_boton.append(button);
 button.append(img_button);
 div_boton.append(div_overlay);
+div_overlay.append(img_boton_compartir2);
 div_overlay.append(div_redes);
 div_redes.append(p_share);
-div_redes.append(img_boton_compartir);
 div_redes.append(img_pinterest);
 div_redes.append(img_twitter);
 div_redes.append(img_facebook);
+
+//funciones
+function boton_compartir_normal() {
+	img_boton_compartir2.style.display = "none";
+}
+function boton_compartir_hover() {
+	img_boton_compartir2.style.display = "block";
+}
+
+function mostrar_redes() {
+	div_redes.style.display = "block";
+}
+function desaparecer_redes() {
+	div_redes.style.display = "none";
+}
+
+div_boton.addEventListener("mouseenter", () => {
+	boton_compartir_hover();
+});
+div_boton.addEventListener("mouseleave", () => {
+	boton_compartir_normal();
+});
+
+img_boton_compartir2.addEventListener("mouseenter", () => {
+	mostrar_redes();
+});
+img_boton_compartir2.addEventListener("mouseleave", () => {
+	desaparecer_redes();
+});

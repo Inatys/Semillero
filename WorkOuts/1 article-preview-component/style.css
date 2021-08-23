@@ -10,7 +10,7 @@ body {
 main {
 	border-radius: 8%;
 	background-color: white;
-	width: 60%;
+	width: 810px;
 	height: 70%;
 	font-family: "Manrope";
 }
@@ -85,7 +85,7 @@ button img {
 .overlay {
 	transition: 0.5s ease;
 	position: absolute;
-	top: -40%;
+	top: -50%;
 	left: 66%;
 	text-align: center;
 }
@@ -95,15 +95,15 @@ button img {
 	font-size: 10px;
 	border-radius: 7px;
 	padding: 5px 9px 2px 2px;
-	display: none;
 	width: 155px;
+	/* display: none; */
 	height: 20px;
 }
 .share {
 	float: left;
 	font-size: 13px;
 	left: 17px;
-	top: -15px;
+	top: -17px;
 	position: absolute;
 }
 .redes img {
@@ -112,18 +112,28 @@ button img {
 	float: right;
 	margin: 1px 3px 1px 3px;
 }
-.boton:hover .redes {
+/* .boton:hover .redes {
 	display: block;
 }
 .boton:hover .boton_compartir {
 	display: none;
+} */
+.boton_compartir2{
+	position: absolute;
+	top:29px;
+	width: 35px;
+	height: 35px;
+	float: left;
+	position: absolute;
+	border: none;
+	left: 83px;
 }
-@media screen and (max-width: 988px) {
+@media screen and (max-width: 838px) {
 	body {
 		height: 800px;
 	}
 	main {
-		min-width: 300px;
+		width: 300px;
 		height: 67%;
 	}
 	.imagen_seccion {
@@ -168,9 +178,9 @@ button img {
 		top: 19px;
 	}
 	button {
-		width: 32px;
-		height: 32px;
-		top: 19px;
+		width: 28px;
+		height: 28px;
+		top: 32px;
 	}
 	button img {
 		width: 15px;
@@ -182,20 +192,31 @@ button img {
 	}
 	.redes {
 		border-radius: 0px 0px 17px 17px;
-		padding: 22px 42px 2px 2px;
+		padding: 18px 76px 2px 2px;
 		display: none;
-		min-width: 258px;
+		min-width: 223px;
 		height: 41px;
 	}
 	.share {
-		top: 3px;
+		top: 2px;
 		left: 30px;
 	}
 	.redes img {
-		width: 17px;
-		height: 17px;
+		width: 20px;
+		height: 20px;
 	}
-	.boton:hover .boton_compartir {
+	/* .boton:hover .boton_compartir {
 		display: block;
+	} */
+
+	.boton_compartir2{
+		position: absolute;
+		top:16px;
+		width: 27px;
+		height: 27px;
+		float: left;
+		position: absolute;
+		border: none;
+		left: 228px;
 	}
 }
