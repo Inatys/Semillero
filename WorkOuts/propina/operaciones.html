@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="operaciones.css" />
+  </head>
+
+  <body>
+ 
+
+    <header>
+        SPLI<br />
+        TTER
+      </header>
+      <main>
+        <section class="sections" id="section1">
+          <div class="datos">
+            <div class="contenido" id="cuenta">
+              <label for="cuenta">Bill</label>
+              <input
+                type="number"
+                name="precio"
+                class="input"
+                id="precio"
+                placeholder="0"
+              />
+            </div>
+            <div class="contenido" id="propina">
+              <label for="propina">Select Tip %</label>
+              <div class="propinas" id="porcentajes">
+                <form name="calculator">
+                <input type="button" value="5%" class="porcentaje" id="cinco" onclick="document.calculator.value+='5'">
+                <input type="button" value="10%" class="porcentaje" id="diez" onclick="document.calculator.value+='10'">
+                <input type="button" value="15%" class="porcentaje" id="quince" onclick="document.calculator.value+='15'">
+                <input type="button" value="25%" class="porcentaje" id="veinticinco" onclick="document.calculator.value+='25'">
+                <input type="button" value="50%" class="porcentaje" id="cincuenta" onclick="document.calculator.value+='50'">
+                <input
+                  class="porcentaje"
+                  type="number"
+                  id="num_porcentaje"
+                  placeholder="Custom"
+                />
+            </form>
+              </div>
+            </div>
+            <div class="contenido" id="person">
+              <label for="personas">Number of People</label>
+              <input
+                type="number"
+                name="personas"
+                class="input"
+                id="personas"
+                placeholder="0"
+              />
+            </div>
+          </div>
+        </section>
+  
+        <section class="sections" id="section2">
+          <div class="valores">
+            <div class="totales">
+              <div class="total" id="total_propina">
+                <h6>
+                  Tip Amount <br />
+                  <b>/person</b>
+                </h6>
+                <h3 id="total_pre_propina">$0.00</h3>
+              </div>
+              <div class="total" id="total_personas">
+                <h6>
+                  Total <br />
+                  <b>/person</b>
+                </h6>
+                <h3 id="total_pre_persona">$0.00</h3>
+              </div>
+            </div>
+            <button class="boton" onclick="limpiar()">Reset</button>
+          </div>
+        </section>
+      </main>
+    
+   </body>
+   <script src="operaciones.js"></script>
+</html>
