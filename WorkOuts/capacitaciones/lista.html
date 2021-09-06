@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Sort Without Articles</title>
+        <link rel="stylesheet" href="lista.css" />
+	</head>	​
+
+	<body>
+
+		<ul id="bands"></ul>
+
+		<script>
+			const bands = [
+				"The Plot in You",
+				"The Devil Wears Prada",
+				"Pierce the Veil",
+				"Norma Jean",
+				"The Bled",
+				"Say Anything",
+				"The Midway State",
+				"We Came as Romans",
+				"Counterparts",
+				"Oh, Sleeper",
+				"A Skylit Drive",
+				"Anywhere But Here",
+				"An Old Dog",
+			];
+
+			function quitar(nombre) {
+				return nombre.replace(/(a  )/i, "").trim();
+			}
+
+			const bandsOrdenadas = bands.sort((a, b) => (quitar(a) > quitar(b) ? 1 : -1));
+			document.querySelector("#bands").innerHTML = bandsOrdenadas
+				.map((elemento) => `<li>${elemento}</li>`)
+				.join("");
+                
+		</script>
+	</body>
+</html>
