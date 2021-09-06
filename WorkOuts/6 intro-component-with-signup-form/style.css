@@ -61,15 +61,30 @@ h5{
 form{
     padding: 10px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;/*alinea izquierda, centro o derecha*/  
-    align-content:space-around;
+    flex-direction: column;
+    justify-content: space-around;/*alinea izquierda, centro o derecha*/  
+    align-items:center;
     width: 455px;
-    height: 455px;
+    height: 420px;
     background: #FFFFFF;
     border-radius: 10px;
+    padding: 25px;
     box-shadow:0px 5px 0px rgba(151, 129, 129, 0.56);
+}
+.grupos{
+    width: 423px;
+    height: 104px;
+}
+.grupo_input{
+    width: 421px;
+    height: 43px;
+    position: relative;
+}
+.validacion{
+    position: absolute;   
+    top: 10px; 
+   right: 10px;
+   opacity: 0;  
 }
 input{
     width: 421px;
@@ -85,7 +100,21 @@ input{
     font-size: 15px;
 }
 :focus{
-    border: 1px solid black;
+    border: 1px solid rgb(67, 196, 243);
+}
+p{
+    color:  red; 
+    font-size: 9px;
+    float: right;
+    display: none;
+}
+.mensaje_error{
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+.mensaje_error_activo{
+    display: block;
 }
 button{
     width: 421px;
@@ -99,8 +128,27 @@ button{
 button:hover{
     background: #6ce8b0;
 }
-input:invalid{
-    border-color:  red;   
+.mensaje_correcto{
+    color: green;
+    font-size: 12px;
+    display: none;
+}
+.mensaje_correcto_activo{
+    display: block;
+}
+.grupos_correcto{
+    width: 423px;
+    height: 104px;
+}
+.grupos_incorrecto .validacion{
+   opacity: 1;   
+}
+.grupos_incorrecto input{
+    border-color:  red;  
+}
+.grupos_incorrecto p{
+    border-color:  red;  
+    display: block;
 }
 .terminos{
     text-align: center;
