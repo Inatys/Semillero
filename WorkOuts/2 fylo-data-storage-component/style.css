@@ -1,10 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
-body{
-    background-color: #0c122c;
-    background-image: url(./images/bg-desktop.png);
+body{   
+     background-image: url(./images/bg-desktop.png);
     background-size:cover; 
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
     display:flex;
     justify-content: center; /*alinea izquierda, centro o derecha*/
     align-items: center;   /*alinea arriba, centro o abajo*/
@@ -63,34 +62,44 @@ main{
 }
 .barra{
     background-color: #0c122c;
-    width: 353px;
+    width: 375px;
     height: 16px;
     left: 31px;
     position: absolute;
     top: 51px;
     border-radius: 10px;
 }
-.punto{
+#progresoBarra{
+    background-image: linear-gradient(45deg, #FFA399,#FF4C97 );
+    height: 15px;
+    position: relative;
+    border-radius: 10px;
+animation: cambio_color 40s;
+}
+
+
+ .punto{
     background-color: white;
-    width: 11px;
-    height: 11px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     float: right;
-}
-.degradado{
+} 
+ 
+ /* #degradado{
     width: 97%;
     height: 10px;
     left: 4px;
     position: absolute;
     background: linear-gradient(45deg,#FFA399,#FF4C97);
-    top: 3px;
-    border-radius: 10px;
-    animation: cambio_color 10s;
-}
-@keyframes cambio_color {
+    top: 1px;
+    
+   animation: cambio_color 10s; 
+}*/
+/* @keyframes cambio_color {
   from  {width: 4%;}
   to    {width: 97%;}
-}
+} */
 .texto{
     position: absolute;
     left: 29px;
@@ -104,14 +113,14 @@ h3{
     font-size: 30px;
     font-weight: 900;
     float: left;   
-    margin: 10px 0px 10px 20px;
+    margin: 10px 0px 10px 20px;    
 }
 h4{
     font-size: 10px;
     font-weight: 500;    
     float: right;
     top: 90px;
-    margin: 25px 20px 20px 0px;
+    margin: 25px 25px 20px 0px;
 }
 b{
     font-size: 10px;
@@ -138,7 +147,7 @@ b{
     position: absolute;
     width: 369px;
 }
-.mensaje{
+#mensaje{
     background-color: white;
     position: absolute;
     width: 140px;
@@ -148,6 +157,8 @@ b{
     border-radius: 10px;
     color:black;
     }
+
+
 @media screen and (max-width:880px){
 
 body{
@@ -181,7 +192,7 @@ padding: 10px 10px 10px 10px;
     left: 8px;
     width: 209px;
 }
-.mensaje{
+#mensaje{
     top:100px;
     left:41px;
     }
