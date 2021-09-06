@@ -12,6 +12,9 @@ main{
     height: 612px;
     position: relative;
 }
+#texto{
+    display: none;
+}
 .titulo{
     text-align: center;
     width: 400px;
