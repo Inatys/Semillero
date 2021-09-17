@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Hoja de vida</title>
+	</head>
+	<body>
+		<header>
+			<a class="todasTarjetas" href="./index.html"><img src="./imagenes/perfiles.svg" alt="" /></a>
+		</header>
+		<div class="container" id="container">
+			<div id="scrolly2">
+			<div class="seccion3" id="cards"></div>
+		</div>
+		</div>
+
+		<template id="template-hoja">
+				<div class="hoja">
+					<div class="personal">
+						<div class="foto">
+							<img src="" alt="" />
+						</div>
+						<div class="datosPersonal">
+							<h1 class="titulo">Nombre completo</h1>
+							<h1 class="titulo">Correo</h1>
+							<h1 class="titulo">Telefono</h1>
+						</div>
+					</div>
+					<div class="datosProfesional">
+						<h2 class="datos">HABILIDADES</h2>
+						<h3 class="dato">habilidad</h3>
+						<div class="linea3"></div>
+						<h2 class="datos">IDIOMAS</h2>
+						<h3 class="dato">Idioma</h3>
+						<div class="linea3"></div>
+						<h2 class="datos">REFERENCIA</h2>
+						<h3 class="dato">referencia</h3>
+					</div>
+
+					<div class="perfilProfesional">
+						<div class="linea2"></div>
+						<div class="colecciones">
+							<h5 class="tituloPrincipal">EDUCACION</h5>
+							<div class="coleccion">
+								<div class="fechas">
+									<h4 class="fecha">fecha inicio</h4>
+									<h4 class="fecha">fecha fin</h4>
+								</div>
+								<div class="descripcion">
+									<h6 class="principal">Titulo</h6>
+									<h6 class="secundario">Universidad</h6>
+								</div>
+							</div>
+						</div>
+						<div class="linea2"></div>
+						<div class="experiencia">
+							<h5 class="tituloPrincipal">EXPERIENCIA PROFESIONAL</h5>
+							<div class="colecciones">
+								<div class="coleccion">
+									<div class="fechas">
+										<h4 class="fecha">fecha inicio</h4>
+										<h4 class="fecha">fecha fin</h4>
+									</div>
+									<div class="descripcion">
+										<h6 class="principal">Cargo</h6>
+										<h6 class="secundario">Empresa</h6>
+										<h6 class="tareas">Tareas realizadas:</h6>
+										<h6 class="tareas">Tareas</h6>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+
+		<script src="hoja.js"></script>
+	</body>
+</html>

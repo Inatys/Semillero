@@ -1,0 +1,21 @@
+[{
+    "id":1,   
+    "imagen":"./imagenes/selena.png",
+    "nombre":"Selena Vargas Amezcua",
+    "correo":"vargas@gmail.com",
+    "telefono":97878799,
+    "habilidad":"Liderazgo Proactividad",
+    "idioma":"Ingles | Frances",
+    "referencia":"Carlos Martinez Publicista 65894832",
+    "fechaInicioEducacion":"15-05-2009",
+    "fechaFinEducacion":"15-05-2015",
+    "titulo":"Marketing y Comunicacion Digital",
+    "universidad":"Los libertadores",
+    "fechaInicioExperiencia":"08-08-2014",
+    "fechaFinExperiencia":"08-08-2016",
+    "cargo":"Directora de marketing",
+    "empresa":"Ashntil Agency",
+    "tareas":"Coordine mas de 30 campañas del area de moda y estilo de vida las cuales tuvieron un alcance de mas de 50.000 personas. Maneje proyectos para clientes internacionales con presupuestos  que superaban el millon de euros."
+}
+]
+

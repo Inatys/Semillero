@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto");
+*{
+	font-family: "Roboto";
+}
+header {
+	width: 100%;
+	height: 60px;
+	background: #0A99B3;
+	position: static;
+}
+#scrolly {
+	overflow-x: scroll;
+	width: 100%;
+	height: 530px;
+	
+}
+#scrolly2 {
+	overflow-x: scroll;
+	width: 100%;
+	height: 585px;
+	
+}
+.seccion {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+
+	width: 1664px;
+	height: 509px;
+	background-color: white;
+	
+}
+.seccion3 {
+	display: flex;
+    align-items: center;
+	flex-direction: row;
+    justify-content: space-around;
+    width: 1664px;
+    height: 568px;
+    background-color: white;
+	
+}
+.tarjeta {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	background-color: white;
+	width: 287px;
+	height: 414px;
+	border: 1px solid #e5e5e5;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.perfil,.profesional {
+    width: 100%;
+    text-align: center;
+}
+h1{
+    color: black;
+    font-weight: 900;
+font-size: 14px;
+margin: 8px;
+}
+h5{
+    color: #3F3F3F;
+    font-size: 12px;
+    margin: 8px;
+}
+h6{
+    color: #97989C;
+    font-size: 12px;
+    margin: 8px;
+}
+.linea{
+    width: 85%;
+border: 2px solid #0A99B3;
+}
+button {
+	font-weight: 900;
+font-size: 12px;
+color: #FFFFFF;
+	border: none;
+    width: 287px;
+height: 48.17px;
+
+background: #0A99B3;
+}
+button:hover {
+	background: #11606e;
+}
+
+
+/* hoja de vida */
+.content{
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    height: 580px;
+}
+.hoja {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	justify-content: space-between;
+	background-color: white;
+	border: 1px solid #e5e5e5;
+	width: 573px;
+height: 549px;
+box-shadow: 0px 0px 4px 3px #C4C4C4;
+}
+.personal{
+	width: 100%;
+	height: 27%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	background-color: white;
+	
+}
+.foto{
+	background: #0A99B3;
+	width: 39%;
+	height: 152px;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+}
+.foto img{
+	width: 58%;
+background-color: gray;
+}
+.datosProfesional {
+    width: 38%;
+	height: 71%;
+	background: #0A99B3;
+	padding-left: 1%;
+	padding-top: 8px;
+	
+}
+.perfilProfesional {
+    width: 59%;
+	height: 71%;
+	background-color: white;
+	
+}
+.datosPersonal{
+	background-color: white;
+	width: 59%;
+	height: 100%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.colecciones{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.coleccion{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+.titulo{
+    color: #0A99B3;
+	
+    font-weight: 900;
+font-size: 14px;
+margin: 8px;
+}
+.datos{
+    color: #FFFFFF;
+    font-size: 12px;
+    margin: 8px;
+}
+.dato{
+    color: #6DD8EF;
+    font-size: 12px;
+    margin: 8px;
+}
+
+.fecha{
+    font-size: 12px;
+    margin: 8px;
+	font-weight: 900;
+	color: #737171;
+}
+.principal{
+    margin: 8px;
+	font-weight: 900;
+font-size: 14px;
+color: #737171;
+}
+.secundario{
+    font-weight: bold;
+font-size: 12px;
+color: #97989C;
+    margin: 8px;
+}
+.tareas{
+    margin: 8px;
+	color: #737171;
+	font-weight: 900;
+font-size: 10px;
+
+}
+.inputs{
+	width: 88%;
+	border: 1px solid #C4C4C4;
+}
+.tituloPrincipal{
+	font-weight: 900;
+font-size: 10px;
+font-size: 14px;
+color: #000000;
+}
+.fechas{
+	width: 100px;
+}
+.descripcion{
+	width: 220px;
+}
+
+.linea2{
+    width: 95%;
+border: 2px solid #0A99B3;
+margin-bottom: 15px;
+margin-top: 7px;
+}
+.linea3{
+    width: 95%;
+border: 2px solid #6DD8EF;
+margin-top: 29px;
+}
+.titulo2{
+    color: #0A99B3;
+	
+    font-weight: 900;
+font-size: 14px;
+margin: 4px;
+}
+.foto2{
+	background: #0A99B3;
+	width: 39%;
+	height: 152px;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+}
+.textArea{
+	width: 88%;
+	height: 60px;
+	border: 1px solid #C4C4C4;
+}
+.content2{
+	display: flex;	
+	justify-content: center;
+    align-items: center;
+    height: 640px;
+}
+.seccion2{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-direction: column;
+	width: 1664px;
+	height: 622px;
+	background-color: white;
+	
+}
+.hojasDeVida{
+	float: right;
+	margin: 5px;
+}
+.agregar{
+	float: left;
+	margin: 5px;
+}
+.todasTarjetas{
+	float: left;
+	margin: 5px;
+}
