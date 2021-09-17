@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" href="style.css" />
+	</head>	
+	<body>
+		<div class="encabeza">
+
+		</div>
+		<header></header>
+
+		<form id="pago" action="">
+			<div id="tarjetas">
+					<div class="tiposTarjetas">
+						<label class="tipoTarjeta">
+							<input
+								id="tipo"
+								type="radio"
+								name="movimiento"
+								value="Renta"
+								checked
+							/>TARJETA CREDITO
+						</label>
+						<label class="tipoTarjeta">
+							<input id="tipo" type="radio" name="movimiento" value="Traspaso" />TARJETA
+							DEBITO
+						</label>
+					</div>
+			</div>
+
+			<div class="datos">
+				<!-- validar -->
+				<div class="grupos" id="grupo_tarjeta">
+					<label for="nombre">NUMERO TARJETA</label>
+
+					<div class="grupo_input" id="tarjeta">
+						<input type="number" name="tarjeta" />
+						<img class="validacion" src="./img/icon-error.svg" alt="" />
+					</div>
+					<p id="error">Solo numeros y maximo 16</p>
+				</div>
+				<br />
+				<div class="imgTarjetas">
+					<label>
+						<input id="tipo" type="radio" name="numero" value="1" checked />
+						<img src="./img/visa.svg" alt="visa" />
+					</label>
+					<label>
+						<input id="tipo" type="radio" name="numero" value="2" />
+						<img src="./img/mastercard.svg" alt="mastercard" />
+					</label>
+					<label>
+						<input id="tipo" type="radio" name="numero" value="3" />
+						<img src="./img/maestro.svg" alt="maestro" />
+					</label>
+				</div>
+
+				<br />
+
+				<div class="grupos" id="grupo_cuota">
+					<label for="cuota">NUMERO DE CUOTAS</label>
+
+					<div class="grupo_input" id="cuota">
+						<input type="number" name="cuota" />
+						<img class="validacion" src="./img/icon-error.svg" alt="" />
+					</div>
+					<p id="error">Solo numeros y maximo 16</p>
+				</div>
+				<br />
+
+				<div class="grupos" id="grupo_nombre">
+					<label for="nombre">NOMBRE Y APELLIDO COMO FIGURA EN LA TARJETA</label>
+				
+					<div class="grupo_input" id="nombre">
+						<input type="text" name="nombre" />
+						<img class="validacion" src="./img/icon-error.svg" alt="" />
+					</div>
+					<p id="error">Solo letras y espacio</p>
+				</div>	
+
+				<br />
+
+				<div class="grupos" id="grupo_codigo">
+					<label for="codigo"> CODIGO DE SEGURIDAD</label>
+					
+					<div class="grupo_input" id="codigo">
+						<input type="text" name="codigo" />
+						<img class="validacion" src="./img/icon-error.svg" alt="" />
+					</div>
+					<p id="error">Solo letras, numeros y maximo 10</p>
+				</div>
+
+				<br />
+
+				
+				<div class="grupos" id="grupo_cedula">
+					<label for="nombre"> CEDULA DE CIUDADANIA</label>
+
+					<div class="grupo_input" id="cedula">
+						<input type="number" name="cedula" />
+						<img class="validacion" src="./img/icon-error.svg" alt="" />
+					</div>
+					<p id="error">Solo numeros y maximo 16</p>
+				</div>
+				<br />
+				<div class="mensaje_error" id="mensaje_error">
+					<b>Diligencia el formulario correctamente</b>			
+				</div>
+				
+			 <button type="submit" class="popup" id="pagoFinal">Agregar al carrito
+				<span class="popuptext" id="myPopup">¡Pago realizado con éxito!</span>
+			  </button>		
+			</div>
+			
+		</form>
+
+		<script src="validar.js"></script>
+	</body>
+</html>

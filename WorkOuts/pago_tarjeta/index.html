@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" href="style.css" />
+		<title>son de habana</title>
+	</head>
+	<body>
+		<header></header>
+
+		<div class="container">
+			<div id="scrolly">
+				<div class="row seccion" id="cards"></div>
+			</div>
+            <br>
+            <br>
+            <br>
+
+			<h6>LISTADO COMPRA DE CURSOS</h6>
+			<hr />
+			<table class="table">
+				<thead>
+					<tr>
+						<th class="encabezado">Clase</th>
+						<th class="encabezado">Cantidad</th>
+						<th class="encabezado">Accion</th>
+						<th class="encabezado">Total</th>
+					</tr>
+				</thead>
+				<tbody id="items"></tbody>
+				
+				<tfoot>
+					
+					<tr id="footer">
+					
+						<th>El carrito esta vacio</th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+
+		<template id="template-card">
+				<div class="card">
+					<div class="tarjeta">
+						<h1>clase</h1>
+						<img src="" alt="" />
+						<h6>descripcion</h6>
+						<h6>Valor: $<span style="color:#ed222a">precio</span></h6>
+						<button class="btn-dark">Comprar curso</button>
+					</div>
+				</div>
+		</template>
+
+        <template id="template-carrito">
+			<tr>
+				<td>clase</td>
+				<td>1</td>
+                <td>
+                    <button class="btn-info accion">+</button>
+                    <button class="btn-danger accion">-</button>
+                </td>
+                <td>$ <span>500</span></td>                
+			</tr>            
+            <!-- <hr> -->
+		</template>
+<br>
+       
+
+        <template id="template-footer">	
+					
+			<th>total producto</th>
+            <td><a href="./pago.html"><button class="compraFinal">comprar</button></a></td>
+			<td>10</td>
+			<td>
+				<button class="btn-damger vaciar" id="vaciar-carrito">vaciar todo</button>
+			</td>
+			<td>$ <span>5000</span></td>
+			<br>
+			
+		</template>
+		
+		<script src="script.js"></script>
+	</body>
+</html>

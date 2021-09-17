@@ -1,0 +1,44 @@
+[
+    {
+        "precio":20000,
+        "descripcion":"Ven y aprende a bailar. Clases todos los sabados de 3:00 pm a 4:00 pm",
+        "id":1,
+        "clase":"salsa casino basico",
+        "imagen":"./img/salsa.png"
+    },
+    {
+        "precio":20000,
+        "descripcion":"Ven y aprende a bailar. Clases todos los sabados de 4:00 pm a 5:00 pm",
+        "id":2,
+        "clase":"salsa casino intermedio",
+        "imagen":"./img/salsa.png"
+    },
+    {
+        "precio":20000,
+        "descripcion":"Ven y aprende a bailar. Clases todos los sabados de 12:00 pm a 1:00 pm",
+        "id":3,
+        "clase":"salsa casino avanzado",
+        "imagen":"./img/salsa.png"
+    },
+    {
+        "precio":20000,
+        "descripcion":"Ven y aprende a bailar. Clases todos los sabados de 10:00 am a 11:00 am",
+        "id":4,
+        "clase":"bachata moderna",
+        "imagen":"./img/bachata.png"
+    },
+    {
+        "precio":20000,
+        "descripcion":"Ven y aprende a bailar. Clases todos los sabados de 8:00 am a 9:00 am",
+        "id":5,
+        "clase":"kizomba",
+        "imagen":"./img/kizomba.png"
+    },
+    {
+        "precio":10000,
+        "descripcion":"Ven a bailar y practicar tus pasos, con shows increibles.Todos los viernes a las 6:30 pm",
+        "id":6,
+        "clase":"social",
+        "imagen":"./img/social.png"
+    }
+]
