@@ -15,7 +15,7 @@ let veinticinco_porcen = document.getElementById("veinticinco");
 let cincuenta_porcen = document.getElementById("cincuenta");
 let porcent = document.getElementById("num_porcentaje");
 
- let porcentaje;
+
 cinco_porcen.onclick = function () {
 	porcentaje = 5;
 	totales();
