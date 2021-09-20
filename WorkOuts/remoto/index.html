@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<section>
+			<img class="remoto" src="./imagenes/remoto.PNG" alt="" />
+			<form action="" id="formulario">
+				<!-- validar -->
+				<h1>Ayuda remota</h1>
+				<div class="grupos" id="grupo_nombre">
+					<label for="nombre">Nombre completo</label>
+					<!--  conteerror -->
+					<div class="grupo_input" id="nombre">
+						<input type="text" name="nombre" placeholder="Nombre y apellido" />
+						<img class="validacion" src="./imagenes/icon-error.svg" alt="" />
+					</div>
+					<p id="error">Solo letras y espacios</p>
+				</div>
+
+				<div class="grupos" id="grupo_nit">
+					<label for="nit">NIT</label>
+					<div class="grupo_input" id="nit">
+						<input type="text" name="nit" placeholder="NIT o nombre compañia" />
+						<img class="validacion" src="./imagenes/icon-error.svg" alt="" />
+					</div>
+					<p id="error">Solo letras, numeros y espacios</p>
+				</div>
+
+				<div class="grupos" id="grupo_incoveniente">
+					<label for="incoveniente">Incoveniente</label>
+					<div class="grupo_input" id="incoveniente">
+						<input
+							type="text"
+							name="incoveniente"
+							placeholder="Breve descripcion del incoveniente"
+						/>
+						<img class="validacion" src="./imagenes/icon-error.svg" alt="" />
+					</div>
+					<p id="error">Solo letras y espacios</p>
+				</div>
+
+				<div class="grupos" id="grupo_telefono">
+					<label for="telefono">Telefono</label>
+					<div class="grupo_input" id="telefono">
+						<input
+							type="number"
+							name="telefono"
+							placeholder="Telefono o celular"
+							id="telefono"
+						/>
+						<img class="validacion" src="./imagenes/icon-error.svg" alt="" />
+					</div>
+					<p id="error">Solo numeros</p>
+				</div>
+
+				<div class="grupos" id="grupo_email">
+					<label for="email">Correo</label>
+					<div class="grupo_input" id="email">
+						<input type="email" name="email" placeholder="Correo electronico" />
+						<img class="validacion" src="./imagenes/icon-error.svg" alt="" />
+					</div>
+					<p id="error">debe contener @ y . sin espacios</p>
+				</div>
+
+				<div class="gruposCheck" id="grupo_terminos">
+					<h6><label class="label" for="terminos">
+						<input type="checkbox" id="terminos" name="terminos" placeholder="Correo electronico" />
+						Al enviar este formulario autorizo el servicio de software TeamViewer para
+							realizar el acceso remoto, autorizo realizar cambios en el equipo los cuales 
+							incluyen puntos de restauracion del sistema operativo, manifiesto que conozco
+							la politica de proteccion de datos autorixo de manera voluntaria, previa, 
+							expresa e inequivoca a SINCOSOFT S.A.S, para tratar mis daros personales y 
+							de caracter sensible (en caso de ser necesaria su recoleccion), de acuerdo 
+							con las politicas de tratamiento de datos personales de la empresa y para los 
+							fines relacionados con su objeto social y especial para fines legales, 
+							contractuales y comerciales de SINCOSOFT S.A.S. De igual manera acepto los 
+							"terminos condiciones" establecidos por SINCOSOFT S.A.S. 						
+					</label>
+				</h6>
+				</div>
+
+				<div class="mensaje_error" id="mensaje_error">
+					<img class="error" src="./imagenes/cancel.svg" alt="" />
+					<b>Diligencia el formulario correctamente</b>
+				</div>
+
+				<button type="submit">
+					<b>Solicitar sesion</b>
+				</button>
+
+				<div class="mensaje_correcto" id="mensaje_correcto">
+					<img src="./imagenes/checked.svg" alt="" />
+					<b>Sesion remota solicitada con exito</b>
+				</div>
+			</form>
+		</section>
+		<footer>
+			<h5>
+				PBX: (57) 5 190 345 - Cr.12 # 79-50 - Bogota D.C, Colombia - Copyright 2016. SINCOSOFT
+				S.A.S Todos los derechos reservados.
+			</h5>
+		</footer>
+	</body>
+	<script src="script.js"></script>
+</html>
