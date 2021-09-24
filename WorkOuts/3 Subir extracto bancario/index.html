@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Extracto bancario</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Subir extracto bancario</h1>
+			<div class="linea"></div>
+			<div class="detalles">
+				<h5>DEMO SAS NIT 85,133,458-9</h5>
+				<h6 id="date">Fecha:</h6>
+			</div>
+		</header>
+		<main>
+			<div class="form" id="formulario">
+				<div class="elementos">
+					<div class="archivo elemento" id="checked">
+						<div class="titulo">
+							<h4>Archivo a procesar</h4>
+						</div>
+						<div class="opcion">
+							<input id="opcionArchivo" type="file" name="archivosubido" />
+							<h6 class="imgMensaje">								
+							</h6>
+						</div>
+					</div>
+
+					<div class="elemento">
+						<div class="titulo">
+							<h4>Archivo en ceros</h4>
+						</div>
+						<div class="opcion">
+							<label class="switch">
+								<input id="on" type="checkbox" onclick="archivo()" checked />
+								<span class="slider round"></span>
+							</label>
+						</div>
+					</div>
+
+					<div class="elemento">
+						<div class="titulo">
+							<h4>Mes</h4>
+						</div>
+						<div class="opcion">
+							<input id="opcionFecha" type="month" required />
+							<h6 class="imgMensaje">
+							
+							</h6>
+							
+							
+						</div>
+					</div>
+
+					<div class="elemento">
+						<div class="titulo">
+							<h4>Banco</h4>
+						</div>
+						<div class="opcion">
+							<select name="banco" id="opcionBanco" class="banco" required>
+								<option value="0">Seleccionar</option>
+								<option value="1">Banco de Bogota</option>
+								<option value="2">Bancolombia</option>								
+								<option value="3">BBVA</option>
+								<option value="1">Banco de Occidente</option>
+								<option value="1">Banco Popular</option>
+							</select>
+							<h6 class="imgMensaje">								
+							</h6>											
+						</div>
+					</div>
+
+					<div class="elemento">
+						<div class="titulo">
+							<h4>Cuenta</h4>
+						</div>
+						<div class="opcion">
+							<select name="cuenta" id="opcionCuenta" class="cuenta" required>
+								<option value="0">Seleccionar</option>
+								<option value="1">Cuenta de ahorros</option>
+								<option value="1">Cuenta corriente</option>
+							</select>
+							<h6 class="imgMensaje">								
+							</h6>
+						</div>
+					</div>
+
+					<div class="elemento">
+						<div class="titulo">
+							<h4>Moneda conciliacion</h4>
+						</div>
+						<div class="opcion">
+							<label class="switch">
+								<input id="estaOn" type="checkbox" onclick="conciliacion()" checked />
+								<span class="slider round"></span>
+							</label>
+							<p>Esta paz y salvo</p>
+						</div>
+					</div>
+
+				</div>
+				<div class="boton">
+					<b id="falta">Falta seleccionar elementos en los campos</b>
+					<button type="submit">Subir archivos</button>
+					<b id="lleno">Se lleno los campos de manera correcta</b>
+				</div>
+			</div>
+		</main>
+		<script src="script.js"></script>
+	</body>
+</html>
