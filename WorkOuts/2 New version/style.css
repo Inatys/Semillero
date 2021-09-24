@@ -1,0 +1,279 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+* {
+	font-weight: normal;
+}
+body {
+	display: flex;
+	justify-content: space-between; /*alinea izquierda, centro o derecha*/
+	align-items: center; /*alinea arriba, centro o abajo*/
+	font-family: "Roboto";
+	height: 640px;
+	padding-left: 20px;
+}
+.empresa {
+	display: flex;
+	justify-content: center;
+	min-width: 82px;
+	height: 100%;
+}
+.linea {
+	height: 100%;
+	min-width: 79px;
+	background-color: #4c88b5;
+}
+
+.empresa h1 {
+	text-align: end;
+	position: absolute;
+	background: linear-gradient(
+		90deg,
+		#787878 8.72%,
+		#ffffff 11.09%,
+		#ffffff 51.11%,
+		#4c88b5 51.71%,
+		#4c88b5 100%
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	margin-left: 75px;
+}
+section {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 64%;
+
+	height: 99%;
+}
+header {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	height: 312px;
+
+	align-items: flex-end;
+}
+header img {
+	width: 50%;
+	margin-right: 35px;
+}
+.versiones {
+	bottom: 83px;
+	width: 76%;
+	height: 259px;
+	position: absolute;
+	display: flex;
+
+	justify-content: space-around;
+}
+.pantalla {
+	width: 100%;
+	height: 100%;
+}
+.texto{
+	display: flex;	
+	width: 36%;
+	height: 85%;
+	position: absolute;
+	justify-content: center;
+    align-items: center;
+	padding: 20px;
+	opacity: 0;
+}
+.texto1{
+	background-color:#2525259d;
+	top: 0px;
+}
+.texto2{
+	background-color:#4c88b591;
+	top: 0px;
+}
+h6{
+	color: white;
+	font-weight: 900;
+	text-align: center;
+	font-size: 20px;
+	text-shadow: 0px 2px 7px white;
+}
+.antiguo {
+	width: 40%;
+}
+.antiguo:hover>.texto1 {
+	opacity: 1;
+}
+.nuevo {
+	width: 40%;
+}
+.nuevo:hover>.texto2 {
+	opacity: 1;
+}
+footer {
+	width: 100%;
+	height: 65px;
+}
+footer img {
+	height: 100%;
+}
+.descripcion {
+	float: right;
+	width: 29%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-end;
+}
+
+.descripcion h1 {
+	background: linear-gradient(
+		180deg,
+		#989898 0%,
+		#989898 71.7%,
+		#4c88b5 78.44%,
+		#4c88b5 89.47%
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-align: end;
+	top: 45px;
+	position: absolute;
+	margin-right: 109px;
+}
+.circulo {
+	height: 120px;
+	margin-right: 40px;
+}
+.persona {
+	width: 99%;
+	height: 390px;
+}
+@media screen and (max-width: 1020px) {
+	body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 765px;
+	}
+	.empresa {
+		display: flex;
+		justify-content: center;
+		width: 330px;
+	}
+	.linea {
+		width: 75px;
+		background-color: #4c88b5;
+		margin-right: 72px;
+	}
+
+	.empresa h1 {
+		background: linear-gradient(
+			90deg,
+			#787878 8.72%,
+			#ffffff 11.09%,
+			#ffffff 51.11%,
+			#4c88b5 51.71%,
+			#4c88b5 100%
+		);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-align: end;
+		position: absolute;
+		margin-left: 0px;
+	}
+	section {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 333px;
+		height: 633px;
+	}
+	header {
+		display: flex;
+		justify-content: flex-end;
+		width: 99%;
+		height: 180px;
+
+		align-items: flex-end;
+	}
+	header img {
+		margin-right: 61px;
+		height: 70%;
+	}
+	.versiones {
+		width: 99%;
+		height: 390px;
+		display: flex;
+
+		justify-content: space-around;
+		flex-direction: column;
+		align-items: center;
+		position: static;
+	}
+	.versiones img {
+		width: 100%;
+		height: 100%;
+	}
+	.antiguo {
+		width: 99%;
+		height: 49%;
+	}
+	.nuevo {
+		width: 99%;
+		height: 49%;
+	}
+	footer {
+		height: 45px;
+	}
+	footer img {
+		height: 100%;
+	}
+	.descripcion {
+		top: 136px;
+		width: 330px;
+		height: 180px;
+		position: absolute;
+	}
+
+	.descripcion h1 {
+		background: linear-gradient(
+			180deg,
+			#989898 0%,
+			#989898 71.7%,
+			#4c88b5 78.44%,
+			#4c88b5 89.47%
+		);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-align: end;
+		margin-right: 0px;
+		font-size: 25px;
+		top: 15px;
+		left: 10px;
+	}
+	.circulo {
+		height: 0px;
+		margin-right: 0px;
+	}
+	.persona {
+		top: 136px;
+		width: 88px;
+		height: 170px;
+	}
+	.texto{
+		width: 290px;
+    height: 150px;
+	}
+	.texto1{
+		background-color:#2525259d;
+		top: 340px;
+	}
+	.texto2{
+		background-color:#4c88b591;
+		top: 535px;
+	}
+}
