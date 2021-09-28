@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Configuracion riesgo</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header><h1>CONFIGURACION DE RIESGO</h1></header>
+		<main>
+			<div class="botones">
+				<a href="./impacto.html"><button class="opcion">IMPACTOS</button></a>
+				<a href="./probabilidad.html"><button class="opcion">PROBABILIDADES</button></a>
+				<a href="./tipo.html"><button class="opcion">TIPOS DE RIESGO</button></a>
+				<a href="./evaluacion.html"><button class="opcion">EVALUACION DEL RIESGO</button></a>
+			</div>
+			<section class="mostarTabla">
+				<div class="nuevo">
+					<h3>TIPOS DE RIESGO</h3>
+					<button id="nuevo" class="agrega">Nuevo</button>
+				</div>
+				<table>
+					<thead>
+					<tr>
+						<th>Codigo</th>
+						<th>Descripcion</th>
+						<th>Interno</th>
+						<th>Accion</th>
+					</tr>
+				</thead>
+				<tbody id="tipos-tabla"></tbody>
+				</table>
+			</section>
+			<div class="nuevoElemento" id="agregaElemento">
+				<section class="agregarNuevo">
+					<div class="nuevoEncabezado">
+						<h3>CREAR</h3>
+						<button id="cerrar">x</button>
+					</div>
+						<form  id="nuevo-tipo" action="">
+							<label for=""> Codigo</label>
+							<input id="equipo" class="inputForm" type="number" />
+							
+							<label for=""> Descripcion</label>
+							<input id="puntos" class="inputForm" type="text"  />
+							
+							<label for=""> Interno</label>
+							<input id="interno" class="inputForm" type="number" />
+							<br>
+							<button class="agrega" type="submit">Guardar</button>
+						</form>
+				</section>
+			</div>
+		</main>
+
+		<script src="elementos.js"></script>
+	</body>
+</html>
