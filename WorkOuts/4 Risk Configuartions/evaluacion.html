@@ -31,7 +31,7 @@
 							<th>Accion</th>
 						</tr>
 					</thead>
-					<tbody id="evaluacion-tabla"></tbody>
+					<tbody id="evaluacionesTabla"></tbody>
 				</table>
 			</section>
 			<div class="nuevoElemento" id="agregaElemento">
@@ -40,25 +40,36 @@
 						<h3>CREAR</h3>
 						<button id="cerrar">x</button>
 					</div>
-					<form id="nuevo-evaluacion" action="">
+					<form id="nuevoEvaluacion" action="">
 						<label for=""> Codigo</label>
-						<input id="equipo" class="inputForm" type="number" />
+						<input id="codigo" class="inputForm" type="number" />
 						
 						<label for=""> Descripcion</label>
-						<input id="puntos" class="inputForm" type="text" />
+						<input id="descripcion" class="inputForm" type="text" />
 
 						<label for=""> Valor Minimo</label>
-						<input id="valor" class="inputForm" type="number" />
+						<input id="valorMin" class="inputForm" type="number" />
 
-						<label for=""> Valor Maximo</label>
-						<input id="valor" class="inputForm" type="number" />
-						<br />
+						 <label for=""> Valor Maximo</label>
+						<input id="valorMax" class="inputForm" type="number" />
+						<br /> 
 						<button class="agrega" type="submit">Guardar</button>
 					</form>
 				</section>
 			</div>
+			<div class="nuevoElemento" id="editaElemento">				
+				<section class="agregarNuevo">
+					<div class="nuevoEncabezado">
+						<h3>EDITAR</h3>
+						<button id="cerrar2">x</button>
+					</div>
+						<form  id="editaEvaluacion" action="">						
+							<!-- aca va todo lo del formulario de editar -->
+						</form>
+				</section>			
+			</div>
 		</main>
 
-		<script src="elementos.js"></script>
+		<script src="evaluacion.js"></script>
 	</body>
 </html>

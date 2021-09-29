@@ -28,7 +28,7 @@
 						<th>Accion</th>
 					</tr>
 				</thead>
-				<tbody id="tipos-tabla"></tbody>
+				<tbody id="tiposTabla"></tbody>
 				</table>
 			</section>
 			<div class="nuevoElemento" id="agregaElemento">
@@ -37,12 +37,12 @@
 						<h3>CREAR</h3>
 						<button id="cerrar">x</button>
 					</div>
-						<form  id="nuevo-tipo" action="">
+						<form  id="nuevoTipo" action="">
 							<label for=""> Codigo</label>
-							<input id="equipo" class="inputForm" type="number" />
+							<input id="codigo" class="inputForm" type="number" />
 							
 							<label for=""> Descripcion</label>
-							<input id="puntos" class="inputForm" type="text"  />
+							<input id="descripcion" class="inputForm" type="text"  />
 							
 							<label for=""> Interno</label>
 							<input id="interno" class="inputForm" type="number" />
@@ -51,8 +51,19 @@
 						</form>
 				</section>
 			</div>
+			<div class="nuevoElemento" id="editaElemento">				
+				<section class="agregarNuevo">
+					<div class="nuevoEncabezado">
+						<h3>EDITAR</h3>
+						<button id="cerrar2">x</button>
+					</div>
+						<form  id="editaTipo" action="">						
+							<!-- aca va todo lo del formulario de editar -->
+						</form>
+				</section>			
+			</div>
 		</main>
 
-		<script src="elementos.js"></script>
+		<script src="tipo.js"></script>
 	</body>
 </html>
