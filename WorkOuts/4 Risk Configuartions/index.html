@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Configuracion riesgo</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header><h1>CONFIGURACION DE RIESGO</h1></header>
+		<main>
+
+			<div class="botones">
+				<button class="opcion" id="impacto">IMPACTOS</button>
+				<button class="opcion" id="probabilidad">PROBABILIDADES</button>
+				<button class="opcion" id="tipo">TIPOS DE RIESGO</button>
+				<button class="opcion" id="evaluacion">EVALUACION DEL RIESGO</button>
+			</div>
+			<div class="fondo" id="imagenFondo">
+				<img src="./design/form2.svg" alt="">
+			</div>
+			
+
+			<!-- seccion impacto -->
+			<section class="mostarTabla" id="tablaImpacto">
+				<div class="nuevo">
+					<h3>IMPACTOS</h3>
+					<button id="buttonNuevoImpacto" class="agrega">Nuevo</button>
+				</div>
+				<table border="1" rules=all>
+					<thead>
+						<tr>
+							<th>Codigo</th>
+							<p id="mensajeError"></p>
+							<th>Descripcion</th>
+							<th>Valor</th>
+							<th>Accion</th>
+						</tr>
+					</thead>
+					
+					<tbody id="impactosTabla"></tbody>
+				</table>
+			</section>
+			<div class="nuevoElemento" id="agregaElementoImpacto">
+				<section class="agregarNuevo">
+					<div class="nuevoEncabezado">
+						<h3>CREAR</h3>
+						<button id="cerrarCrearImpacto">x</button>
+					</div>
+					<form id="nuevoImpacto" action="">
+						<label for=""> Codigo</label>
+						<input id="codigoImpacto" class="inputForm" type="number" />
+						<label for=""> Descripcion</label>
+						<input id="descripcionImpacto" class="inputForm" type="text" />
+						<label for=""> Valor</label>
+						<input id="valorImpacto" class="inputForm" type="number" />
+						<br />
+						<button class="agrega" type="submit">Guardar</button>
+					</form>
+				</section>
+			</div>
+			<div class="nuevoElemento" id="editaElementoImpacto">
+				<section class="agregarNuevo">
+					<div class="nuevoEncabezado">
+						<h3>EDITAR</h3>
+						<button id="cerrarEditarImpacto">x</button>
+					</div>
+					<form id="editaImpacto" action="">
+						<!-- aca va todo lo del formulario de editar -->
+					</form>
+				</section>
+			</div>
+
+			<!-- seccion probabilidad -->
+			<section class="mostarTabla" id="tablaProbabilidad">
+				<div class="nuevo">
+					<h3>PROBABILIDADES</h3>
+					<button id="buttonNuevoProbabilidad" class="agrega">Nuevo</button>
+				</div>
+				<table  border="1" rules=all>
+					<thead>
+						<tr>
+							<th>Codigo</th>
+							<th>Descripcion</th>
+							<th>Valor</th>
+							<th>Accion</th>
+						</tr>
+					</thead>
+					<tbody id="probabilidadesTabla"></tbody>
+				</table>
+			</section>
+			<div class="nuevoElemento" id="agregaElementoProbabilidad">
+				<section class="agregarNuevo">
+					<div class="nuevoEncabezado">
+						<h3>CREAR</h3>
+						<button id="cerrarCrearProbabilidad">x</button>
+					</div>
+					<form id="nuevoProbabilidad" action="">
+						<label for=""> Codigo</label>
+						<input id="codigoProbabilidad" class="inputForm" type="number" />
+						<label for=""> Descripcion</label>
+						<input id="descripcionProbabilidad" class="inputForm" type="text" />
+						<label for=""> Valor</label>
+						<input id="valorProbabilidad" class="inputForm" type="number" />
+						<br />
+						<button class="agrega" type="submit">Guardar</button>
+					</form>
+				</section>
+			</div>
+			<div class="nuevoElemento" id="editaElementoProbabilidad">
+				<section class="agregarNuevo">
+					<div class="nuevoEncabezado">
+						<h3>EDITAR</h3>
+						<button id="cerrarEditarProbabilidad">x</button>
+					</div>
+					<form id="editaProbabilidad" action="">
+						<!-- aca va todo lo del formulario de editar -->
+					</form>
+				</section>
+			</div>
+
+			<!-- seccion tipo -->
+			<section class="mostarTabla" id="tablaTipo">
+				<div class="nuevo">
+					<h3>TIPOS DE RIESGO</h3>
+					<button id="buttonNuevoTipo" class="agrega">Nuevo</button>
+				</div>
+				<table border="1" rules=all>
+					<thead>
+						<tr>
+							<th>Codigo</th>
+							<th>Descripcion</th>
+							<th>Interno</th>
+							<th>Accion</th>
+						</tr>
+					</thead>
+					<tbody id="tiposTabla"></tbody>
+				</table>
+			</section>
+			<div class="nuevoElemento" id="agregaElementoTipo">
+				<section class="agregarNuevo">
+					<div class="nuevoEncabezado">
+						<h3>CREAR</h3>
+						<button id="cerrarCrearTipo">x</button>
+					</div>
+					<form id="nuevoTipo" action="">
+						<label for=""> Codigo</label>
+						<input id="codigoTipo" class="inputForm" type="number" />
+						<label for=""> Descripcion</label>
+						<input id="descripcionTipo" class="inputForm" type="text" />
+						<label for=""> Interno</label>
+						<input id="interno" class="inputForm" type="number" />
+						<br />
+						<button class="agrega" type="submit">Guardar</button>
+					</form>
+				</section>
+			</div>
+			<div class="nuevoElemento" id="editaElementoTipo">
+				<section class="agregarNuevo">
+					<div class="nuevoEncabezado">
+						<h3>EDITAR</h3>
+						<button id="cerrarEditarTipo">x</button>
+					</div>
+					<form id="editaTipo" action="">
+						<!-- aca va todo lo del formulario de editar -->
+					</form>
+				</section>
+			</div>
+
+			<!-- seccion evaluacion -->
+			<section class="mostarTabla" id="tablaEvaluacion">
+				<div class="nuevo">
+					<h3>EVALUACION DEL RIESGO</h3>
+					<button id="buttonNuevoEvaluacion" class="agrega">Nuevo</button>
+				</div>
+				<table border="1" rules=all>
+					<thead>
+						<tr>
+							<th>Codigo</th>
+							<th>Descripcion</th>
+							<th>Valor Minimo</th>
+							<th>Valor Maximo</th>
+							<th>Accion</th>
+						</tr>
+					</thead>
+					<tbody id="evaluacionesTabla"></tbody>
+				</table>
+			</section>
+			<div class="nuevoElemento" id="agregaElementoEvaluacion">
+				<section class="agregarNuevo">
+					<div class="nuevoEncabezado">
+						<h3>CREAR</h3>
+						<button id="cerrarCrearEvaluacion">x</button>
+					</div>
+					<form id="nuevoEvaluacion" action="">
+						<label for=""> Codigo</label>
+						<input id="codigoEvaluacion" class="inputForm" type="number" />
+						<label for=""> Descripcion</label>
+						<input id="descripcionEvaluacion" class="inputForm" type="text" />
+						<label for=""> Valor Minimo</label>
+						<input id="valorMin" class="inputForm" type="number" />
+						<label for=""> Valor Maximo</label>
+						<input id="valorMax" class="inputForm" type="number" />
+						<br />
+						<button class="agrega" type="submit">Guardar</button>
+					</form>
+				</section>
+			</div>
+			<div class="nuevoElemento" id="editaElementoEvaluacion">
+				<section class="agregarNuevo">
+					<div class="nuevoEncabezado">
+						<h3>EDITAR</h3>
+						<button id="cerrarEditarEvaluacion">x</button>
+					</div>
+					<form id="editaEvaluacion" action="">
+						<!-- aca va todo lo del formulario de editar -->
+					</form>
+				</section>
+			</div>
+
+		</main>
+
+		<script src="script.js"></script>
+	</body>
+</html>
