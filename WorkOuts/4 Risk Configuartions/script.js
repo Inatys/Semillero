@@ -123,7 +123,7 @@ function editarImpacto(codigo) {
 	let impactos = JSON.parse(localStorage.getItem("Impactos"));
 	for (let i = 0; i < impactos.length; i++) {
 		if (impactos[i].codigo === codigo) {
-			console.log("la i es:" + i);
+			
 			formularioEditaImpacto.classList.add("mostrarFormulario");
 			document.getElementById("editaImpacto").innerHTML = `	
 			<label for=""> Codigo</label>
@@ -140,7 +140,6 @@ function editarImpacto(codigo) {
 }
 function actualizarImpacto(i) {
 	let impactos = JSON.parse(localStorage.getItem("Impactos"));
-	impactos[i].codigo = document.getElementById("newcodigo").value;
 	impactos[i].descripcion = document.getElementById("newdescripcion").value;
 	impactos[i].valor = document.getElementById("newvalor").value;
 	localStorage.setItem("Impactos", JSON.stringify(impactos));
@@ -200,7 +199,6 @@ function editarProbabilidad(codigo) {
 	let probabilidades = JSON.parse(localStorage.getItem("Probabilidades"));
 	for (let i = 0; i < probabilidades.length; i++) {
 		if (probabilidades[i].codigo === codigo) {
-			console.log("la i es:" + i);
 			formularioEditaProbabilidad.classList.add("mostrarFormulario");
 			document.getElementById("editaProbabilidad").innerHTML = `	
 							<label for=""> Codigo</label>
@@ -217,7 +215,6 @@ function editarProbabilidad(codigo) {
 }
 function actualizarProbabilidad(i) {
 	let probabilidades = JSON.parse(localStorage.getItem("Probabilidades"));
-	probabilidades[i].codigo = document.getElementById("newcodigo").value;
 	probabilidades[i].descripcion = document.getElementById("newdescripcion").value;
 	probabilidades[i].valor = document.getElementById("newvalor").value;
 	localStorage.setItem("Probabilidades", JSON.stringify(probabilidades));
@@ -301,7 +298,6 @@ function editarTipo(codigo) {
 }
 function actualizarTipo(i) {
 	let tipos = JSON.parse(localStorage.getItem("Tipos"));
-	tipos[i].codigo = document.getElementById("newcodigo").value;
 	tipos[i].descripcion = document.getElementById("newdescripcion").value;
 	tipos[i].interno = document.getElementById("newinterno").value;
 	localStorage.setItem("Tipos", JSON.stringify(tipos));
@@ -351,7 +347,6 @@ function leerEvaluacion() {
 	document.getElementById("evaluacionesTabla").innerHTML = "";
 	for (let i = 0; i < evaluaciones.length; i++) {
 		let codigo = evaluaciones[i].codigo;
-console.log("el codigo es"+codigo)
 		let descripcion = evaluaciones[i].descripcion;
 		let valorMin = evaluaciones[i].valorMin;
 		let valorMax = evaluaciones[i].valorMax;
@@ -370,7 +365,6 @@ function editarEvaluacion(codigo) {
 	let evaluaciones = JSON.parse(localStorage.getItem("Evaluaciones"));
 	for (let i = 0; i < evaluaciones.length; i++) {
 		if (evaluaciones[i].codigo === codigo) {
-			console.log("la i es:" + i);
 			formularioEditarEvaluacion.classList.add("mostrarFormulario");
 			document.getElementById("editaEvaluacion").innerHTML = `	
 							<label for=""> Codigo</label>
@@ -389,7 +383,6 @@ function editarEvaluacion(codigo) {
 }
 function actualizarEvaluacion(i) {
 	let evaluaciones = JSON.parse(localStorage.getItem("Evaluaciones"));
-	evaluaciones[i].codigo = document.getElementById("newcodigo").value;
 	evaluaciones[i].descripcion = document.getElementById("newdescripcion").value;
 	evaluaciones[i].valorMin = document.getElementById("newvalorMin").value;
 	evaluaciones[i].valorMax = document.getElementById("newvalorMax").value;
