@@ -1,0 +1,353 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+* {
+	margin: 0px;
+	font-weight: normal;
+}
+body {
+	font-family: "Roboto";
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center; /*alinea arriba, centro o abajo*/
+	height: 651px;	
+}
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 62px;
+	background-color: white;	
+}
+h1 {
+	color: #2c2d3b;
+}
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 590px;
+	background-color: #f5f5fa;
+}
+.filtro {
+	width: 96%;
+	background-color: white;
+}
+.encabezado {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 42px;
+	background-color: #113d72;
+}
+h3 {
+	color: white;
+}
+.filtros {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	width: 100%;
+	background-color: white;
+	
+}
+label {
+	width: 80%;
+}
+select{
+    width: 96%;
+	height: 25px;
+    border: none;
+}
+input {
+	width: 96%;
+	height: 25px;
+    border: none;
+}
+input::placeholder {
+	color: #e5e5e5;
+}
+input[type="date"] {
+    border-radius: 0px 7px 7px 0px;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background-image: url(./img/calendario.svg);
+    width: 22px;
+    height: 100%;
+    background-size: auto;
+    background-position: center;
+}
+.boton {
+	margin-left: 20px;
+	width: 116px;
+	height: 47px;
+	background: #2267a0;
+	color: white;
+	border-radius: 10px;
+	border: none;
+}
+.boton:hover {
+	background: #328bd4;
+}
+#generar{
+	background: rgb(226, 223, 223);
+}
+.fechas {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 50%;
+	height: 79px;
+	background: #f7f7f7;
+	border-radius: 20px;
+	margin-left: 10px;
+}
+.fecha {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 45%;
+	height: 70px;
+}
+.factura {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 90%;
+	height: 164px;
+	background: #f7f7f7;
+	border-radius: 20px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.opcion {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 32%;
+	height: 70px;
+}
+.consulta {
+	width: 96%;
+	height: 230px;
+	background-color: white;
+}
+.datos {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 176px;
+	background-color: white;
+}
+.imagenFiltro {
+	width: 100%;
+	height: 80%;
+}
+.scroll {
+	width: 100%;
+	height: 176px;
+	background-color: white;
+	overflow-x: scroll;
+}
+table {
+	width: 1720px;
+	font-size: 12px;
+}
+.descripcion{
+	width: 227px;
+	display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+	}
+.iconosTabla {
+	width: 20px;
+}
+.filtrado {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 58%;
+	height: 109px;
+	background: #f7f7f7;
+	border-radius: 20px;
+	margin-left: 10px;
+}
+.divFiltro {
+	width: 30%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: 70px;
+}
+span {
+	color: #948d8d;
+}
+.generaFactura {
+	background-color: #948d8db4;
+	width: 100%;
+	height: 89%;
+	position: absolute;
+	display: none;
+}
+.orden {
+	width: 80%;
+	height: 257px;
+	top: 25%;
+	left: 10%;
+	position: relative;
+}
+.todasFacturas {
+	background-color: white;
+	width: 100%;
+	height: 203px;
+}
+.tablaFactura {
+	width: 100%;
+}
+.carga {
+	display: none;
+	position: absolute;
+	width: 99%;
+	height: 98%;
+	background-color: rgba(71, 71, 71, 0.89);
+}
+.loaderContainer {
+	position: relative;
+	width: 30%;
+	height: 63%;
+	left: 35%;
+	top: 20%;
+}
+.loaderContainer .loader {
+	position: absolute;
+	width: 70%;
+	height: 70%;
+	border: solid 8px transparent;
+	border-top-color: #0dac77;
+	border-left-color: #0dac77;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	animation: loader 1.2s linear infinite;
+}
+.loaderContainer .loader2 {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	border: solid 8px transparent;
+	border-top-color: #283fc3;
+	border-left-color: #283fc3;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	animation: loader2 1.2s linear infinite;
+}
+@keyframes loader {
+	0% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+@keyframes loader2 {
+	0% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(-360deg);
+	}
+}
+p{
+	position: absolute;
+    width: 210px;
+    top: 200px;
+	left: 50px;
+    font-size: 9px;
+    color: red;
+}
+
+@media screen and (max-width: 745px) {
+	body {
+		height: 873px;
+	}
+	h1 {
+		font-size: 28px;
+	}
+	main {
+		height: 799px;
+	}
+	.encabezado {
+		width: 99%;
+	}
+	.filtros {
+		width: 99%;
+	}
+	.fechas {
+		flex-direction: column;
+		width: 58%;
+		height: 139px;
+	}
+	.fecha {
+		width: 95%;
+		height: 55px;
+	}
+	.factura {
+		flex-direction: column;	
+		height: 270px;
+	}
+	.opcion {
+		width: 90%;
+		height: 55px;
+	}
+	.datos {
+		width: 99%;
+	}
+	.scroll {
+		width: 99%;
+	}
+	table {
+		width: 1370px;
+		font-size: 11px;
+	}
+	.descripcion{
+		width: 150px;
+		display: block;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	.filtrado {
+		flex-direction: column;
+		height: 239px;
+	}
+	.divFiltro {
+		width: 90%;
+	}
+	.generaFactura {
+		height: 138%;
+	}
+	.todasFacturas {
+		width: 99%;
+	}
+	.tablaFactura {
+		font-size: 10px;
+	}
+	.carga {
+		width: 98%;
+		height: 132%;
+    }
+	.loaderContainer {
+		width: 46%;
+		height: 17%;
+		top: 40%;
+	}
+}
