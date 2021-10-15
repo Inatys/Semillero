@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function paginaInicio() {	
-	location.reload();
 	divFiltro.innerHTML = ` 
 					<div class="fechas">
 						<div   class="fecha">
@@ -68,43 +67,42 @@ function paginaInicio() {
 							</label>
 						</div>		
     `;
-	fetch('../moneda.json')
-	.then(response=>response.json())
-	.then(data=>{ 
-		 data.forEach(dato=>{
-			 monedas.innerHTML+=`		
+	fetch("../moneda.json")
+		.then((response) => response.json())
+		.then((data) => {
+			data.forEach((dato) => {
+				monedas.innerHTML += `		
 			<option id="valorMoneda">${dato.abreviatura}-${dato.descripcion}</option>
-			` 
-		 })})
+			`;
+			});
+		});
 	divConsulta.innerHTML = `    
 					<img class="imagenFiltro" src="./img/imagenFiltro.svg" alt="" />
 	`;
-	fechaInicial=document.getElementById("fechaInicial")	
-	fechaFinal=document.getElementById("fechaFinal")
-	inputFactura=document.getElementById("factura")
-	inputCliente=document.getElementById("cliente")
-	inputModelo=document.getElementById("modelo")
-	mensajeFecha=document.getElementById("mensajeFecha")
-	monedas=document.getElementById("monedas")	
-	valorMoneda=document.getElementById("valorMoneda")
-	
+	fechaInicial = document.getElementById("fechaInicial");
+	fechaFinal = document.getElementById("fechaFinal");
+	inputFactura = document.getElementById("factura");
+	inputCliente = document.getElementById("cliente");
+	inputModelo = document.getElementById("modelo");
+	mensajeFecha = document.getElementById("mensajeFecha");
+	monedas = document.getElementById("monedas");
+	valorMoneda = document.getElementById("valorMoneda");
 }
-let fechaInicial
-let fechaFinal
-let inputFactura
-let inputCliente
-let inputModelo
-let mensajeFecha
-let monedas
-let valorMoneda
+let fechaInicial;
+let fechaFinal;
+let inputFactura;
+let inputCliente;
+let inputModelo;
+let mensajeFecha;
+let monedas;
+let valorMoneda;
 
 function consultar() {
-
-    let divCarga=document.querySelector(".carga")
-    divCarga.style.display="block";
-    setTimeout(function(){
-        divCarga.style.display="none"
-    },1000);
+	let divCarga = document.querySelector(".carga");
+	divCarga.style.display = "block";
+	setTimeout(function () {
+		divCarga.style.display = "none";
+	}, 1000);
 
 	divFiltro.innerHTML = `
     <div class="filtrado">
@@ -137,8 +135,8 @@ function consultar() {
       <button class="boton" onClick="paginaInicio()">Filtrar</button>
       <button id="generar" class="boton" onClick="generarFactura()">Generar</button>
     </div>
-    `;	
-	divConsulta.innerHTML =`
+    `;
+	divConsulta.innerHTML = `
 			<div class="scroll">
 							<table border="solid">
 								<thead>
@@ -159,13 +157,13 @@ function consultar() {
 								</tbody>
 							</table>
 						</div> 
-			`
-			contenidoTabla=document.getElementById("contenidoTabla")
-			fetch('../datosFactura.json')
-			.then(response=>response.json())
-			.then(data=>{
-				 data.forEach(dato=>{
-					contenidoTabla.innerHTML+=`
+			`;
+	contenidoTabla = document.getElementById("contenidoTabla");
+	fetch("../datosFactura.json")
+		.then((response) => response.json())
+		.then((data) => {
+			data.forEach((dato) => {
+				contenidoTabla.innerHTML += `
 			<tr id="tablaDato">
 										<td>
 											<img class="iconosTabla" src="./img/icono adobe verde.svg" alt="" />
@@ -197,35 +195,36 @@ function consultar() {
 										<td>$${dato.asociarAnticipo}</td>
 										<td id="tdSeleccion"><img class="iconosTabla" id="imagenSeleccion" src="./img/noSeleccionado.svg" alt="" /></td>
 									</tr>								
-			`
-				}) 
-				
-				trTabla = document.querySelectorAll("#tablaDato");		
-				tdSeleccion=document.querySelectorAll("#tdSeleccion");
-				habilitarSeleccion=document.querySelectorAll("#dias");
-				filtrarFactura()
-			})    
-			botonGenerar=document.getElementById("generar");
-			botonGenerar.disabled=true;
-			
-}
-let contenidoTabla
-let trTabla
-let li
-let tdSeleccion
-let habilitarSeleccion
-let botonGenerar
-let generaFactura
-let tbodyFactura=document.getElementById("tablaFactura")
+			`;
+			});
 
-function validarSelect(){  
-            for(let i=0;i<habilitarSeleccion.length;i++){
-                console.log(habilitarSeleccion[i]);
-				console.log(tdSeleccion[i]);
-				console.log(habilitarSeleccion[i].value);
-                if(habilitarSeleccion[i].value!="0"){
-					tdSeleccion[i].innerHTML=`<img class="iconosTabla" id="imagenSeleccion" src="./img/seleccionado.svg" alt="" />`;
-					/* tbodyFactura.innerHTML=`
+			trTabla = document.querySelectorAll("#tablaDato");
+			tdSeleccion = document.querySelectorAll("#tdSeleccion");
+			habilitarSeleccion = document.querySelectorAll("#dias");
+			filtrarFactura();
+		});
+	botonGenerar = document.getElementById("generar");
+	botonGenerar.disabled = true;
+}
+let contenidoTabla;
+let trTabla;
+let li;
+let tdSeleccion;
+let habilitarSeleccion;
+let botonGenerar;
+let generaFactura;
+let tbodyFactura = document.getElementById("tablaFactura");
+
+function validarSelect() {
+	for (let i = 0; i < habilitarSeleccion.length; i++) {
+		console.log(habilitarSeleccion[i]);
+		console.log(tdSeleccion[i]);
+		console.log(habilitarSeleccion[i].value);
+		if (habilitarSeleccion[i].value != "0") {
+			tdSeleccion[
+				i
+			].innerHTML = `<img class="iconosTabla" id="imagenSeleccion" src="./img/seleccionado.svg" alt="" />`;
+			/* tbodyFactura.innerHTML=`
 					<td>641</td>
 								<td>FE</td>
 								<td>SETT1150</td>
@@ -235,82 +234,81 @@ function validarSelect(){
 									<img class="iconosTabla" src="./img/icono documento azul.svg" alt="" />
 								</td>
 					` */
-					console.log("selecciono");
-					botonGenerar.disabled=false;
-					botonGenerar.style.background="#2267a0";
-        }else if(habilitarSeleccion[i].value==="0"){
+			console.log("selecciono");
+			botonGenerar.disabled = false;
+			botonGenerar.style.background = "#2267a0";
+		} else if (habilitarSeleccion[i].value === "0") {
 			console.log("no selecciono");
-			tdSeleccion[i].innerHTML=`<img class="iconosTabla" id="imagenSeleccion" src="./img/noSeleccionado.svg" alt="" />`
+			tdSeleccion[
+				i
+			].innerHTML = `<img class="iconosTabla" id="imagenSeleccion" src="./img/noSeleccionado.svg" alt="" />`;
 		}
-     } 
+	}
 }
 
-function generarFactura(){
-	
-   generaFactura=document.querySelector(".generaFactura").style.display = "block";
-    let cerrar =document.getElementById("cerrar").addEventListener("click",()=>{
-        generaFactura=document.querySelector(".generaFactura").style.display = "none";
-       
-    })
+function generarFactura() {
+	generaFactura = document.querySelector(".generaFactura").style.display = "block";
+	let cerrar = document.getElementById("cerrar").addEventListener("click", () => {
+		generaFactura = document.querySelector(".generaFactura").style.display = "none";
+	});
 }
 
-let valorFechaInicial
-let valorFechaFinal
-function validarFechas(){
-	valorFechaInicial=fechaInicial.value
-	valorFechaFinal=fechaFinal.value 
-if(valorFechaInicial>valorFechaFinal){
-	mensajeFecha.innerText=`la fecha inicial no puede ser mayor a la fecha final`
-}else{
-	mensajeFecha.innerText=``
+let valorFechaInicial;
+let valorFechaFinal;
+function validarFechas() {
+	valorFechaInicial = fechaInicial.value;
+	valorFechaFinal = fechaFinal.value;
+	if (valorFechaInicial > valorFechaFinal) {
+		mensajeFecha.innerText = `la fecha inicial no puede ser mayor a la fecha final`;
+	} else {
+		mensajeFecha.innerText = ``;
+	}
 }
-}
-
 
 //filtrar datos
 function filtrarFactura() {
-	let  filterFactura, contenidoFactura, textoFactura;
-	let  filterCliente, contenidoCliente, textoCliente;
-	let  filterModelo, contenidoModelo, textoModelo;
-	let  filterFechaInicial, contenidoFechaInicial, textoFechaInicial;
-	let  filterFechaFinal, contenidoFechaFinal, textoFechaFinal;
-	
- filterFactura = inputFactura.value.toUpperCase();
- filterCliente = inputCliente.value.toUpperCase();
- filterModelo = inputModelo.value.toUpperCase();
- filterFechaInicial = valorFechaInicial;
- filterFechaFinal = valorFechaFinal;
+	let filterFactura, contenidoFactura, textoFactura;
+	let filterCliente, contenidoCliente, textoCliente;
+	let filterModelo, contenidoModelo, textoModelo;
+	let filterFechaInicial, contenidoFechaInicial, textoFechaInicial;
+	let filterFechaFinal, contenidoFechaFinal, textoFechaFinal;
+
+	filterFactura = inputFactura.value.toUpperCase();
+	filterCliente = inputCliente.value.toUpperCase();
+	filterModelo = inputModelo.value.toUpperCase();
+	filterFechaInicial = valorFechaInicial;
+	filterFechaFinal = valorFechaFinal;
 	for (let i = 0; i < trTabla.length; i++) {
 		contenidoFactura = trTabla[i].querySelectorAll("#textoFactura")[0];
 		contenidoCliente = trTabla[i].querySelectorAll("#textoCliente")[0];
 		contenidoModelo = trTabla[i].querySelectorAll("#textoModelo")[0];
 		contenidoFechaInicial = trTabla[i].querySelectorAll("#textoFechaInicio")[0];
 		contenidoFechaFinal = trTabla[i].querySelectorAll("#textoFechaFinal")[0];
-		
-		textoFactura = contenidoFactura.textContent;		
-		textoCliente = contenidoCliente.textContent;		
+
+		textoFactura = contenidoFactura.textContent;
+		textoCliente = contenidoCliente.textContent;
 		textoModelo = contenidoModelo.textContent;
 		textoFechaInicial = contenidoFechaInicial.textContent;
 		textoFechaFinal = contenidoFechaFinal.textContent;
-		
-		if ((((textoFactura).toUpperCase().indexOf(filterFactura))&&
-		((textoFechaInicial).indexOf(filterFechaInicial)) &&
-		((textoFechaFinal).indexOf(filterFechaFinal)) &&
-		((textoCliente).toUpperCase().indexOf(filterCliente)) &&
-		((textoModelo).toUpperCase().indexOf(filterModelo))||
-		((textoCliente).toUpperCase().indexOf(filterCliente))||
-		((textoFechaInicial).indexOf(filterFechaInicial))|| 
-		((textoFechaFinal).indexOf(filterFechaFinal))|| 
-		((textoFactura).toUpperCase().indexOf(filterFactura))||
-		((textoModelo).toUpperCase().indexOf(filterModelo))) > -1  ) {
+
+		if (
+			((textoFactura.toUpperCase().indexOf(filterFactura) &&
+				textoFechaInicial.indexOf(filterFechaInicial) &&
+				textoFechaFinal.indexOf(filterFechaFinal) &&
+				textoCliente.toUpperCase().indexOf(filterCliente) &&
+				textoModelo.toUpperCase().indexOf(filterModelo)) ||
+				textoCliente.toUpperCase().indexOf(filterCliente) ||
+				textoFechaInicial.indexOf(filterFechaInicial) ||
+				textoFechaFinal.indexOf(filterFechaFinal) ||
+				textoFactura.toUpperCase().indexOf(filterFactura) ||
+				textoModelo.toUpperCase().indexOf(filterModelo)) > -1
+		) {
 			trTabla[i].style.display = "";
 			//trTabla[i].style.display = "none";
-		}else{
+		} else {
 			trTabla[i].style.display = "none";
-			console.log("los filtors no se encontraron")
+			console.log("los filtors no se encontraron");
 			//trTabla[i].style.display = "";
 		}
-	}  
+	}
 }
-
-
