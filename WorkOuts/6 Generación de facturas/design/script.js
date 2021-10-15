@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function paginaInicio() {	
+	location.reload();
 	divFiltro.innerHTML = ` 
 					<div class="fechas">
 						<div   class="fecha">
@@ -72,7 +73,7 @@ function paginaInicio() {
 	.then(data=>{ 
 		 data.forEach(dato=>{
 			 monedas.innerHTML+=`		
-			<option id="valorMoneda" value="1">${dato.abreviatura}-${dato.descripcion}</option>
+			<option id="valorMoneda">${dato.abreviatura}-${dato.descripcion}</option>
 			` 
 		 })})
 	divConsulta.innerHTML = `    
@@ -128,7 +129,7 @@ function consultar() {
     <label for=""
         >Moneda
         <br />
-        <span>${valorMoneda.value}</span>
+        <span>${monedas.value}</span>
     </label>						
 </div>
 </div>
@@ -216,6 +217,7 @@ let habilitarSeleccion
 let botonGenerar
 let generaFactura
 let tbodyFactura=document.getElementById("tablaFactura")
+
 function validarSelect(){  
             for(let i=0;i<habilitarSeleccion.length;i++){
                 console.log(habilitarSeleccion[i]);
@@ -251,6 +253,7 @@ function generarFactura(){
        
     })
 }
+
 let valorFechaInicial
 let valorFechaFinal
 function validarFechas(){
@@ -262,38 +265,52 @@ if(valorFechaInicial>valorFechaFinal){
 	mensajeFecha.innerText=``
 }
 }
+
+
 //filtrar datos
 function filtrarFactura() {
 	let  filterFactura, contenidoFactura, textoFactura;
 	let  filterCliente, contenidoCliente, textoCliente;
 	let  filterModelo, contenidoModelo, textoModelo;
+	let  filterFechaInicial, contenidoFechaInicial, textoFechaInicial;
+	let  filterFechaFinal, contenidoFechaFinal, textoFechaFinal;
 	
  filterFactura = inputFactura.value.toUpperCase();
  filterCliente = inputCliente.value.toUpperCase();
  filterModelo = inputModelo.value.toUpperCase();
- console.log(filterModelo)
- console.log(filterCliente)
- console.log(filterFactura)
+ filterFechaInicial = valorFechaInicial;
+ filterFechaFinal = valorFechaFinal;
 	for (let i = 0; i < trTabla.length; i++) {
 		contenidoFactura = trTabla[i].querySelectorAll("#textoFactura")[0];
 		contenidoCliente = trTabla[i].querySelectorAll("#textoCliente")[0];
 		contenidoModelo = trTabla[i].querySelectorAll("#textoModelo")[0];
-		console.log(contenidoCliente)
-		textoFactura = contenidoFactura.textContent;
-		console.log(textoFactura)
-		textoCliente = contenidoCliente.textContent;
-		console.log(textoCliente)
-		textoModelo = contenidoModelo.textContent;
-		console.log(textoModelo)
+		contenidoFechaInicial = trTabla[i].querySelectorAll("#textoFechaInicio")[0];
+		contenidoFechaFinal = trTabla[i].querySelectorAll("#textoFechaFinal")[0];
 		
-		if ((((textoFactura).toUpperCase().indexOf(filterFactura))&&((textoCliente).toUpperCase().indexOf(filterCliente)) &&((textoModelo).toUpperCase().indexOf(filterModelo))||((textoCliente).toUpperCase().indexOf(filterCliente))|| ((textoFactura).toUpperCase().indexOf(filterFactura))||((textoModelo).toUpperCase().indexOf(filterModelo))) > -1  ) {
+		textoFactura = contenidoFactura.textContent;		
+		textoCliente = contenidoCliente.textContent;		
+		textoModelo = contenidoModelo.textContent;
+		textoFechaInicial = contenidoFechaInicial.textContent;
+		textoFechaFinal = contenidoFechaFinal.textContent;
+		
+		if ((((textoFactura).toUpperCase().indexOf(filterFactura))&&
+		((textoFechaInicial).indexOf(filterFechaInicial)) &&
+		((textoFechaFinal).indexOf(filterFechaFinal)) &&
+		((textoCliente).toUpperCase().indexOf(filterCliente)) &&
+		((textoModelo).toUpperCase().indexOf(filterModelo))||
+		((textoCliente).toUpperCase().indexOf(filterCliente))||
+		((textoFechaInicial).indexOf(filterFechaInicial))|| 
+		((textoFechaFinal).indexOf(filterFechaFinal))|| 
+		((textoFactura).toUpperCase().indexOf(filterFactura))||
+		((textoModelo).toUpperCase().indexOf(filterModelo))) > -1  ) {
 			trTabla[i].style.display = "";
 			//trTabla[i].style.display = "none";
 		}else{
 			trTabla[i].style.display = "none";
+			console.log("los filtors no se encontraron")
 			//trTabla[i].style.display = "";
 		}
 	}  
 }
 
-//validar campos
+
