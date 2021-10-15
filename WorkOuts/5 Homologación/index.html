@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Homologacion</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<section>
+			<div class="encabezado">
+				<img src="./assets/DA.svg" alt="" />
+				<div class="texto">
+					<h1>Homologacion</h1>
+					<h3>Directorio activo</h3>
+				</div>
+			</div>
+			<div class="busqueda">
+				<div class="buscador">
+					<h4>Nivel acceso</h4>
+					<input type="text" id="myInput" class="inputBuscar"  onkeyup="filtrar()" placeholder="Buscar" />
+				</div>
+				<div class="scroll">
+					<div class="lista" id="lista">
+						<!-- <button id="botonAcceso" class="dato">
+							<h5 id="textoAcceso">Acceso t</h5>
+							<h6>cantidad</h6>
+						</button>
+						<button id="botonAcceso" class="dato">
+							<h5 id="textoAcceso">acceso y</h5>
+							<h6>cantidad</h6>
+						</button> -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<main>
+			<!-- <div class="fondo" id="imagenFondo">
+				<img src="./assets/Background.svg" alt="">
+			</div> -->
+			<div class="informacion">
+				<div class="opciones">
+					<button id="marcarTodos"><img src="./assets/marcar.svg" alt="" /></button>
+					<button id="desmarcarTodos"><img src="./assets/desmarcar.svg" alt="" /></button>
+					
+				</div>
+				<hr />
+				<div class="tabla">
+					<div class="encabezadoTabla">
+						<div class="encabezadoNombre"><h4>Nombre</h4></div>
+						<div class="encabezadoDatos"><h4>Loggin</h4></div>
+						<div class="encabezadoDatos"><h4>Homologacion</h4></div>
+					</div>
+					<hr />
+					<div class="scrollTabla">
+						<table class="listaTabla" >							
+							<tbody id="listaTabla">
+								 <!-- <tr class="datoTabla">
+									<td class="nombre">
+										<input id="inputCheck" change="prueba()" type="checkbox" />
+										<h6>Nombre</h6>
+									</td>
+									<td>
+										<h6>Loggin</h6>
+									</td>
+									<td>
+										<h6>Homologacion</h6>
+									</td>
+								</tr>  -->
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script src="script.js"></script>
+	</body>
+</html>

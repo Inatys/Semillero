@@ -1,0 +1,151 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+*{
+    margin: 0px;
+    font-weight: normal;
+}
+body{
+    font-family: 'Roboto'; 
+    display:flex;
+    justify-content: center; /*alinea izquierda, centro o derecha*/
+    align-items: center;   /*alinea arriba, centro o abajo*/
+    height: 651px;
+}
+section{    
+    width: 30%;
+    height: 100%;
+    padding-left: 10px;
+}
+.encabezado{    
+    display:flex;
+    padding: 3px;
+}
+h4{
+    font-weight: 900;
+}
+h3{
+    color: #3871A7;
+}
+.buscador{    
+    padding: 3px;
+    margin-top: 7px;
+    margin-bottom: 6px;
+}
+.inputBuscar{
+    width: 70%;
+    margin-top: 4px;
+}
+.scroll{
+	overflow-y: scroll;
+	width: 99%;
+	height: 524px;	
+    box-shadow: 0px 0px 1px rgba(173, 173, 173, 0.377);
+}
+.lista{    
+    height: 120%;
+}
+.dato{    
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    padding: 7px 9px 7px 9px;
+    text-align: start;
+    background-color: white;
+    border:none;
+}
+.dato:hover{
+    background-color: #DEEAFF;
+}
+main{    
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F1F1F1;
+}
+.informacion{    
+    width: 94%;
+    height: 94%;
+    padding: 10px 5px 0px 15px;
+    background-color: white;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.596);
+}
+.opciones img{
+    width: 110px;
+    height: 20px;    
+}
+.encabezadoTabla{    
+    display: flex;
+    justify-content: space-around;
+    padding: 7px 0px 7px 0px;
+    width: 94%;
+}
+.encabezadoNombre{    
+    width:45%
+}
+.encabezadoDatos{
+    width:25%;
+}
+.scrollTabla{
+    overflow-y: scroll;
+	width: 99%;
+	height: 543px;	
+}
+.listaTabla{    
+    height: 120%;
+    padding-top: 5px;
+    width: 100%;
+}
+.datoTabla{    
+    display:flex;
+    justify-content: space-between;
+    padding: 7px 9px 7px 9px;
+    width: 96%;
+}
+td{
+    width:25%;
+}
+.nombre{    
+    display:flex;
+    width:45%
+}
+.nombre input{
+    margin-right: 7px;
+}
+@media screen and (max-width:710px){ 
+    body{
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    section{        
+        width: 97%;
+        height: 35%;
+    }   
+    .scroll{
+        height: 102px;
+    }
+    main{
+        width: 99%;
+        height: 65%;
+    }
+    .opciones img{
+        width: 90px;
+    }
+    .scrollTabla{
+        height: 333px;
+    }
+    .encabezadoNombre{    
+        width:44%
+    }
+    .encabezadoDatos{
+        width:25%;
+    }
+    h4{
+        font-weight: 900;
+        font-size: 12px;
+    }
+    .datoTabla{    
+        width: 95%;
+    }
+}
