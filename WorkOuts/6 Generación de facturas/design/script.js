@@ -1,10 +1,8 @@
 let divFiltro = document.querySelector(".filtros");
 let divConsulta = document.querySelector(".datos");
-
 document.addEventListener("DOMContentLoaded", () => {
 	paginaInicio();
 });
-
 function paginaInicio() {
 	divFiltro.innerHTML = ` 
 					<div class="fechas">
@@ -96,14 +94,12 @@ let inputModelo;
 let mensajeFecha;
 let monedas;
 let valorMoneda;
-
 function consultar() {
 	let divCarga = document.querySelector(".carga");
 	divCarga.style.display = "block";
 	setTimeout(function () {
 		divCarga.style.display = "none";
 	}, 1000);
-
 	divFiltro.innerHTML = `
     <div class="filtrado">
     <div class="divFiltro">
@@ -162,7 +158,7 @@ function consultar() {
 	fetch("../datosFactura.json")
 		.then((response) => response.json())
 		.then((data) => {
-			data.forEach((dato) => {
+			data.forEach(dato => {
 				contenidoTabla.innerHTML += `
 			<tr id="tablaDato">
 										<td>
@@ -179,13 +175,13 @@ function consultar() {
 										<td id="textoModelo"><h4 class="descripcion">${dato.modeloNegocio}<h4></td>
 										<td><h4 class="descripcion">${dato.descripcionOrdenFacturacion}<h4></td>
 										<td>
-										<select name="" id="dias" onChange="validarSelect(${dato.codigoOrdenDeFacturacion},${dato.valorTotalACobrar})">
+										<select name="" id="dias" onChange="validarSelect()">
 											<option value="0">Selecciona Dias</option>
-											<option value="1">5</option>
-											<option value="2">10</option>
-											<option value="3">15</option>
-											<option value="4">20</option>
-											<option value="5">25</option>
+											<option value=${dato.codigoOrdenDeFacturacion}">5</option>
+											<option value="${dato.codigoOrdenDeFacturacion}">10</option>
+											<option value="${dato.codigoOrdenDeFacturacion}">15</option>
+											<option value="${dato.codigoOrdenDeFacturacion}">20</option>
+											<option value="${dato.codigoOrdenDeFacturacion}">25</option>
 											<option value="6">30</option>
 										</select>
 									</td>
@@ -195,15 +191,41 @@ function consultar() {
 										<td>$${dato.asociarAnticipo}</td>
 										<td id="tdSeleccion"><img class="iconosTabla" id="imagenSeleccion" src="./img/noSeleccionado.svg" alt="" /></td>
 									</tr>								
-			`;
+			`;	
 			});
 			trTabla = document.querySelectorAll("#tablaDato");
 			tdSeleccion = document.querySelectorAll("#tdSeleccion");
 			habilitarSeleccion = document.querySelectorAll("#dias");
-			habilitarSelecciones = Array.from(document.querySelectorAll("#dias"));
 			diasSelect = document.getElementById("dias");
 			filtrarFactura();
+			botonGenerar.addEventListener('click',()=>{			
+			data.forEach(dato=>{				
+				fetch("../modelosFactura.json")
+				.then((response) => response.json())
+				.then((data2) => {
+					data2.forEach(elemento => {
+						for (let i = 0; i < habilitarSeleccion.length; i++) {
+							if(dato.codigoOrdenDeFacturacion===elemento.codigoOrdenDeFacturacion&&habilitarSeleccion[i].value==dato.codigoOrdenDeFacturacion){
+								tbodyFactura.innerHTML += `
+								<td>${dato.codigoOrdenDeFacturacion}</td>
+											<td>${elemento.tipoDocumentoFacturaDiaria}</td>
+											<td>${elemento.prefijo}</td>
+											<td>$${dato.valorTotalACobrar}</td>
+											<td>
+												<img class="iconosTabla" src="./img/icono adobe azul.svg" alt="" />
+												<img class="iconosTabla" src="./img/icono documento azul.svg" alt="" />
+											</td>
+								`;
+							}
+							else{
+								console.log("no")
+							}						
+						}						
+				})				
+			})
 		});
+	})
+	});
 	botonGenerar = document.getElementById("generar");
 	botonGenerar.disabled = true;
 }
@@ -218,50 +240,26 @@ let botonGenerar;
 let generaFactura;
 let tbodyFactura = document.getElementById("tablaFactura");
 let arr = [];
-function validarSelect(dato1, dato2) {
-	for (let i = 0; i < habilitarSeleccion.length; i++) {
-		/* 	console.log(habilitarSeleccion[i]);
-		console.log(tdSeleccion[i]);
-		console.log(habilitarSeleccion[i].value); */
+function validarSelect() {
+	for (let i = 0; i < habilitarSeleccion.length; i++) {		
 		if (habilitarSeleccion[i].value != "0") {
-			tdSeleccion[
-				i
-			].innerHTML = `<img class="iconosTabla" id="imagenSeleccion" src="./img/seleccionado.svg" alt="" />`;
+			tdSeleccion[i].innerHTML = `<img class="iconosTabla" id="imagenSeleccion" src="./img/seleccionado.svg" alt="" />`;
 			botonGenerar.disabled = false;
-			botonGenerar.style.background = "#2267a0";
-			tbodyFactura.innerHTML += `
-			<td>${dato1}</td>
-						<td>FE</td>
-						<td>SETT1150</td>
-						<td>${dato2}</td>
-						<td>
-							<img class="iconosTabla" src="./img/icono adobe azul.svg" alt="" />
-							<img class="iconosTabla" src="./img/icono documento azul.svg" alt="" />
-						</td>
-			`;
-			/* console.log("selecciono")
-			console.log(taba) */
+			botonGenerar.style.background = "#2267a0";			
 		} else if (habilitarSeleccion[i].value === "0") {
-			/* console.log("no selecciono"); */
-			tdSeleccion[
-				i
-			].innerHTML = `<img class="iconosTabla" id="imagenSeleccion" src="./img/noSeleccionado.svg" alt="" />`;
-		}
+			tdSeleccion[i].innerHTML = `<img class="iconosTabla" id="imagenSeleccion" src="./img/noSeleccionado.svg" alt="" />`;
+		}		
 	}
-
-
-
-
+}
 function generarFactura() {
 	generaFactura = document.querySelector(".generaFactura").style.display = "block";
 	let cerrar = document.getElementById("cerrar").addEventListener("click", () => {
 		generaFactura = document.querySelector(".generaFactura").style.display = "none";
+		tbodyFactura.innerHTML=``;
 	});
 }
-
 let valorFechaInicial;
 let valorFechaFinal;
-
 function validarFechas() {
 	valorFechaInicial = fechaInicial.value;
 	valorFechaFinal = fechaFinal.value;
@@ -271,15 +269,9 @@ function validarFechas() {
 		mensajeFecha.innerText = ``;
 	}
 }
-
 //filtrar datos
 function filtrarFactura() {
-	let filterFactura, contenidoFactura, textoFactura;
-	let filterCliente, contenidoCliente, textoCliente;
-	let filterModelo, contenidoModelo, textoModelo;
-	let filterFechaInicial, contenidoFechaInicial, textoFechaInicial;
-	let filterFechaFinal, contenidoFechaFinal, textoFechaFinal;
-
+	let filterFactura, contenidoFactura, textoFactura,filterCliente, contenidoCliente, textoCliente,filterModelo, contenidoModelo, textoModelo,filterFechaInicial, contenidoFechaInicial, textoFechaInicial,filterFechaFinal, contenidoFechaFinal, textoFechaFinal;
 	filterFactura = inputFactura.value.toUpperCase();
 	filterCliente = inputCliente.value.toUpperCase();
 	filterModelo = inputModelo.value.toUpperCase();
@@ -291,7 +283,6 @@ function filtrarFactura() {
 		contenidoModelo = trTabla[i].querySelectorAll("#textoModelo")[0];
 		contenidoFechaInicial = trTabla[i].querySelectorAll("#textoFechaInicio")[0];
 		contenidoFechaFinal = trTabla[i].querySelectorAll("#textoFechaFinal")[0];
-
 		textoFactura = contenidoFactura.textContent;
 		textoCliente = contenidoCliente.textContent;
 		textoModelo = contenidoModelo.textContent;
@@ -301,24 +292,20 @@ function filtrarFactura() {
 		console.log("texto cliente" + textoCliente.toUpperCase().indexOf(filterCliente));
 		console.log("texto modelo" + textoModelo.toUpperCase().indexOf(filterModelo));
 		console.log(
-			"texto fecha inicial" + textoFechaInicial.toUpperCase().indexOf(filterFechaInicial)
+			"texto fecha inicial" + textoFechaInicial.indexOf(filterFechaInicial)
 		);
 		console.log("texto fecha final" + textoFechaFinal.indexOf(filterFechaFinal));
-
 		if (
 			(textoFactura.toUpperCase().indexOf(filterFactura) ||
 				textoCliente.toUpperCase().indexOf(filterCliente) ||
 				textoModelo.toUpperCase().indexOf(filterModelo)) > -1
 		) {
 			trTabla[i].style.display = "";
-			//trTabla[i].style.display = "none";
-			console.log(" se encontraron");
+			console.log("este cumple")
 		} else {
 			trTabla[i].style.display = "none";
-			console.log("los filtors no se encontraron");
-			//trTabla[i].style.display = "";
+			console.log("este no cumple")
 		}
-
 		//textoFechaInicial.indexOf(filterFechaInicial) ||
 		//textoFechaFinal.indexOf(filterFechaFinal) ||
 	}
