@@ -179,7 +179,7 @@ function consultar() {
 										<td id="textoModelo"><h4 class="descripcion">${dato.modeloNegocio}<h4></td>
 										<td><h4 class="descripcion">${dato.descripcionOrdenFacturacion}<h4></td>
 										<td>
-										<select name="" id="dias" onChange="select(${dato.codigoOrdenDeFacturacion},${dato.valorTotalACobrar})">
+										<select name="" id="dias" onChange="validarSelect(${dato.codigoOrdenDeFacturacion},${dato.valorTotalACobrar})">
 											<option value="0">Selecciona Dias</option>
 											<option value="1">5</option>
 											<option value="2">10</option>
@@ -218,7 +218,7 @@ let botonGenerar;
 let generaFactura;
 let tbodyFactura = document.getElementById("tablaFactura");
 let arr = [];
-function validarSelect() {
+function validarSelect(dato1, dato2) {
 	for (let i = 0; i < habilitarSeleccion.length; i++) {
 		/* 	console.log(habilitarSeleccion[i]);
 		console.log(tdSeleccion[i]);
@@ -229,7 +229,16 @@ function validarSelect() {
 			].innerHTML = `<img class="iconosTabla" id="imagenSeleccion" src="./img/seleccionado.svg" alt="" />`;
 			botonGenerar.disabled = false;
 			botonGenerar.style.background = "#2267a0";
-
+			tbodyFactura.innerHTML += `
+			<td>${dato1}</td>
+						<td>FE</td>
+						<td>SETT1150</td>
+						<td>${dato2}</td>
+						<td>
+							<img class="iconosTabla" src="./img/icono adobe azul.svg" alt="" />
+							<img class="iconosTabla" src="./img/icono documento azul.svg" alt="" />
+						</td>
+			`;
 			/* console.log("selecciono")
 			console.log(taba) */
 		} else if (habilitarSeleccion[i].value === "0") {
@@ -239,24 +248,9 @@ function validarSelect() {
 			].innerHTML = `<img class="iconosTabla" id="imagenSeleccion" src="./img/noSeleccionado.svg" alt="" />`;
 		}
 	}
-}
-function rellenar(dato1, dato2) {
-	/*diasSelect.addEventListener('change', (event) => {
-     console.log(event.target.value);
-}); */
-	console.log(diasSelect);
-	console.log(diasSelect.value); 
-	habilitarSelecciones.map((select)=>{
-		select.addEventListener('change',()=>{
-			console.log("este");
-		})
-	})
-}
 
-function select(dato1, dato2) {
-	rellenar(dato1, dato2);
-	validarSelect();
-}
+
+
 
 function generarFactura() {
 	generaFactura = document.querySelector(".generaFactura").style.display = "block";
