@@ -35,7 +35,7 @@ function paginaInicio() {
 							<label for=""
 								>Orden de facturacion
 								<br />
-								<input id="factura" type="text" placeholder="Numero de orden de facturacion" />
+								<input id="factura" type="number" placeholder="Numero de orden de facturacion" />
 							</label>
 						</div>
 						<div class="opcion">
@@ -51,8 +51,9 @@ function paginaInicio() {
 							<label for=""
 								>Modelo de negocio
 								<br />
-								<input id="modelo" type="text" placeholder="Buscar el modelo de negocio" />
-							</label>
+								<input id="modelo" onkeyup="validarModelo()" onblur="validarModelo()" type="text" placeholder="Buscar el modelo de negocio" />
+							<b id="mensajeModelo"></b>
+								</label>
 						</div>
 						<div class="opcion">
 							<img src="./img/billete.svg" alt="" />
@@ -60,7 +61,7 @@ function paginaInicio() {
 								>Moneda
 								<br />
 								<select name="" id="monedas">
-								<option value="0">Selecciona Moneda</option>
+								<option  value="0">Selecciona Moneda</option>
                                 </select>
 							</label>
 						</div>		
@@ -68,10 +69,11 @@ function paginaInicio() {
 	fetch("../moneda.json")
 		.then((response) => response.json())
 		.then((data) => {
-			data.forEach((dato) => {
-				monedas.innerHTML += `		
-			<option id="valorMoneda">${dato.abreviatura}-${dato.descripcion}</option>
-			`;
+			data.forEach((dato) => {					
+					monedas.innerHTML += `		
+				<option id="valorMoneda">${dato.descripcion}</option>
+				`;
+				
 			});
 		});
 	divConsulta.innerHTML = `    
@@ -83,6 +85,7 @@ function paginaInicio() {
 	inputCliente = document.getElementById("cliente");
 	inputModelo = document.getElementById("modelo");
 	mensajeFecha = document.getElementById("mensajeFecha");
+	mensajeModelo = document.getElementById("mensajeModelo");
 	monedas = document.getElementById("monedas");
 	valorMoneda = document.getElementById("valorMoneda");
 }
@@ -158,8 +161,9 @@ function consultar() {
 	fetch("../datosFactura.json")
 		.then((response) => response.json())
 		.then((data) => {
-			data.forEach(dato => {
-				contenidoTabla.innerHTML += `
+			data.forEach((dato) => {
+				if (inputFactura.value == dato.codigoOrdenDeFacturacion && inputCliente.value == dato.clienteNombre || inputCliente.value == dato.clienteNombre || inputFactura.value == dato.codigoOrdenDeFacturacion || valorFechaInicial == dato.fechaRegistro && valorFechaFinal == dato.fechaVencimiento || inputModelo.value == dato.modeloNegocio) {
+					contenidoTabla.innerHTML += `
 			<tr id="tablaDato">
 										<td>
 											<img class="iconosTabla" src="./img/icono adobe verde.svg" alt="" />
@@ -171,7 +175,7 @@ function consultar() {
 										</td>
 										<td id="textoFactura">${dato.codigoOrdenDeFacturacion}</td>
 										<td id="textoFechaInicio">${dato.fechaRegistro}</td>
-										<td id="textoCliente"><h4 class="descripcion">${dato.clienteIdentificacion}-${dato.clienteNombre}</td>
+										<td id="textoCliente"><h4 class="descripcion">${dato.clienteNombre}</td>
 										<td id="textoModelo"><h4 class="descripcion">${dato.modeloNegocio}<h4></td>
 										<td><h4 class="descripcion">${dato.descripcionOrdenFacturacion}<h4></td>
 										<td>
@@ -186,46 +190,49 @@ function consultar() {
 										</select>
 									</td>
 										<td id="textoFechaFinal">${dato.fechaVencimiento}</td>
-										<td>$${dato.valorTotalACobrar}</td>
+										<td>$${monedas.value==="US Dólar"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00026)+" USD":(monedas.value==="Euro"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00023)+" EUR":(monedas.value==="Balboa Panameña"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00027)+" PAB":(monedas.value==="Libra Esterlina"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00019)+" GBP":(monedas.value==="Peso Mexicano"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.0054)+" MXN":(monedas.value==="Nuevo Sol"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.0010)+" PEN":(monedas.value==="Bolivar Fuerte"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00110977)+" VEZ":(monedas.value==="Peso Dominicano"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.015)+" DOP":(monedas.value==="Yuan"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.0017)+" CNY":(monedas.value==="Guaraní"?TotalMoneda=Math.round(dato.valorTotalACobrar*1.82)+" PYG":(monedas.value==="Franco Suizo"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00024)+" CHF":(monedas.value==="Dólar Canadiense"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00033)+" CAD":TotalMoneda=dato.valorTotalACobrar+" COP")))))))))))}</td>
 										<td>$${dato.valorAnticipo}</td>
 										<td>$${dato.asociarAnticipo}</td>
 										<td id="tdSeleccion"><img class="iconosTabla" id="imagenSeleccion" src="./img/noSeleccionado.svg" alt="" /></td>
 									</tr>								
-			`;	
+			`;
+				}
 			});
 			trTabla = document.querySelectorAll("#tablaDato");
 			tdSeleccion = document.querySelectorAll("#tdSeleccion");
 			habilitarSeleccion = document.querySelectorAll("#dias");
 			diasSelect = document.getElementById("dias");
-			filtrarFactura();
-			botonGenerar.addEventListener('click',()=>{			
-			data.forEach(dato=>{				
-				fetch("../modelosFactura.json")
-				.then((response) => response.json())
-				.then((data2) => {
-					data2.forEach(elemento => {
-						for (let i = 0; i < habilitarSeleccion.length; i++) {
-							if(dato.codigoOrdenDeFacturacion===elemento.codigoOrdenDeFacturacion&&habilitarSeleccion[i].value==dato.codigoOrdenDeFacturacion){
-								tbodyFactura.innerHTML += `
+			//filtrarFactura();
+			botonGenerar.addEventListener("click", () => {
+				data.forEach((dato) => {
+					fetch("../modelosFactura.json")
+						.then((response) => response.json())
+						.then((data2) => {
+							data2.forEach((elemento) => {
+								for (let i = 0; i < habilitarSeleccion.length; i++) {
+									if (
+										dato.codigoOrdenDeFacturacion === elemento.codigoOrdenDeFacturacion &&
+										habilitarSeleccion[i].value == dato.codigoOrdenDeFacturacion
+									) {
+										tbodyFactura.innerHTML += `
 								<td>${dato.codigoOrdenDeFacturacion}</td>
 											<td>${elemento.tipoDocumentoFacturaDiaria}</td>
 											<td>${elemento.prefijo}</td>
-											<td>$${dato.valorTotalACobrar}</td>
+											<td>$${monedas.value==="US Dólar"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00026)+" USD":(monedas.value==="Euro"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00023)+" EUR":(monedas.value==="Balboa Panameña"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00027)+" PAB":(monedas.value==="Libra Esterlina"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00019)+" GBP":(monedas.value==="Peso Mexicano"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.0054)+" MXN":(monedas.value==="Nuevo Sol"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.0010)+" PEN":(monedas.value==="Bolivar Fuerte"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00110977)+" VEZ":(monedas.value==="Peso Dominicano"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.015)+" DOP":(monedas.value==="Yuan"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.0017)+" CNY":(monedas.value==="Guaraní"?TotalMoneda=Math.round(dato.valorTotalACobrar*1.82)+" PYG":(monedas.value==="Franco Suizo"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00024)+" CHF":(monedas.value==="Dólar Canadiense"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00033)+" CAD":TotalMoneda=dato.valorTotalACobrar+" COP")))))))))))}</td>
 											<td>
 												<img class="iconosTabla" src="./img/icono adobe azul.svg" alt="" />
 												<img class="iconosTabla" src="./img/icono documento azul.svg" alt="" />
 											</td>
 								`;
-							}
-							else{
-								console.log("no")
-							}						
-						}						
-				})				
-			})
+									} else {
+										console.log("no");
+									}
+								}
+							});
+						});
+				});
+			});
 		});
-	})
-	});
 	botonGenerar = document.getElementById("generar");
 	botonGenerar.disabled = true;
 }
@@ -241,21 +248,25 @@ let generaFactura;
 let tbodyFactura = document.getElementById("tablaFactura");
 let arr = [];
 function validarSelect() {
-	for (let i = 0; i < habilitarSeleccion.length; i++) {		
+	for (let i = 0; i < habilitarSeleccion.length; i++) {
 		if (habilitarSeleccion[i].value != "0") {
-			tdSeleccion[i].innerHTML = `<img class="iconosTabla" id="imagenSeleccion" src="./img/seleccionado.svg" alt="" />`;
+			tdSeleccion[
+				i
+			].innerHTML = `<img class="iconosTabla" id="imagenSeleccion" src="./img/seleccionado.svg" alt="" />`;
 			botonGenerar.disabled = false;
-			botonGenerar.style.background = "#2267a0";			
+			botonGenerar.style.background = "#2267a0";
 		} else if (habilitarSeleccion[i].value === "0") {
-			tdSeleccion[i].innerHTML = `<img class="iconosTabla" id="imagenSeleccion" src="./img/noSeleccionado.svg" alt="" />`;
-		}		
+			tdSeleccion[
+				i
+			].innerHTML = `<img class="iconosTabla" id="imagenSeleccion" src="./img/noSeleccionado.svg" alt="" />`;
+		}
 	}
 }
 function generarFactura() {
 	generaFactura = document.querySelector(".generaFactura").style.display = "block";
 	let cerrar = document.getElementById("cerrar").addEventListener("click", () => {
 		generaFactura = document.querySelector(".generaFactura").style.display = "none";
-		tbodyFactura.innerHTML=``;
+		tbodyFactura.innerHTML = ``;
 	});
 }
 let valorFechaInicial;
@@ -269,44 +280,13 @@ function validarFechas() {
 		mensajeFecha.innerText = ``;
 	}
 }
-//filtrar datos
-function filtrarFactura() {
-	let filterFactura, contenidoFactura, textoFactura,filterCliente, contenidoCliente, textoCliente,filterModelo, contenidoModelo, textoModelo,filterFechaInicial, contenidoFechaInicial, textoFechaInicial,filterFechaFinal, contenidoFechaFinal, textoFechaFinal;
-	filterFactura = inputFactura.value.toUpperCase();
-	filterCliente = inputCliente.value.toUpperCase();
-	filterModelo = inputModelo.value.toUpperCase();
-	filterFechaInicial = valorFechaInicial;
-	filterFechaFinal = valorFechaFinal;
-	for (let i = 0; i < trTabla.length; i++) {
-		contenidoFactura = trTabla[i].querySelectorAll("#textoFactura")[0];
-		contenidoCliente = trTabla[i].querySelectorAll("#textoCliente")[0];
-		contenidoModelo = trTabla[i].querySelectorAll("#textoModelo")[0];
-		contenidoFechaInicial = trTabla[i].querySelectorAll("#textoFechaInicio")[0];
-		contenidoFechaFinal = trTabla[i].querySelectorAll("#textoFechaFinal")[0];
-		textoFactura = contenidoFactura.textContent;
-		textoCliente = contenidoCliente.textContent;
-		textoModelo = contenidoModelo.textContent;
-		textoFechaInicial = contenidoFechaInicial.textContent;
-		textoFechaFinal = contenidoFechaFinal.textContent;
-		console.log("texto factura" + textoFactura.toUpperCase().indexOf(filterFactura));
-		console.log("texto cliente" + textoCliente.toUpperCase().indexOf(filterCliente));
-		console.log("texto modelo" + textoModelo.toUpperCase().indexOf(filterModelo));
-		console.log(
-			"texto fecha inicial" + textoFechaInicial.indexOf(filterFechaInicial)
-		);
-		console.log("texto fecha final" + textoFechaFinal.indexOf(filterFechaFinal));
-		if (
-			(textoFactura.toUpperCase().indexOf(filterFactura) ||
-				textoCliente.toUpperCase().indexOf(filterCliente) ||
-				textoModelo.toUpperCase().indexOf(filterModelo)) > -1
-		) {
-			trTabla[i].style.display = "";
-			console.log("este cumple")
-		} else {
-			trTabla[i].style.display = "none";
-			console.log("este no cumple")
-		}
-		//textoFechaInicial.indexOf(filterFechaInicial) ||
-		//textoFechaFinal.indexOf(filterFechaFinal) ||
-	}
+function validarModelo() {
+	const expresiones = new RegExp("^[a-zA-ZÀ-ÿ\s]{1,180}$");
+	if(expresiones.test(inputModelo.value)){ 
+		mensajeModelo.innerText = ``;
+	} else {
+		mensajeModelo.innerText = `Solo se permiten letras, no numeros`;
+	}  
 }
+let tipoMoneda
+let TotalMoneda

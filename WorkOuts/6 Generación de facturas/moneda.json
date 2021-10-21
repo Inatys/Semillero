@@ -47,14 +47,7 @@
         "abreviatura": "PEN",
         "simbolo": "S/.",
         "funcional": false
-      },
-      {
-        "codigo": 8,
-        "descripcion": "Dólar Trinitense",
-        "abreviatura": "TDD",
-        "simbolo": "$",
-        "funcional": false
-      },
+      },    
       {
         "codigo": 9,
         "descripcion": "Bolivar Fuerte",
@@ -67,13 +60,6 @@
         "descripcion": "Peso Dominicano",
         "abreviatura": "DOP",
         "simbolo": "RD$",
-        "funcional": false
-      },
-      {
-        "codigo": 11,
-        "descripcion": "Bitcoin",
-        "abreviatura": "BTC",
-        "simbolo": "$",
         "funcional": false
       },
       {

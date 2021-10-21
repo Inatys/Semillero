@@ -279,6 +279,14 @@ p {
 	font-size: 9px;
 	color: red;
 }
+b {
+	position: absolute;
+	width: 210px;
+	top: 505px;
+    left: 155px;
+	font-size: 9px;
+	color: red;
+}
 
 @media screen and (max-width: 745px) {
 	body {
