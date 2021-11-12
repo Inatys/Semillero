@@ -99,6 +99,19 @@ function crearImpacto(e) {
 		impactos.push(impacto);
 		localStorage.setItem("Impactos", JSON.stringify(impactos));
 	}
+/*} else {
+	let impactos = JSON.parse(localStorage.getItem("Impactos"));
+	//let codigosLocal = impactos[i].codigo;
+
+	if(codigo==codigosLocal){
+		console.log("son iguales")
+	}else{
+		console.log("no iguales")
+		impactos.push(impacto);
+localStorage.setItem("Impactos", JSON.stringify(impactos));
+	} 
+}) */
+
 	leerImpacto();
 	document.getElementById("nuevoImpacto").reset();
 	e.preventDefault();
@@ -106,6 +119,7 @@ function crearImpacto(e) {
 function leerImpacto() {
 	let impactos = JSON.parse(localStorage.getItem("Impactos"));
 	document.getElementById("impactosTabla").innerHTML = "";
+	if (impactos != null) { 
 	for (let i = 0; i < impactos.length; i++) {
 		let codigo = impactos[i].codigo;
 		let descripcion = impactos[i].descripcion;
@@ -116,7 +130,7 @@ function leerImpacto() {
 	<td>${valor}</td>
 	<td><button id="editar" class="accion" onclick="editarImpacto('${codigo}')"><img src="./design/pen.png" alt=""></button><button class="accion" onclick="eliminarImpacto('${codigo}')"><img src="./design/bin.png" alt=""></button></td>
 	</tr>`;
-	}
+	}}
 }
 leerImpacto();
 function editarImpacto(codigo) {
@@ -138,12 +152,14 @@ function editarImpacto(codigo) {
 		}
 	}
 }
+
 function actualizarImpacto(i) {
 	let impactos = JSON.parse(localStorage.getItem("Impactos"));
 	impactos[i].descripcion = document.getElementById("newdescripcion").value;
 	impactos[i].valor = document.getElementById("newvalor").value;
 	localStorage.setItem("Impactos", JSON.stringify(impactos));
 }
+
 function eliminarImpacto(codigo) {
 	let impactos = JSON.parse(localStorage.getItem("Impactos"));
 	for (let i = 0; i < impactos.length; i++) {
@@ -182,6 +198,7 @@ function crearProbabilidad(e) {
 function leerProbabilidad() {
 	let probabilidades = JSON.parse(localStorage.getItem("Probabilidades"));
 	document.getElementById("probabilidadesTabla").innerHTML = "";
+	if (probabilidades != null) { 
 	for (let i = 0; i < probabilidades.length; i++) {
 		let codigo = probabilidades[i].codigo;
 		let descripcion = probabilidades[i].descripcion;
@@ -192,7 +209,7 @@ function leerProbabilidad() {
 	<td>${valor}</td>
 	<td><button id="editar" class="accion" onclick="editarProbabilidad('${codigo}')"><img src="./design/pen.png" alt=""></button><button class="accion" onclick="eliminarProbabilidad('${codigo}')"><img src="./design/bin.png" alt=""></button></td>
 	</tr>`;
-	}
+	}}
 }
 leerProbabilidad();
 function editarProbabilidad(codigo) {
@@ -264,6 +281,7 @@ function crearTipo(e) {
 function leerTipo() {
 	let tipos = JSON.parse(localStorage.getItem("Tipos"));
 	document.getElementById("tiposTabla").innerHTML = "";
+	if (tipos != null) { 
 	for (let i = 0; i < tipos.length; i++) {
 		let codigo = tipos[i].codigo;
 		let descripcion = tipos[i].descripcion;
@@ -274,7 +292,7 @@ function leerTipo() {
 	<td>${interno}</td>
 	<td><button id="editar" class="accion" onclick="editarTipo('${codigo}')"><img src="./design/pen.png" alt=""></button><button class="accion" onclick="eliminarTipo('${codigo}')"><img src="./design/bin.png" alt=""></button></td>
 	</tr>`;
-	}
+	}}
 }
 leerTipo();
 function editarTipo(codigo) {
@@ -345,6 +363,7 @@ function crearEvaluacion(e) {
 function leerEvaluacion() {
 	let evaluaciones = JSON.parse(localStorage.getItem("Evaluaciones"));
 	document.getElementById("evaluacionesTabla").innerHTML = "";
+	if (evaluaciones != null) { 
 	for (let i = 0; i < evaluaciones.length; i++) {
 		let codigo = evaluaciones[i].codigo;
 		let descripcion = evaluaciones[i].descripcion;
@@ -358,7 +377,7 @@ function leerEvaluacion() {
 	<td>${valorMax}</td>
 	<td><button id="editar" class="accion" onclick="editarEvaluacion('${codigo}')"><img src="./design/pen.png" alt=""></button><button class="accion" onclick="eliminarEvaluacion('${codigo}')"><img src="./design/bin.png" alt=""></button></td>
 	</tr>`;
-	}
+	}}
 }
 leerEvaluacion();
 function editarEvaluacion(codigo) {
