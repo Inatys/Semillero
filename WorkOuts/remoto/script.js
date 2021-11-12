@@ -2,7 +2,7 @@ const expresiones = {
 	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
 	nit: /^[a-zA-Z0-9\s]{1,20}$/, // Letras y espacios, pueden llevar acentos.
 	incoveniente: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-	telefono: /^[a-zA-Z0-9]{1,11}$/, // Letras y espacios, pueden llevar acentos.
+	telefono: /^[0-9]{1,11}$/, // Letras y espacios, pueden llevar acentos.
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 };
 const campos = {
