@@ -1,109 +1,108 @@
 body {
-    font-family: sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #c5e4e7;
-  }
-  main {
-    display: flex;
-    flex-direction: row;
-    
-    justify-content: center;
-    width: 590px;
-    height: 290px;
-    background-color: white;
-  }
-  .sections {
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex: 1 1 50%;
-  }
-  .contenido {
-    
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  .propinas {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    
-  }
-  
-  .porcentaje {
-    width: 60px;
-    background-color: #00474b;
-    color: white;
-  }
-  
-  .datos {
-    
-    width: 80%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+	font-family: sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #c5e4e7;
+}
+main {
+	display: flex;
+	flex-direction: row;
 
-    color: #ffc600;
-		text-decoration: none;
+	justify-content: center;
+	width: 590px;
+	height: 290px;
+	background-color: white;
+}
+.sections {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex: 1 1 50%;
+}
+.contenido {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: space-between;
+	width: 100%;
+}
 
-  }
-  .input {
-    width: 97%;
-    background-color: #f4f8fb;
-  }
-  .valores {
-    
-    width: 80%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #00474b;
-  }
-  .totales {
-    
-    width: 90%;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  .total {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    
-  }
-  h3 {
-    margin: 0px;
-    color: #30bdac;
-  }
-  h6 {
-    margin: 0px;
-    color: white;
-  }
-  b {
-    margin: 0px;
-    color: grey;
-  }
-  
-  .boton {
-    width: 80%;
-    height: 30px;
-    background-color: #0d686d;
-    color: white;
-  }
-  
+.propinas {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.porcentaje {
+	width: 60px;
+	background-color: #00474b;
+	color: white;
+	border: none;
+}
+input[type="button"]:hover {
+	background-color: #179197;
+}
+
+.datos {
+	width: 80%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	color: #ffc600;
+	text-decoration: none;
+}
+.input {
+	width: 97%;
+	background-color: #f4f8fb;
+	border: none;
+}
+.valores {
+	width: 90%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	background-color: #00474b;
+}
+.totales {
+	width: 90%;
+	height: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.total {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+h3 {
+	margin: 0px;
+	color: #30bdac;
+}
+h6 {
+	margin: 0px;
+	color: white;
+}
+b {
+	margin: 0px;
+	color: grey;
+}
+
+.boton {
+	width: 80%;
+	height: 30px;
+	background-color: #0d686d;
+	color: white;
+	border: none;
+}
+.boton:hover {
+	background-color: #179197;
+}

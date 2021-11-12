@@ -1,10 +1,8 @@
  let porcentajes = document.querySelectorAll(".porcentaje");
 let porcentaje;
 for(let i=0;i<porcentajes.length;i++){
-	console.log(porcentajes[i]);
 	porcentajes[i].addEventListener('click',()=>{
 		porcentaje=porcentajes[i].value;
-		console.log("dio click");
 	})
 } 
 
