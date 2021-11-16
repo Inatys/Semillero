@@ -36,6 +36,7 @@ const tablaAccesosTotales = async () => {
 
 const mostrarAccesos = (data2) => {
 	data2.forEach((acceso) => {
+		console.log("entro");
 		const dato = document.createElement("button");
 		dato.setAttribute("class", "dato");
 		dato.setAttribute("id", "botonAcceso");
@@ -49,22 +50,20 @@ const mostrarAccesos = (data2) => {
 		dato.append(accesos, cantidadAcceso);
 
 		if (acceso.Id == 1) {
-			dato.addEventListener("click", ()=>{
-				tablaAccesosTotales()
+			dato.addEventListener("click", () => {
+				tablaAccesosTotales();
 				/* const ids = (data3) => {
 					data3.forEach((id)=>{
 						let todosId=id.Id	
 						localStorage.getItem(todosId)===null?null:id(todosId);
 					});
 					
-				} */
-				function id (todosId){
-					console.log(localStorage.getItem(todosId))
-					localStorage.getItem(todosId)==="true"?inputs2(inputs):null;
-					
+				}  */
+				function id(todosId) {
+					console.log(localStorage.getItem(todosId));
+					localStorage.getItem(todosId) === "true" ? inputs2(inputs) : null;
 				}
 			});
-			
 		} else if (acceso.Id == 32) {
 			dato.addEventListener("click", tablaCoordinadores);
 		}
@@ -72,78 +71,82 @@ const mostrarAccesos = (data2) => {
 };
 let datoTabla;
 
-function inputs2(inputs){
-console.log(inputs)
+function inputs2(inputs) {
+	console.log(inputs);
 }
 
 const mostrarTablaAccesosTotales = (data3) => {
-
 	listaTabla.innerHTML = "";
-	
 	data3.forEach((accesoTotal) => {
-		
-		
-        listaTabla.innerHTML+=`<tr class="datoTabla">
+		listaTabla.innerHTML += `<tr class="datoTabla">
         <td class="nombre">
-            <input id="${accesoTotal.Id}"  onchange="cambiarEstado(this)" type="checkbox" />
+            <input id="${
+							accesoTotal.Id
+						}"  onchange="cambiarEstado(this)" type="checkbox" />
             <h6>${accesoTotal.Nombre}</h6>
         </td>
         <td>
             <h6>${accesoTotal.Loggin}</h6>
         </td>
         <td>
-            <h6 id="textoHomologacion">${accesoTotal.Homologacion===null?"":accesoTotal.Homologacion}</h6>
+            <h6 id="textoHomologacion">${
+							accesoTotal.Homologacion === null ? "" : accesoTotal.Homologacion
+						}</h6>
         </td>
-    </tr>`		
+    </tr>`;
 	});
-	
+
 	inputs = document.querySelectorAll("input[type='checkbox']");
-	h6 = document.querySelectorAll("#textoHomologacion");	
-	
+	h6 = document.querySelectorAll("#textoHomologacion");
+	mantenerCheck();
 };
+
 let inputs;
-//console.log(localStorage.getItem(1479))
 document.getElementById("marcarTodos").addEventListener("click", marcarTodos);
 function marcarTodos() {
 	for (let i = 0; i < inputs.length; i++) {
 		inputs[i].checked = true;
 	}
-	cambiarEstado()
+	cambiarEstado();
 }
 document.getElementById("desmarcarTodos").addEventListener("click", desmarcarTodos);
 function desmarcarTodos() {
 	for (let i = 0; i < inputs.length; i++) {
 		inputs[i].checked = false;
 	}
-	cambiarEstado()
+	cambiarEstado();
 }
 
-function save() {
+/* function save() {
 	for (let i = 0; i < inputs.length; i++) {
 		inputs[i].checked = false;
 		localStorage.setItem("input[type='checkbox']", inputs[i].checked);
 	}
-}
-
+} */
 
 const mostrarTablaCoordinadores = (data) => {
 	listaTabla.innerHTML = "";
 	data.forEach((coordinador) => {
-        listaTabla.innerHTML+=`<tr class="datoTabla">
+		listaTabla.innerHTML += `<tr class="datoTabla">
         <td class="nombre">
-            <input id="${coordinador.Id}"  onchange="cambiarEstado(this)" type="checkbox" />
+            <input id="${
+							coordinador.Id
+						}"  onchange="cambiarEstado(this)" type="checkbox" />
             <h6>${coordinador.Nombre}</h6>
         </td>
         <td>
             <h6>${coordinador.Loggin}</h6>
         </td>
         <td>
-            <h6 id="textoHomologacion">${coordinador.Homologacion===null?"":coordinador.Homologacion}</h6>
+            <h6 id="textoHomologacion">${
+							coordinador.Homologacion === null ? "" : coordinador.Homologacion
+						}</h6>
         </td>
-    </tr>`
+    </tr>`;
 	});
 	inputs = document.querySelectorAll("input[type='checkbox']");
 	h6 = document.querySelectorAll("#textoHomologacion");
+	mantenerCheck();
 };
 
 function filtrar() {
@@ -168,33 +171,47 @@ function filtrar() {
 	}
 }
 
-
 let h6;
-function cambiarEstado(check) {  
+function cambiarEstado(check) {
+	for (let i = 0; i < inputs.length; i++) {
+		if (inputs[i].checked == true) {
+			console.log(inputs[i]);
+			console.log("check");
+			console.log(h6[i]);
+			h6[i].innerText = "pendiente";
+		} else {
+			console.log(" no check");
+			h6[i].innerText = "";
+		}
+	}
+	let idCheck = check.id;
+	let estadoCheck = check.checked;
+	let checks = { idCheck, estadoCheck };
 
-    for (let i = 0; i < inputs.length; i++) {       
-        if (inputs[i].checked == true) {
-            console.log(inputs[i]);
-            console.log("check");
-            console.log(h6[i]);
-            h6[i].innerText = "pendiente";
-    }     else {
-				console.log(" no check");
-				h6[i].innerText = "";
-			}					
-		} 
-		localStorage.setItem(check.id,check.checked);
+	if (localStorage.getItem("todoCheck") == null) {
+		let todoCheck = [];
+		todoCheck.push(checks);
+		localStorage.setItem("todoCheck", JSON.stringify(todoCheck));
+	} else {
+		let todoCheck = JSON.parse(localStorage.getItem("todoCheck"));
+		todoCheck.push(checks);
+		localStorage.setItem("todoCheck", JSON.stringify(todoCheck));
+	}
 }
 
-/*function mantenerCheck(check){   
-	id()
-  //  let conChecked= localStorage.getItem(check.id,check.checked);
-//console.log("todo lo que:"+conChecked);
-	//for (let i = 0; i < inputs.length; i++) {
-		//if (check.checked === true) {
-			//console.log("mantener");
+function mantenerCheck(check) {
+	let verEstadoCheck = JSON.parse(localStorage.getItem("todoCheck"));
+	if (verEstadoCheck != null) {  
+	for (let i = 0; i < verEstadoCheck.length; i++) {
+		for (let i = 0; i < inputs.length; i++) {
+			console.log(verEstadoCheck[i].idCheck);
+			console.log(inputs[i]);
+			console.log(inputs[i].id);
+			if (verEstadoCheck[i].idCheck == inputs[i].id) {
+				if (verEstadoCheck[i].estadoCheck == true) {
+					inputs[i].setAttribute('checked','checked');
+				}
+			}
+		}}
 	}
-} 
-
-console.log(localStorage.getItem)
-} */
+}
