@@ -51,7 +51,7 @@ function paginaInicio() {
 							<label for=""
 								>Modelo de negocio
 								<br />
-								<input id="modelo" onkeyup="validarModelo()" onblur="validarModelo()" type="text" placeholder="Buscar el modelo de negocio" />
+								<input id="modelo" type="text" placeholder="Buscar el modelo de negocio" />
 							<b id="mensajeModelo"></b>
 								</label>
 						</div>
@@ -110,7 +110,7 @@ function consultar() {
         <label for=""
             >Fecha inicial
             <br />
-            <span>${valorFechaInicial}</span>
+            <span>${valorFechaInicial==undefined?"":valorFechaInicial}</span>
         </label>
     </div>
     <div class="divFiltro">
@@ -118,7 +118,7 @@ function consultar() {
         <label for=""
             >Fecha final
             <br />
-            <span>${valorFechaFinal}</span>
+            <span>${valorFechaFinal==undefined?"":valorFechaFinal}</span>
         </label>
     </div>
     <div class="divFiltro">
@@ -126,7 +126,7 @@ function consultar() {
     <label for=""
         >Moneda
         <br />
-        <span>${monedas.value}</span>
+        <span>${monedas.value==0?"":monedas.value}</span>
     </label>						
 </div>
 </div>
@@ -150,7 +150,7 @@ function consultar() {
 									<td>Valor total cobrar</td>
 									<td>Valor anticipo</td>
 									<td>Asociar anticipo</td>
-									<td><img  class="iconosTabla" src="./img/noSeleccionado.svg" alt="" /></td>
+									<td></td>
 								</thead>
 								<tbody id="contenidoTabla">									
 								</tbody>
@@ -162,7 +162,7 @@ function consultar() {
 		.then((response) => response.json())
 		.then((data) => {
 			data.forEach((dato) => {
-				if (inputFactura.value == dato.codigoOrdenDeFacturacion && inputCliente.value == dato.clienteNombre || inputCliente.value == dato.clienteNombre || inputFactura.value == dato.codigoOrdenDeFacturacion || valorFechaInicial == dato.fechaRegistro && valorFechaFinal == dato.fechaVencimiento || inputModelo.value == dato.modeloNegocio) {
+				if (inputFactura.value == dato.codigoOrdenDeFacturacion && inputCliente.value == dato.clienteNombre || inputCliente.value == dato.clienteNombre || inputFactura.value == dato.codigoOrdenDeFacturacion || valorFechaInicial == dato.fechaRegistro && valorFechaFinal == dato.fechaVencimiento || inputModelo.value == dato.modeloNegocio||inputCliente.value == dato.clienteCodigo) {
 					contenidoTabla.innerHTML += `
 			<tr id="tablaDato">
 										<td>
@@ -175,7 +175,7 @@ function consultar() {
 										</td>
 										<td id="textoFactura">${dato.codigoOrdenDeFacturacion}</td>
 										<td id="textoFechaInicio">${dato.fechaRegistro}</td>
-										<td id="textoCliente"><h4 class="descripcion">${dato.clienteNombre}</td>
+										<td id="textoCliente"><h4 class="descripcion">${dato.clienteCodigo}-${dato.clienteNombre}</td>
 										<td id="textoModelo"><h4 class="descripcion">${dato.modeloNegocio}<h4></td>
 										<td><h4 class="descripcion">${dato.descripcionOrdenFacturacion}<h4></td>
 										<td>
@@ -192,7 +192,7 @@ function consultar() {
 										<td id="textoFechaFinal">${dato.fechaVencimiento}</td>
 										<td>$${monedas.value==="US Dólar"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00026)+" USD":(monedas.value==="Euro"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00023)+" EUR":(monedas.value==="Balboa Panameña"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00027)+" PAB":(monedas.value==="Libra Esterlina"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00019)+" GBP":(monedas.value==="Peso Mexicano"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.0054)+" MXN":(monedas.value==="Nuevo Sol"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.0010)+" PEN":(monedas.value==="Bolivar Fuerte"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00110977)+" VEZ":(monedas.value==="Peso Dominicano"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.015)+" DOP":(monedas.value==="Yuan"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.0017)+" CNY":(monedas.value==="Guaraní"?TotalMoneda=Math.round(dato.valorTotalACobrar*1.82)+" PYG":(monedas.value==="Franco Suizo"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00024)+" CHF":(monedas.value==="Dólar Canadiense"?TotalMoneda=Math.round(dato.valorTotalACobrar*0.00033)+" CAD":TotalMoneda=dato.valorTotalACobrar+" COP")))))))))))}</td>
 										<td>$${dato.valorAnticipo}</td>
-										<td>$${dato.asociarAnticipo}</td>
+										<td>$</td>
 										<td id="tdSeleccion"><img class="iconosTabla" id="imagenSeleccion" src="./img/noSeleccionado.svg" alt="" /></td>
 									</tr>								
 			`;
@@ -280,13 +280,3 @@ function validarFechas() {
 		mensajeFecha.innerText = ``;
 	}
 }
-function validarModelo() {
-	const expresiones = new RegExp("^[a-zA-ZÀ-ÿ\s]{1,180}$");
-	if(expresiones.test(inputModelo.value)){ 
-		mensajeModelo.innerText = ``;
-	} else {
-		mensajeModelo.innerText = `Solo se permiten letras, no numeros`;
-	}  
-}
-let tipoMoneda
-let TotalMoneda
