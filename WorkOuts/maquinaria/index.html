@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title id="title">Control maquinaria</title>
+        <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+        <div class="imagenFiltro">seccion de filtro</div>
+        <div class="seccionRenovada">        
+		<header>
+           <h2>Control maquinaria equipo: PRB BSA-010203</h2> 
+           <div class="lineaHeader"></div>
+        </header>
+        
+		<main>  
+            <nav>
+                <div class="menu">
+                    <div class="toggle">
+                        <i class="fas fa-bars" onclick="mobile()"></i>
+                </div>
+                    <div class="seccionImagen">
+                        <img src="./imagenes/carro.png" alt="" id="img"/>
+                        <div class="lineaImagen"></div>
+                        <div class="opcionesImagen">
+                            <div class="seccionOpcionImagen" onclick="ampliarImagen()">
+                                <img class="opcionImagen" src="./imagenes/ampliarImagen.svg" alt="" />
+                                <img class="opcionImagenHover" src="./imagenes/ampliarImagenHover.svg" alt="" />
+                            </div>
+                            <div class="seccionOpcionImagen" >
+                                <label class="botonAgregarCarro label2" for="upload">
+                                    <img class="opcionImagen" src="./imagenes/camera.svg" alt="" />
+                                    <img class="opcionImagenHover" src="./imagenes/cameraHover.svg" alt="" /> 
+                                </label>
+                                <input id="upload" type="file" onchange="mostrarImagenAgregada()"/>
+                            </div>
+                        </div>					
+                    </div>
+                    <div class="seccionMenu">
+                        <div class="control divSeccionesMenu" onclick="mostrarControl()">
+                            <img class="imagenNormal" src="./imagenes/control.svg" alt="">
+                            <img class="imagenHover" src="./imagenes/controlHover.svg" alt="">
+                            <h6>Control</h6>
+                            <div class="lineaSeccionesMenu"></div>
+                        </div>
+                        <div class="mantenimiento divSeccionesMenu" onclick="mostrarMantenimiento()">
+                            <img class="imagenNormal" src="./imagenes/mantenimiento.svg" alt="">
+                            <img class="imagenHover" src="./imagenes/mantenimientoHover.svg" alt="">
+                            <h6>Mantenimiento</h6>
+                            <div class="lineaSeccionesMenu"></div>
+                        </div>
+                        <div class="combustible divSeccionesMenu" onclick="mostrarCombustible()">
+                            <img class="imagenNormal" src="./imagenes/combustible.svg" alt="">
+                            <img class="imagenHover" src="./imagenes/combustibleHover.svg" alt="">
+                            <h6>Combustible</h6>
+                            <div class="lineaSeccionesMenu"></div>
+                        </div>
+                        <div class="tarifas divSeccionesMenu" onclick="mostrarTarifas()">
+                            <img class="imagenNormal" src="./imagenes/tarifas.svg" alt="">
+                            <img class="imagenHover" src="./imagenes/tarifasHover.svg" alt="">
+                            <h6>Tarifas</h6>
+                            <div class="lineaSeccionesMenu"></div>
+                        </div>
+                        <div class="neumaticos divSeccionesMenu" onclick="mostrarNeumaticos()">
+                            <img class="imagenNormal" src="./imagenes/neumaticos.svg" alt="">
+                            <img class="imagenHover" src="./imagenes/neumaticosHover.svg" alt="">
+                            <h6>Neumaticos</h6>
+                            <div class="lineaSeccionesMenu"></div>
+                        </div>
+                    </div>
+                </div>
+        </nav>         
+			
+			<div class="tablas">
+                <div class="alertError alert"></div>
+                <div class="alertExito alert"></div>
+                <div class="opcionImagenAmpliada" id="carroAmpliado"></div>
+                <div class="seccionControl">    
+                    <div class="tituloSeccion">Control</div>                
+                    <div class="tablasControl">
+                        <div class="seccionDatosAsignacion">
+                            <div class="seccionFormDatosBasicos">
+                                <div class="encabezadoForm">Datos basicos</div>
+                                <form action="" class="formDatosBasicos">                            
+                                    <label for="" class="label3">
+                                        Grupo de mantenimiento 
+                                        <input type="text" placeholder="Este se llena automatico">
+                                    </label>
+                                    <label for="" class="label3">
+                                        Plan de mantenimiento 
+                                        <input type="text" placeholder="Este se llena automatico">
+                                    </label>
+                                    <label for="" class="label3">
+                                        Esquema de control
+                                        <select name="" id="selectControl" required>
+                                            <option value="0">Selecciona</option>
+                                            <option value="1">Fecha</option>
+                                            <option value="2">Lectura</option>
+                                        </select>
+                                    </label>
+                                    <label for="" class="label3">
+                                        Control por
+                                        <select name="" id="selectControl" required>
+                                            <option value="0">Selecciona</option>
+                                            <option value="1">Bitácora de uso</option>
+                                            <option value="2">Combustible</option>
+                                        </select>
+                                    </label>
+                                    <label for="" class="label3">
+                                        Frecuencia control op
+                                        <select name="" id="selectControl" required>
+                                            <option value="0">Selecciona</option>
+                                            <option value="1">Diario</option>
+                                            <option value="2">Semanal</option>
+                                        </select>
+                                    </label>
+                                    <label for="" class="label3">
+                                        Consume combustible
+                                        <label class="switch">
+                                            <input id="checkCombustible" type="checkbox" onclick="mostrarMenuCombustible()"  />
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </label>
+                                    <label for="" class="label3">
+                                        Control neumaticos
+                                        <label class="switch">
+                                            <input id="checkNeumaticos" type="checkbox" onclick="mostrarMenuNeumaticos()"  />
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </label>
+                                </form>
+                            </div>					
+                            <div class="seccionFormAsignacionPresupuestal">
+                                <div class="encabezadoForm">Asignacion presupuestal</div>
+                                <form action="" class="formAsignacionPresupuestal">                                
+                                    <label for="" class="label3">
+                                        Obra
+                                        <select name="" class="selectAsignacionPresupuestal" id="selectControl" required>
+                                            <option value="0">Selecciona</option>
+                                            <option value="1">EJEMPLO 129</option>
+                                            <option value="2">1861-migraciones Jua EDT</option>
+                                            <option value="3">1928 control CD-Pradera de San Carlos Etapa IV</option>
+                                            <option value="4">1948-Torre reservada de los Nardos XXVI</option>
+                                        </select>
+                                    </label>
+                                    <label for="" class="label3">
+                                        Item servicio externo
+                                        <select name="" class="selectAsignacionPresupuestal" id="selectControl" required>
+                                            <option value="0">Selecciona</option>
+                                            <option value="1">Adoquin receto-Piso 1(M2)</option>
+                                            <option value="2">Excavaciona mano retiro-Piso 1(M3)</option>
+                                            <option value="3">Placa contrapiso CONINSA-Piso 1(M2)</option>
+                                        </select>
+                                    </label>
+                                    <label for="" class="label3">
+                                        Item combustible
+                                        <select name="" class="selectAsignacionPresupuestal" id="selectControl" required>
+                                            <option value="0">Selecciona</option>
+                                            <option value="1">Excavaciona mano retiro-Piso 3(M3)</option>
+                                            <option value="2">Placa contrapiso CONINSA-Piso 3(M2)</option>
+                                            <option value="3">Placa matiza enntrepiso CONINSA e-0.10-Piso 3(M2)</option>
+                                        </select>
+                                    </label>
+                                    <label for="" class="label3">
+                                        Item mantenimiento
+                                        <select name="" class="selectAsignacionPresupuestal" id="selectControl" required>
+                                            <option value="0">Selecciona</option>
+                                            <option value="1">Ejercicio de proyeccion-Piso 1(M2)</option>
+                                            <option value="2">Adoquin receto-Piso 1(M2)</option>
+                                            <option value="3">Excavaciona mano retiro-Piso 1(M3)</option>                                        
+                                        </select>
+                                    </label>
+                                </form>	
+                            </div>
+                        </div>
+                        <div class="seccionFormMedidores">
+                            <div class="encabezadoForm">
+                                Medidores
+                                <button class="botonAgregarEliminar botonAgregar" onclick="agregarSegundoMedidorControl()">+</button>
+                                <button class="botonAgregarEliminar botonEliminar" onclick="EliminaSegundoMedidorControl()">-</button>
+                            </div>
+                            <div class="seccionesDosMedidores">
+                                <div class="seccionMedidores medidor1">
+                                    <div class="lineaMedidores"></div>
+                                    <div class="encabezadoMedidor"> Medidor 1 </div>
+                                    <form action="" class="formMedidores">
+                                        <label for="" >
+                                            Medidor
+                                            <select name="" id="selectControl">
+                                                <option value="0">Selecciona</option>
+                                                <option value="1">Horómetro(Hr)</option>
+                                                <option value="2">Odómetro(Km)</option>
+                                            </select>
+                                        </label>
+                                        <label for="" >
+                                            Medidor inicial
+                                            <input type="number" id="inputControl">
+                                        </label>
+                                        <label for="" >
+                                            Fecha medidor inicial
+                                            <input type="date" id="inputControl"/>
+                                        </label>
+                                        <label for="" >
+                                            Medidor actual
+                                            <input type="text" placeholder="Este se llena automatico">
+                                        </label>
+                                        <label for="" >
+                                            Fecha medidor actual
+                                            <input type="text" placeholder="Este se llena automatico">
+                                        </label>
+                                        <label for="" >
+                                            Trabajo acumulado
+                                            <input type="text" placeholder="Este se llena automatico">
+                                        </label>
+                                    </form>
+                                </div>
+                                <div class="seccionMedidores medidor2"></div>      
+                            </div>
+                                            
+                        </div>
+                    </div>
+                    <button class="botonGuardarCerrar" onclick="guardarDatosControl()" >Guardar</button>
+                </div>
+                <div class="seccionMantenimiento">
+                    <div class="tituloSeccion">Mantenimiento</div>   
+                    <h6>Nota: Equipos controlados por fechas, solo cargan rutinas de mantenimineto configuradas por días en su primer medidor</h6>
+                    <div class="tablasMantenimiento">                        
+                        <div class="seccionFormMantenimiento">
+                            <div class="encabezadoForm">Información de mantenimiento</div>
+                        <form action="" class="informacionMantenimiento">                            
+                            <label for="" >
+                                Grupo de mantenimiento
+                                <select name="" id="selectMantenimiento">
+                                    <option value="0">Selecciona</option>
+                                    <option value="1">Grua hidraulica</option>
+                                    <option value="2">Jumbos</option>
+                                    <option value="3">Automovil prueba</option>
+                                </select>
+                            </label>
+                            <label for="" >
+                                Plan de mantenimiento
+                                <select name="" id="selectMantenimiento">
+                                    <option value="0">Selecciona</option>
+                                    <option value="1">Copia tractomula</option>
+                                    <option value="2">R24</option>
+                                </select>
+                            </label>
+                            <label for="" >
+                                Fecha ultimo ciclo OT
+                                <input type="date" id="inputMantenimiento"/>
+                            </label>
+                        </form>
+                       
+                        </div>  
+                        <div class="seccionFormMedidores seccionFormMedidores2">
+                            <div class="encabezadoForm">
+                                Medidores
+                            </div>
+                            <div class="seccionesDosMedidores seccionesDosMedidores2">
+                                <div class="seccionMedidores seccionMedidores2">
+                                    <div class="lineaMedidores2"></div>
+                                    <div class="encabezadoMedidor"> Medidor 1 </div>
+                                    <form action="" class="formMedidores">
+                                        <label for="" >
+                                            Ciclo anterior OT
+                                            <select name="" id="selectMantenimiento">
+                                                <option value="0">Selecciona</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                            </select>
+                                        </label>
+                                        <label for="" >
+                                            Medida anterior OT
+                                            <select name="" id="selectMantenimiento">
+                                                <option value="0">Selecciona</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                            </select>
+                                        </label>                                       
+                                        <label for="" >
+                                            Acumulado Anterior OT
+                                            <select name="" id="selectMantenimiento">
+                                                <option value="0">Selecciona</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                            </select>
+                                        </label>                                        
+                                    </form>
+                                </div>
+                                 <div class="seccionMedidores seccionMedidores2 medidor2Mantenimiento"></div>    
+                            </div>
+                                            
+                        </div>                 
+                    </div>
+                    <button  class="botonGuardarCerrar" onclick="guardarDatosMantenimiento()" >Guardar</button>
+                </div>
+                <div class="seccionCombustible">
+                    <div class="tituloSeccion">Combustible</div> 
+                    <div class="tablasCombustible">
+                        <div class="todasTablasTolerancia">
+                            <div class="seccionFormTolerancias">
+                                <div class="encabezadoForm">Tolerancia</div>
+                                <form action="" class="tolerancias">                                    
+                                    <label for="" >
+                                        Consumo combustible libre
+                                        <label class="switch">
+                                            <input id="inputSwitchCombustibleLibre" type="checkbox" onclick="mostrarCombustibleLibre()"/>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </label>
+                                    <label for="" >
+                                        Capacidad del tanque
+                                        <select name="" id="selectCombustible">
+                                            <option value="0">Selecciona</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                        </select>
+                                    </label>
+                                    <div class="cantidades">
+                                        <p>Cantidades</p>
+                                        <label for="" >
+                                            Gal/Hr
+                                            <select name="" id="selectCombustible">
+                                                <option value="0">Selecciona</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                            </select>
+                                        </label>
+                                        <label for="" >
+                                            Km/Gal
+                                            <select name="" id="selectCombustible">
+                                                <option value="0">Selecciona</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                            <table class="combustibleLibre">
+                                <thead>
+                                    <th>Obra</th>
+                                    <th>Cantidad</th>
+                                    <th class="estiloFilaBotones"></th>
+                                </thead>
+                                <tbody id="tbodyCombustibleLibre"></tbody>
+                            </table>                          
+                        </div>  
+                        <div class="tablaRendimiento">                     
+                        <table class="rendimiento">
+                            <thead>
+                                <th>Frente de obra</th>
+                                <th>Rendimiento Km/Gal</th>
+                                <th>Rendimiento Gal/Hr</th>
+                                <th>Rendimiento Gal/Hr</th>
+                                <th class="estiloFilaBotones"></th>
+                            </thead>
+                            <tbody id="tbodyRendimiento">
+                                <tr>
+                                    <th>
+                                        <select name="" id="selectRendimiento" required>
+                                            <option value="0">Selecciona</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select name="" id="selectRendimiento" required>
+                                            <option value="0">Selecciona</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select name="" id="selectRendimiento" required>
+                                            <option value="0">Selecciona</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select name="" id="selectRendimiento" required>
+                                            <option value="0">Selecciona</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                        </select>
+                                    </th>
+                                    <th class="estiloFilaBotones">
+                                        <button class="botonAgregarEliminar" onclick="agregarFilaRendimiento()">+</button>
+                                        <button class="botonAgregarEliminar">-</button>
+                                    </th>
+                                </tr>
+                            </tbody>                        
+                        </table>      
+                    </div>                         
+                    </div>
+                    <button class="botonGuardarCerrar" onclick="guardarDatosCombustible()">Guardar</button>
+                </div>
+                <div class="seccionTarifas">
+                    <div class="tituloSeccion">Tarifas</div> 
+                    <h6>NOTA: Si el valor en los campos de stand by mes es 0, se tomarán los datos configurados para la obra que se liquide el equipo</h6>
+                    <div class="tablasTarifas">                       
+                        <div class="seccionFormTarifas">
+                            <div class="encabezadoForm">Tarifas</div>
+                            <form action="" class="tarifas">
+                                <label for="">
+                                    Fecha inicio Alquiler
+                                    <input type="date" id="inputTarifas">
+                                </label>
+                                <label for="">
+                                    Hr stand by mes
+                                    <select name="" id="selectTarifas">
+                                        <option value="0">Selecciona</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </label>
+                                <label for="">
+                                    Valor tarifa diaria
+                                    <select name="" id="selectTarifas">
+                                        <option value="0">Selecciona</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </label>
+                                <label for="">
+                                    Insumo de costo
+                                    <select name="" id="selectTarifas">
+                                        <option value="0">Selecciona</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </label>
+                                <label for="">
+                                    Obra alquiler
+                                    <select name="" id="selectTarifas">
+                                        <option value="0">Selecciona</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </label>
+                                <label for="">
+                                    Stand by mes(dia)
+                                    <select name="" id="selectTarifas">
+                                        <option value="0">Selecciona</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </label>
+                                <label for="">
+                                    Insumo alquiler
+                                    <select name="" id="selectTarifas">
+                                        <option value="0">Selecciona</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </label>
+                                <label for="">
+                                    Cobro diario
+                                    <select name="" id="selectTarifas">
+                                        <option value="0">Selecciona</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </label>
+                                <label for="">
+                                    Tarifa
+                                    <select name="" id="selectTarifas">
+                                        <option value="0">Selecciona</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </label>
+                            </form>	
+                        </div>                    
+                    </div> 
+                    <button class="botonGuardarCerrar" onclick="guardarDatosTarifas()">Guardar</button>
+			    </div>
+                <div class="seccionNeumaticos">
+                    <div class="tituloSeccion">Neumaticos</div> 
+                    <div class="tablasNeumaticos">
+                        <div class="seccionFormNeumaticos">
+                            <div class="encabezadoForm">Tarifas</div>
+                            <form action="" class="formNeumaticos">						
+                                <label for="">
+                                    Tendido neumaticos
+                                    <select name="" id="selectTendido">
+                                        <option value="0">Selecciona</option>
+                                        <option value="1">Bus</option>
+                                        <option value="2">Camion</option>
+                                        <option value="3">Volqueta</option>
+                                    </select>
+                                </label>
+                                <div class="botonMirarTendido" onclick="mostrarTendido()">
+                                    <img class="mirarTendido" src="./imagenes/mirarTendido.svg" alt="" />
+                                    <img class="mirarTendidoHover" src="./imagenes/mirarTendidoHover.svg" alt="" />
+                                </div>
+                            </form>	
+                            <div class="imagenTendido">
+                                
+                            </div> 				
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</main>
+    </div>
+		<script src="script.js"></script>
+	</body>
+</html>
