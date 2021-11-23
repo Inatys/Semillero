@@ -11,15 +11,30 @@ body {
 	overflow: hidden;
 	margin: 0px;
 }
+.imagenFiltro {
+	width: 350px;
+	height: 657px;
+	background: white;
+	box-shadow: 1px -1px 2px rgba(0, 0, 0, 0.25);
+	margin-right: 3px;
+}
+.imagenFiltro img {
+	width: 100%;
+	height: 100%;
+}
+.seccionRenovada {
+	width: 100%;
+	height: 100%;
+}
 header {
-	height: 52px;
+	height: 39px;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
 }
-h2 {
+h3 {
 	padding-left: 10px;
 	color: #888686;
 	margin: 0px;
@@ -27,27 +42,24 @@ h2 {
 .lineaHeader {
 	position: relative;
 	width: 100%;
-	bottom: -9px;
+	bottom: -7px;
 	background: #e8cc5a;
-	border: 2px solid #e8cc5a;
+	border: 1px solid #e8cc5a;
 }
+main {
+	width: 100%;
+	height: 605px;
+	display: flex;
+	justify-content: space-between;
+}
+
 .menu {
 	width: 73px;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	box-shadow: 4px -1px 10px rgba(0, 0, 0, 0.25);
-}
-.toggle {
-	width: 100%;
-	padding: 10px 20px;
-	background: #001f44;
-	text-align: right;
-	box-sizing: border-box;
-	color: #fff;
-	font-size: 30px;
-	display: block;
+	box-shadow: 4px -1px 6px rgba(0, 0, 0, 0.25);
 }
 .seccionImagen {
 	width: 100%;
@@ -63,9 +75,7 @@ h2 {
 	border-radius: 50%;
 	width: 59px;
 	height: 60px;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
 }
-
 .lineaImagen {
 	width: 90%;
 	height: 0px;
@@ -74,22 +84,30 @@ h2 {
 .opcionesImagen {
 	display: flex;
 	justify-content: space-around;
-	align-items: center;
+	align-items: flex-start;
 	width: 100%;
 	height: 30px;
-}
-.opcionImagenHover {
-	display: none;
 }
 .seccionOpcionImagen {
 	position: relative;
 	cursor: pointer;
+}
+.label2 {
+	display: flex;
+	width: 80%;
+}
+.opcionImagenHover {
+	display: none;
 }
 .seccionOpcionImagen:hover .opcionImagen {
 	display: none;
 }
 .seccionOpcionImagen:hover .opcionImagenHover {
 	display: block;
+}
+.botonAgregarCarro {
+	position: relative;
+	cursor: pointer;
 }
 input[type="file"] {
 	position: absolute;
@@ -100,32 +118,10 @@ input[type="file"] {
 	font-size: 10px;
 	color: #b8b8b8;
 }
-.botonAgregarCarro {
-	position: relative;
-	cursor: pointer;
-}
-.opcionImagenAmpliada {
-	display: none;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	position: absolute;
-	z-index: 1;
-	width: 74%;
-	height: 92%;
-	padding: 10px 0px 10px 0px;
-	background: rgba(0, 0, 0, 0.58);
-	box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.25);
-}
-.opcionImagenAmpliada img {
-	width: 570px;
-	height: 470px;
-}
-
 .seccionMenu {
-	display: flex;
 	width: 100%;
 	height: 456px;
+	display: flex;	
 	flex-direction: column;
 	justify-content: flex-start;
 	background: #fafafa;
@@ -144,23 +140,11 @@ input[type="file"] {
 	background: #ffffff;
 	margin: 2px 0px 2px 0px;
 }
-.divSeccionesMenu:hover {
-	background: #f1eeee;
-}
-.imagenNormal {
-	display: block;
-}
 .imagenHover {
 	display: none;
 }
-.divSeccionesMenu:hover .imagenNormal {
-	display: none;
-}
-.divSeccionesMenu:hover .imagenHover {
-	display: block;
-}
 h6 {
-	margin: 0px;
+	margin: 0px 5px 0px 5px;
 	color: #676565;
 }
 .lineaSeccionesMenu {
@@ -172,7 +156,28 @@ h6 {
 	display: none;
 	background: #e8cc5a;
 }
+.divSeccionesMenu:hover {
+	background: #f1eeee;
+}
+.divSeccionesMenu:hover .imagenNormal {
+	display: none;
+}
+.divSeccionesMenu:hover .imagenHover {
+	display: block;
+}
 .divSeccionesMenu:hover .lineaSeccionesMenu {
+	display: block;
+}
+.seleccionado {
+	background: #f1eeee;
+}
+.seleccionado .imagenHover {
+	display: block;
+}
+.seleccionado .imagenNormal {
+	display: none;
+}
+.seleccionado .lineaSeccionesMenu {
 	display: block;
 }
 .mantenimiento {
@@ -184,40 +189,51 @@ h6 {
 .neumaticos {
 	display: none;
 }
-.seccionRenovada {
-	width: 100%;
-	height: 100%;
-}
-.imagenFiltro {
-	width: 255px;
-	border: solid 1px;
-	height: 657px;
-	background: rgb(190, 190, 190);
-}
-main {
-	width: 100%;
-	height: 605px;
-	display: flex;
+
+.opcionImagenAmpliada {
+	display: none;
+	flex-direction: column;
+	align-items: center;
 	justify-content: space-between;
+	position: absolute;
+	z-index: 1;
+	width: 74%;
+	height: 92%;
+	padding: 10px 0px 10px 0px;
+	background: rgba(0, 0, 0, 0.58);
 }
+.opcionImagenAmpliada img {
+	width: 80%;
+	height: 75%;
+}
+
 .tablas {
-	margin-left: 20px;
+	margin-left: 14px;
 	width: 100%;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	box-shadow: -4px -1px 10px rgba(0, 0, 0, 0.25);
+	box-shadow: -4px -1px 6px rgba(0, 0, 0, 0.25);
 }
-.tituloSeccion {
-	font-size: 20px;
-	color: #b3b3b3;
-	margin: 0px;
-	font-weight: 600;
+.alert {
+	opacity: 0;
+	position: absolute;
+	padding: 9px;
+	color: rgb(66, 66, 66);
+	top: 53px;
+	right: 20px;
+	font-size: 12px;
+	z-index: 2;
 }
-/* todo lo de seccion control */
-.seccionControl {
+.alertError {
+	background: rgba(255, 0, 0, 0.329);
+}
+.alertExito {
+	background: rgba(0, 128, 0, 0.329);
+}
+.tipoSeccion {
 	display: none;
 	flex-direction: column;
 	align-items: center;
@@ -225,28 +241,26 @@ main {
 	width: 100%;
 	height: 100%;
 }
-.tablasControl {
+.tituloSeccion {
+	font-size: 18px;
+	color: #b3b3b3;
+	margin: 0px;
+	font-weight: 600;
+}
+.tipoTablas {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	flex-direction: column;
 	justify-content: space-between;
 	width: 100%;
-	height: 90%;
+	height: 84%;
 }
-.seccionFormDatosBasicos {
+.tipoSeccionForm{
 	width: 362px;
-	height: 283px;
+	height: 262px;
 	background: #ffffff;
-	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-}
-form {
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-	width: 100%;
-	height: 83%;
-	padding: 0px 5px 0px 5px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
 }
 .encabezadoForm {
 	display: flex;
@@ -256,8 +270,20 @@ form {
 	width: 100%;
 	height: 24px;
 	background: #f1eeee;
-	font-size: 14px;
-	font-weight: 400;
+	font-size: 13px;
+	font-weight: 600;
+	z-index: 2;
+}
+.encabezadoFormTabla {
+	width: 90%;
+}
+form {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 88%;
+	padding: 0px 5px 0px 5px;
 }
 label {
 	display: flex;
@@ -267,12 +293,22 @@ label {
 	font-size: 10px;
 	margin-left: 5px;
 }
+p{
+	width: 155px;
+	margin:0px;
+	height: 22px;
+	background: rgba(236, 236, 236, 0.452);
+}
 select {
-	width: 155.97px;
+	width: 155px;
 	height: 24px;
 	border: 1px solid #e6e1c8;
 	outline: none;
 	font-size: 9px;
+	color: gray;
+}
+select:focus {
+	color: black;
 }
 input {
 	width: 155.97px;
@@ -281,325 +317,6 @@ input {
 	outline: none;
 	font-size: 9px;
 }
-.botonGuardarCerrar {
-	width: 89px;
-	height: 25px;
-	background: #f2ecec;
-	border-radius: 5px;
-	border: 1px solid #e8cc5a;
-}
-.botonGuardarCerrar:hover {
-	color: white;
-	background: #e8cc5a;
-	border: none;
-}
-.seccionFormMedidores {
-	/* height: 541px; */
-	background: #ffffff;
-	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-}
-.encabezadoMedidor {
-	width: 100%;
-	height: 24px;
-	padding: 0px 5px 0px 5px;
-	text-align: center;
-	font-size: 12px;
-}
-.botonAgregarEliminar {
-	width: 19px;
-	height: 20px;
-	padding: 0px;
-	border: none;
-	color: white;
-	font-size: 12px;
-	margin-right: 3px;
-	background: #e8cc5a;
-}
-.botonEliminar {
-	display: none;
-}
-.botonAgregarEliminar:hover {
-	background: #f1eeee;
-	color: #e8cc5a;
-	border: 0.5px solid #e8cc5a;
-}
-.seccionesDosMedidores {
-	width: 100%;
-	/* height: 499px; */
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-around;
-	padding: 0px 0px 13px 0px;
-}
-.lineaMedidores {
-	position: relative;
-	width: 229px;
-	top: 112px;
-	right: 114px;
-	background: #e8cc5a;
-	border: 2px solid #e8cc5a;
-	transform: rotate(90deg);
-}
-.seccionMedidores {
-	margin-top: 15px;
-	display: flex;
-	flex-direction: column;
-	width: 297px;
-	height: 230px;
-	background: #ffffff;
-	border: 0.3px solid #c4c4c4;
-	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-}
-.medidor2 {
-	display: none;
-}
-.formMedidores {
-	display: flex;
-	flex-direction: column;
-	height: 87%;
-	align-items: flex-start;
-	justify-content: space-between;
-	padding-bottom: 8px;
-}
-.seccionDatosAsignacion {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	height: 98%;
-}
-.label2 {
-	display: flex;
-	width: 80%;
-}
-.selectAsignacionPresupuestal{
-	width: 235px;
-}
-.label3 {
-	width: 335px;
-}
-.seccionFormAsignacionPresupuestal {
-	width: 362px;
-	height: 190px;
-	background: #ffffff;
-	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-}
-/* todo lo de seccion mantenimiento */
-.seccionMantenimiento {
-	display: none;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-around;
-	width: 100%;
-	height: 100%;
-}
-h5 {
-	color: #888686;
-	margin: 0px;
-}
-.tablasMantenimiento {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	flex-direction: column;
-	justify-content: space-between;
-	width: 100%;
-	height: 70%;
-}
-.seccionFormMantenimiento {
-	width: 303px;
-	height: 211px;
-	background: #ffffff;
-	box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.25);
-}
-
-.seccionesDosMedidores2 {
-	padding: 0px 0px 13px 0px;
-}
-.seccionMedidores2 {
-	height: 161px;
-}
-.medidor2Mantenimiento {
-	display: none;
-}
-.lineaMedidores2 {
-	position: relative;
-	width: 156px;
-	top: 75px;
-	right: 76px;
-	background: #e8cc5a;
-	border: 2px solid #e8cc5a;
-	transform: rotate(90deg);
-}
-/* todo lo de seccion combustible */
-.seccionCombustible {
-	display: none;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-around;
-	width: 100%;
-	height: 100%;
-}
-.tablasCombustible {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	flex-direction: column;
-	justify-content: space-between;
-	width: 100%;
-	height: 78%;
-}
-.todasTablasTolerancia {
-	display: flex;
-	justify-content: space-around;
-	width: 100%;
-}
-.seccionFormTolerancias {
-	width: 329px;
-	height: 233px;
-	background: #ffffff;
-	box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.25);
-}
-.cantidades {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	width: 412px;
-	height: 69px;
-	text-align: center;
-}
-p {
-	font-size: 10px;
-	margin: 0px;
-}
-table {
-	font-size: 10px;
-	box-shadow: 0px 1px 20px rgb(0 0 0 / 25%);
-}
-table tbody {
-	display: block;
-	overflow-y: scroll;
-}
-table thead,
-table tbody tr {
-	display: table;
-	width: 100%;
-	table-layout: fixed;
-}
-
-table thead {
-	background: #f1eeee;
-}
-table tbody::-webkit-scrollbar {
-	width: 6px;
-}
-table tbody::-webkit-scrollbar-thumb {
-	background: #676565;
-	height: 1px;
-}
-.tablaRendimiento {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-}
-.rendimiento {
-	width: 720px;
-}
-.rendimiento tbody {
-	height: 166px;
-}
-.combustibleLibre {
-	display: none;
-	width: 382px;
-}
-.combustibleLibre tbody {
-	height: 199px;
-}
-.estiloFilaBotones {
-	width: 49px !important;
-}
-
-/* todo lo de seccion tarifas */
-.seccionTarifas {
-	display: none;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-around;
-	width: 100%;
-	height: 100%;
-}
-.tablasTarifas {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	flex-direction: column;
-	justify-content: space-between;
-	width: 100%;
-	height: 70%;
-}
-.seccionFormTarifas {
-	width: 591px;
-	height: 331px;
-	background: #ffffff;
-	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-}
-/* todo lo de seccion neumaticos */
-.seccionNeumaticos {
-	display: none;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-around;
-	width: 100%;
-	height: 100%;
-}
-.tablasNeumaticos {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	flex-direction: column;
-	justify-content: space-between;
-	width: 100%;
-	height: 90%;
-}
-.seccionFormNeumaticos {
-	width: 677px;
-	background: #ffffff;
-	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-	padding-bottom: 15px;
-}
-.formNeumaticos {
-	display: flex;
-	justify-content: space-evenly;
-	width: 100%;
-	height: 86px;
-}
-.imagenTendido {
-	display: none;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	width: 90%;
-}
-.imagenTendido img {
-	width: 100%;
-}
-.botonMirarTendido {
-	border: none;
-	background: white;
-}
-.mirarTendido {
-	display: block;
-}
-.mirarTendidoHover {
-	display: none;
-}
-.botonMirarTendido:hover .mirarTendidoHover {
-	display: block;
-}
-.botonMirarTendido:hover .mirarTendido {
-	display: none;
-}
-
 /* los estilos del contenedor del boton */
 .switch {
 	position: relative;
@@ -648,18 +365,310 @@ input:checked + .slider:before {
 .slider.round {
 	border-radius: 34px;
 }
-.alert {
-	opacity: 0;
-	position: absolute;
-	padding: 9px;
-	color: rgb(66, 66, 66);
-	top: 53px;
-	right: 20px;
+.botonGuardarCerrar {
+	width: 89px;
+	height: 25px;
+	background: #f2ecec;
+	border-radius: 5px;
+	border: 1px solid #e8cc5a;
+}
+.botonGuardarCerrar:hover {
+	color: white;
+	background: #e8cc5a;
+	border: none;
+}
+.seccionFormMedidores {
+	background: #ffffff;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+.botonAgregarEliminar {
+	width: 19px;
+	height: 20px;
+	padding: 0px;
+	border: none;
+	color: white;
+	font-size: 12px;
+	margin-right: 3px;
+	background: #e8cc5a;
+	border-radius: 5px;
+}
+.botonAgregarEliminar:hover {
+	background: #f1eeee;
+	color: #e8cc5a;
+	border: 0.5px solid #e8cc5a;
+}
+.botonEliminar {
+	display: none;
+}
+.seccionesDosMedidores {
+	width: 320px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	padding: 0px 0px 13px 0px;
+}
+.seccionMedidores {
+	margin-top: 15px;
+	display: flex;
+	flex-direction: column;
+	width: 297px;
+	height: 210px;
+	background: #ffffff;
+	border: 0.3px solid #e5e5e5;
+}
+.lineaMedidores {
+	position: relative;
+	width: 209px;
+	top: 102px;
+	right: 103px;
+	background: #e8cc5a;
+	border: 2px solid #e8cc5a;
+	transform: rotate(90deg);
+}
+.encabezadoMedidor {
+	width: 100%;
+	height: 24px;
+	padding: 0px 5px 0px 5px;
+	text-align: center;
 	font-size: 12px;
 }
-.alertError {
-	background: rgba(255, 0, 0, 0.329);
+.formMedidores {
+	display: flex;
+	flex-direction: column;
+	height: 87%;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding-bottom: 8px;
 }
-.alertExito {
-	background: rgba(0, 128, 0, 0.329);
+.medidor2Control {
+	display: none;
+}
+/*control*/
+.seccionDatosAsignacion {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 96%;
+}
+.label3 {
+	width: 335px;
+}
+.selectAsignacionPresupuestal {
+	width: 235px;
+}
+.seccionFormAsignacionPresupuestal {
+	height: 190px;
+}
+/* todo lo de seccion mantenimiento */
+.tablasMantenimiento {	
+	height: 70%;
+}
+.seccionFormMantenimiento {
+	width: 303px;
+	height: 211px;
+}
+.seccionMedidoresMantenimiento {
+	height: 161px;
+}
+.medidor2Mantenimiento {
+	display: none;
+}
+.lineaMedidores2 {
+	position: relative;
+	width: 160px;
+	top: 78px;
+	right: 79px;
+	background: #e8cc5a;
+	border: 2px solid #e8cc5a;
+	transform: rotate(90deg);
+}
+/* todo lo de seccion combustible */
+.tablasCombustible {
+	height: 78%;
+}
+.todasTablasTolerancia {
+	display: flex;
+	justify-content: space-around;
+	width: 95%;
+}
+.seccionFormTolerancias {
+	width: 310px;
+	height: 233px;
+}
+.cantidades {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 412px;
+	height: 69px;
+	text-align: center;
+}
+table {
+	font-size: 10px;
+	box-shadow: 0px 0px 10px rgb(0 0 0 / 25%);
+}
+table tbody {
+	display: block;
+	overflow-y: scroll;
+}
+table thead,table tbody tr {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+}
+table thead {
+	background: #f1eeee;
+}
+table tbody::-webkit-scrollbar {
+	width: 6px;
+}
+table tbody::-webkit-scrollbar-thumb {
+	background: #676565;
+	height: 1px;
+}
+.combustibleLibre {
+	display: none;
+	width: 45%;
+}
+.combustibleLibre tbody {
+	height: 199px;
+}
+.estiloFilaBotones {
+	width: 49px !important;
+}
+.tablaRendimiento {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+.rendimiento {
+	width: 90%;
+}
+.inputTable, .selectTable {
+	width: 90%;
+}
+.rendimiento tbody {
+	height: 166px;
+}
+/* todo lo de seccion tarifas */
+.tablasTarifas {
+	height: 70%;
+}
+.seccionFormTarifas {
+	width: 591px;
+	height: 251px;
+}
+/* todo lo de seccion neumaticos */
+.tablasNeumaticos {
+	height: 90%;
+}
+.seccionFormNeumaticos {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 80%;
+	padding-bottom: 15px;
+}
+.formNeumaticos {
+	display: flex;
+	justify-content: space-evenly;
+	height: 86px;
+}
+.botonMirarTendido {
+	border: none;
+	background: white;
+}
+.mirarTendidoHover {
+	display: none;
+}
+.botonMirarTendido:hover .mirarTendidoHover {
+	display: block;
+}
+.botonMirarTendido:hover .mirarTendido {
+	display: none;
+}
+.imagenTendido {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 85%;
+}
+.imagenTendido img {
+	width: 100%;
+}
+@media screen and (max-width: 1040px) {
+	.tablasControl {
+		overflow-y: scroll;
+		justify-content: center;
+		width: 97%;
+		height: 87%;
+		flex-direction: row;
+		padding: 10px 0px 10px 0px;
+	}
+	.seccionDatosAsignacion {
+		height: 92%;
+		margin-bottom: 20px;
+	}
+	.tablasMantenimiento {
+		overflow-y: scroll;
+		align-items: flex-start;
+		flex-direction: row;
+		justify-content: space-around;
+		height: 76%;
+		width: 97%;
+		padding: 10px 0px 10px 0px;
+	}
+	.tablasMantenimiento::-webkit-scrollbar {
+		width: 6px;
+		background: #dbdbdb;
+	}
+	.tablasMantenimiento::-webkit-scrollbar-thumb {
+		background: #676565;
+	}
+	.tablasControl::-webkit-scrollbar {
+		width: 6px;
+		background: #dbdbdb;
+	}
+	.tablasControl::-webkit-scrollbar-thumb {
+		background: #676565;
+	}
+	.seccionFormMantenimiento {
+		margin-bottom: 15px;
+	}
+}
+@media screen and (max-width: 960px) {
+	.tablasCombustible {
+		overflow-y: scroll;
+		flex-direction: row;
+		justify-content: center;
+		width: 97%;
+		height: 87%;
+		padding: 10px 0px 10px 0px;
+	}
+	.todasTablasTolerancia {
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 15px;
+	}
+	.seccionFormTolerancias {
+		margin-bottom: 15px;
+	}
+	.tablasCombustible::-webkit-scrollbar {
+		width: 6px;
+		background: #dbdbdb;
+	}
+	.tablasCombustible::-webkit-scrollbar-thumb {
+		background: #676565;
+	}
+	.combustibleLibre {
+		width: 61%;
+	}
+	.seccionFormTarifas {
+		width: 310px;
+		height: 321px;
+	}
 }
