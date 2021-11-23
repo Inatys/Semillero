@@ -299,7 +299,7 @@ p{
 	height: 22px;
 	background: rgba(236, 236, 236, 0.452);
 }
-select {
+select,input  {
 	width: 155px;
 	height: 24px;
 	border: 1px solid #e6e1c8;
@@ -310,12 +310,8 @@ select {
 select:focus {
 	color: black;
 }
-input {
-	width: 155.97px;
-	height: 24px;
-	border: 1px solid #e6e1c8;
-	outline: none;
-	font-size: 9px;
+input:focus {
+	color: black;
 }
 /* los estilos del contenedor del boton */
 .switch {
@@ -357,8 +353,6 @@ input:checked + .slider {
 	background-color: #e8cc5a;
 }
 input:checked + .slider:before {
-	-webkit-transform: translateX(26px);
-	-ms-transform: translateX(26px);
 	transform: translateX(26px);
 }
 /* hace el boton redondo */
@@ -494,7 +488,7 @@ input:checked + .slider:before {
 }
 .seccionFormTolerancias {
 	width: 310px;
-	height: 233px;
+	height: 200px;
 }
 .cantidades {
 	display: flex;
@@ -532,7 +526,7 @@ table tbody::-webkit-scrollbar-thumb {
 	width: 45%;
 }
 .combustibleLibre tbody {
-	height: 199px;
+	height: 169px;
 }
 .estiloFilaBotones {
 	width: 49px !important;

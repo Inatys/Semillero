@@ -66,10 +66,13 @@
 						</div>
 					</div>
 				</div>
+
                 <div class="opcionImagenAmpliada" id="carroAmpliado"></div>
+
 				<div class="tablas">
 					<div class="alertError alert"></div>
-					<div class="alertExito alert"></div>					
+					<div class="alertExito alert"></div>	
+
 					<div class="seccionControl tipoSeccion">
 						<div class="tituloSeccion">Control</div>
 						<div class="tablasControl tipoTablas">
@@ -93,15 +96,7 @@
 												<option value="2">Lectura</option>
 											</select>
 										</label>
-										<label for="" class="label3">
-											Control por
-											<select name="" id="selectControl" required>
-												<option value="0">Selecciona</option>
-												<option value="1">Bitácora de uso</option>
-												<option value="2">Combustible</option>
-											</select>
-										</label>
-										<label for="" class="label3">
+                                        <label for="" class="label3">
 											Frecuencia control op
 											<select name="" id="selectControl" required>
 												<option value="0">Selecciona</option>
@@ -109,6 +104,14 @@
 												<option value="2">Semanal</option>
 											</select>
 										</label>
+										<label for="" class="label3">
+											Control por
+											<select name="" id="selectControl" required>
+												<option value="0">Selecciona</option>
+												<option value="1">Bitácora de uso</option>
+												<option value="2">Combustible</option>
+											</select>
+										</label>										
 										<label for="" class="label3">
 											Consume combustible
 											<label class="switch">
@@ -138,16 +141,7 @@
 												<option value="4">1948-Torre reservada de los Nardos XXVI</option>
 											</select>
 										</label>
-										<label for="" class="label3">
-											Item servicio externo
-											<select name="" class="selectAsignacionPresupuestal" id="selectControl" required>
-												<option value="0">Selecciona</option>
-												<option value="1">Adoquin receto-Piso 1(M2)</option>
-												<option value="2">Excavaciona mano retiro-Piso 1(M3)</option>
-												<option value="3">Placa contrapiso CONINSA-Piso 1(M2)</option>
-											</select>
-										</label>
-										<label for="" class="label3">
+                                        <label for="" class="label3">
 											Item combustible
 											<select name="" class="selectAsignacionPresupuestal" id="selectControl" required>
 												<option value="0">Selecciona</option>
@@ -156,6 +150,15 @@
 												<option value="3">Placa matiza enntrepiso CONINSA e-0.10-Piso 3(M2)</option>
 											</select>
 										</label>
+										<label for="" class="label3">
+											Item servicio externo
+											<select name="" class="selectAsignacionPresupuestal" id="selectControl" required>
+												<option value="0">Selecciona</option>
+												<option value="1">Adoquin receto-Piso 1(M2)</option>
+												<option value="2">Excavaciona mano retiro-Piso 1(M3)</option>
+												<option value="3">Placa contrapiso CONINSA-Piso 1(M2)</option>
+											</select>
+										</label>										
 										<label for="" class="label3">
 											Item mantenimiento
 											<select name="" class="selectAsignacionPresupuestal" id="selectControl" required>
@@ -215,6 +218,7 @@
 						</div>
 						<button class="botonGuardarCerrar" onclick="guardarDatosControl()">Guardar</button>
 					</div>
+
 					<div class="seccionMantenimiento tipoSeccion">
 						<div class="tituloSeccion">Mantenimiento</div>
 						<h6>Nota: Equipos controlados por fechas, solo cargan rutinas de mantenimineto configuradas por días en su primer medidor</h6>
@@ -276,6 +280,7 @@
 						</div>
 						<button class="botonGuardarCerrar" onclick="guardarDatosMantenimiento()">Guardar</button>
 					</div>
+
 					<div class="seccionCombustible tipoSeccion">
 						<div class="tituloSeccion">Combustible</div>
 						<div class="tablasCombustible tipoTablas">
@@ -351,6 +356,7 @@
 						</div>
 						<button class="botonGuardarCerrar" onclick="guardarDatosCombustible()">Guardar</button>
 					</div>
+
 					<div class="seccionTarifas tipoSeccion">
 						<div class="tituloSeccion">Tarifas</div>
 						<h6>NOTA: Si el valor en los campos de stand by mes es 0, se tomarán los datos configurados para la obra que se liquide el equipo</h6>
@@ -362,15 +368,11 @@
 										Fecha inicio Alquiler
 										<input type="date" id="inputTarifas" />
 									</label>
-									<label for="" class="">
-										Hr stand by mes
+                                    <label for="">
+										Cobro diario
 										<input type="number" id="inputTarifas" />
 									</label>
-									<label for="">
-										Valor tarifa diaria
-										<p></p>
-									</label>
-									<label for="">
+                                    <label for="">
 										Insumo de costo
 										<select name="" id="selectTarifas">
 											<option value="0">Selecciona</option>
@@ -378,19 +380,23 @@
 											<option value="2">1057-Gravilla de rio</option>
 										</select>
 									</label>
-									<label for="">
-										Obra alquiler
-										<select name="" id="selectTarifas">
-											<option value="0">Selecciona</option>
-											<option value="1">Hotel portofino</option>
-											<option value="2">Naranjal torre</option>
-										</select>
+                                    <label for="">
+										Valor tarifa diaria
+										<p></p>
 									</label>
-									<label for="">
+                                    <label for="">
+										Tarifa
+										<input type="number" id="inputTarifas" />
+									</label>
+                                    <label for="">
 										Stand by mes(dia)
 										<p></p>
 									</label>
-									<label for="">
+									<label for="" class="">
+										Hr stand by mes
+										<input type="number" id="inputTarifas" />
+									</label>
+                                    <label for="">
 										Insumo alquiler
 										<select name="" id="selectTarifas">
 											<option value="0">Selecciona</option>
@@ -398,19 +404,20 @@
 											<option value="2">325-Bombillo 5985</option>
 										</select>
 									</label>
-									<label for="">
-										Cobro diario
-										<input type="number" id="inputTarifas" />
-									</label>
-									<label for="">
-										Tarifa
-										<input type="number" id="inputTarifas" />
-									</label>
+                                    <label for="">
+										Obra alquiler
+										<select name="" id="selectTarifas">
+											<option value="0">Selecciona</option>
+											<option value="1">Hotel portofino</option>
+											<option value="2">Naranjal torre</option>
+										</select>
+									</label>									
 								</form>
 							</div>
 						</div>
 						<button class="botonGuardarCerrar" onclick="guardarDatosTarifas()">Guardar</button>
 					</div>
+
 					<div class="seccionNeumaticos tipoSeccion">
 						<div class="tituloSeccion">Neumaticos</div>
 						<div class="tablasNeumaticos tipoTablas">
@@ -435,6 +442,7 @@
 							</div>
 						</div>
 					</div>
+
 				</div>
 			</main>
 		</div>
