@@ -1,7 +1,7 @@
-class opcionesMenu extends HTMLElement{
-    constructor() {
-		super();      
-        this.attachShadow({ mode: "open" });
+class opcionesMenu extends HTMLElement {
+	constructor() {
+		super();
+		this.attachShadow({ mode: "open" });
 		this.shadowRoot.innerHTML = `
         <style>    
         .divOpcionesMenu {
@@ -61,24 +61,24 @@ class opcionesMenu extends HTMLElement{
             <h6></h6>
 			<div class="lineaSeccionesMenu"></div>
         </div>
-        `;  
-    }
-    connectedCallback() {       
-        this._divOpcionesMenu = this.shadowRoot.querySelector(".divOpcionesMenu");
-        this.shadowRoot.appendChild(this._divOpcionesMenu);
+        `;
+	}
+	connectedCallback() {
+		this._divOpcionesMenu = this.shadowRoot.querySelector(".divOpcionesMenu");
+		this.shadowRoot.appendChild(this._divOpcionesMenu);
 
-        this._h6textoMensaje = this.shadowRoot.querySelector("h6");  
-        this._divOpcionesMenu.appendChild(this._h6textoMensaje);
-        this._textoMensaje = this.getAttribute("text");
-        this._h6textoMensaje.textContent = this._textoMensaje;
+		this._h6textoMensaje = this.shadowRoot.querySelector("h6");
+		this._divOpcionesMenu.appendChild(this._h6textoMensaje);
+		this._textoMensaje = this.getAttribute("text");
+		this._h6textoMensaje.textContent = this._textoMensaje;
 
-        this._lineaSeccionesMenu = this.shadowRoot.querySelector(".lineaSeccionesMenu");
-        this._divOpcionesMenu.appendChild(this._lineaSeccionesMenu);  
-        
-        this._divOpcionesMenu.addEventListener("click", this._mostrarControl.bind(this));
-    }
-    _mostrarControl() {
-        this._divOpcionesMenu.classList.add("seleccionado");
-    }
+		this._lineaSeccionesMenu = this.shadowRoot.querySelector(".lineaSeccionesMenu");
+		this._divOpcionesMenu.appendChild(this._lineaSeccionesMenu);
+
+		this._divOpcionesMenu.addEventListener("click", this._mostrarControl.bind(this));
+	}
+	_mostrarControl() {
+		this._divOpcionesMenu.classList.add("seleccionado");
+	}
 }
 customElements.define("ng-opciones-menu", opcionesMenu);

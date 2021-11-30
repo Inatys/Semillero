@@ -8,7 +8,14 @@ class botonMensaje extends HTMLElement {
         <style>    
         p{
             font-size:20px;
-        }   
+        }  
+		/* no lo toma porque ya esta button */
+		:host{
+			background:blue;
+		} 
+		button{
+			background:orange;
+		} 
         </style>
         <button>Show</button>
         `;
@@ -21,6 +28,7 @@ class botonMensaje extends HTMLElement {
 	}
 	_mostrarMensaje() {
 		this._botonShow.style.display = "none";
+
 		this._botonHide = document.createElement("button");
 		this._botonHide.textContent = "Hide";
 		this.shadowRoot.appendChild(this._botonHide);
@@ -32,7 +40,7 @@ class botonMensaje extends HTMLElement {
 		this._botonHide.addEventListener("click", this._ocultarMensaje.bind(this));
 	}
 	_ocultarMensaje() {
-		this._botonHide.style.display = "none";
+		this.shadowRoot.removeChild(this._botonHide);
 		this._botonShow.style.display = "block";
 		this.shadowRoot.removeChild(this._divMensaje);
 	}
