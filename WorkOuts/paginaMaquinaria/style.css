@@ -1,0 +1,120 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+* {
+	margin: 0px;
+	font-weight: normal;
+	box-sizing: border-box;
+}
+body {
+	font-family: "Roboto";
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 651px;
+}
+header {
+	width: 100%;
+	height: 62px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.lineaHeader{
+    width: 100%;
+    background: #2267a0;;
+    height: 5px;
+}
+h1 {
+	font-size: 36px;
+	color: #2267a0;
+}
+main {
+	width: 100%;
+	height: 594px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.filtrar {
+	width: 97%;
+	height: 78px;
+	background: #f7f7f7;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+label {
+	width: 238px;
+	height: 57px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+input,select {
+	border-radius: 4px;
+	height: 25px;
+	border: 1px solid #e5e5e5;
+    width: 76%;
+}
+button {
+	width: 116px;
+	height: 35px;
+	background: #2267a0;
+	color: white;
+	border-radius: 10px;
+	border: none;
+}
+.consulta {
+	width: 97%;
+	height: 478px;
+	
+}
+.headerConsulta {
+	background: #5e9ed4;
+	color: white;
+}
+.informacionTarifa{
+    position: absolute;
+    background: white;
+    color: black;
+    right: 30px;
+    top: 190px;
+}
+.datos {
+	width: 100%;
+	height: 404px;
+	display: flex;
+}
+.imagenCalendario{
+    width: 100%;
+}
+.filtroCalendario {
+	width: 283px;
+	height: 398px;
+    box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.25)
+}
+.encabezadoFiltro{
+    background: #E0E0E0;
+    padding: 5px 0px 5px 0px;
+}
+.calendario {
+	width: 1018px;
+	height: 398px;
+}
+
+select {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-image: url(./icons/search.svg);
+	background-repeat: no-repeat;
+	background-position: 98%;
+	cursor: pointer;
+}
+input[type="month"]::-webkit-calendar-picker-indicator {
+	background-image: url(./icons/calendario.svg);
+	width: 22px;
+	height: 100%;
+	background-size: auto;
+	background-position: center;
+}

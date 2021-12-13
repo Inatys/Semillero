@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Pagina Tarifasmaquinaria</title>
+	</head>
+	<body>
+		<header>
+			<h1>Control panel de mantenimiento</h1>
+		</header>
+		<div class="lineaHeader"></div>
+		<main>
+			<section class="filtrar">
+				<label for="">
+					Fecha
+					<input type="month" />
+				</label>
+				<label for="">
+					Obra
+					<select name="" id=""></select>
+				</label>
+				<label for="">
+					Equipo
+					<select name="" id=""></select>
+				</label>
+				<button>Consultar</button>
+			</section>
+			<section class="consulta">
+				<header class="headerConsulta">
+					<h4>Calendario</h4>
+					<img src="./icons/informacion.svg" alt="" />
+					<table class="informacionTarifa">
+						<thead>
+							<th>Sigla</th>
+							<th>Estado</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>M</td>
+								<td>MOVILIZACION/DESMOVILIZACION</td>
+							</tr>
+							<tr>
+								<td>I</td>
+								<td>INSTALACION/DESMOVILIZACION</td>
+							</tr>
+							<tr>
+								<td>T1</td>
+								<td>TRABAJANDO T1</td>
+							</tr>
+							<tr>
+								<td>T2</td>
+								<td>TRABAJANDO T2</td>
+							</tr>
+							<tr>
+								<td>TP</td>
+								<td>TRABAJO PROLONGADO</td>
+							</tr>
+							<tr>
+								<td>A</td>
+								<td>AVERIA</td>
+							</tr>
+						</tbody>
+					</table>
+				</header>
+				<div class="datos">
+					 <img class="imagenCalendario" src="./icons/imagenFiltro.png" alt="" />
+                   <!--  <div class="informacion">
+                        <div class="filtroCalendario">
+                            <div class="encabezadoFiltro">
+                                <h5>Equipos</h5>
+                                <div class="opciones">
+                                    <select name="" id=""></select>
+                                    <img src="./icons/agregar.svg" alt="" />
+                                    <img src="./icons/iconoTarifa.svg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calendario"></div>
+                    </div>  -->
+                    
+				</div>
+			</section>
+		</main>
+	</body>
+</html>
