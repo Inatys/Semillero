@@ -19,11 +19,9 @@ function ampliarImagen() {
     <button class="botonGuardarCerrar"  onclick="cerrarImagenAmpliada()">Cerrar</button>
     `;
 	nuevaImagen = document.getElementById("imagenAmpliadaAgregada");
-	if (nuevaImagen.src == "") {
+	if (nuevaImagen.src != "") {
 		nuevaImagen.src = reader.result;
-	} else {
-		nuevaImagen.src = reader.result;
-	}
+	} 
 }
 function cerrarImagenAmpliada() {
 	imagenCarroAmpliado.style.display = "none";
@@ -34,6 +32,7 @@ let seccionMantenimiento = document.querySelector(".seccionMantenimiento");
 let seccionCombustible = document.querySelector(".seccionCombustible");
 let seccionTarifas = document.querySelector(".seccionTarifas");
 let seccionNeumaticos = document.querySelector(".seccionNeumaticos");
+
 let seccionMenuControl = document.querySelector(".control");
 let seccionMenuMantenimiento = document.querySelector(".mantenimiento");
 let seccionMenuCombustible = document.querySelector(".combustible");
@@ -110,7 +109,7 @@ let menuCombustible = document.querySelector(".combustible");
 let inputSwitchCombustible = document.getElementById("checkCombustible");
 function mostrarMenuCombustible() {
 	if (inputSwitchCombustible.checked == true) {
-		menuCombustible.style.display = "flex";
+		menuCombustible.style.display = (inputSwitchCombustible.checked == true)?"flex":"none";
 	} else {
 		menuCombustible.style.display = "none";
 	}
@@ -158,15 +157,15 @@ function agregarSegundoMedidorControl() {
         </label>
         <label for="">
             Medidor actual
-            <input type="text" placeholder="Este se llena automatico">
+            <p></p> 
         </label>
         <label for="">
             Fecha medidor actual
-            <input type="text" placeholder="Este se llena automatico">
+            <p></p> 
         </label>
         <label for="">
             Trabajo acumulado
-            <input type="text" placeholder="Este se llena automatico">
+            <p></p> 
         </label>
     </form>
     `;
@@ -193,11 +192,7 @@ function agregarSegundoMedidorControl() {
         </label>                                       
         <label for="">
             Acumulado Anterior OT
-            <select name="" id="selectMantenimiento">
-                <option value="0">Selecciona</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-            </select>
+            <p></p> 
         </label>  
     </form>
     `;
@@ -390,7 +385,7 @@ function guardarDatosControl() {
 			lleno2 = lleno + 0;
 		}
 	}
-	if ((lleno >= 7) && (lleno2 >= 2)) {
+	if ((lleno >= 8) && (lleno2 >= 2)) {
 		mantenimientoMenu.style.display = "flex";
 		alertExito.style.opacity = "1";
 		alertExito.innerText = "Los datos se han guardado exitosamente";

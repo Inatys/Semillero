@@ -271,7 +271,6 @@ h6 {
 	height: 24px;
 	background: #f1eeee;
 	font-size: 13px;
-	font-weight: 600;
 	z-index: 2;
 }
 .encabezadoFormTabla {
@@ -313,20 +312,17 @@ select:focus {
 input:focus {
 	color: black;
 }
-/* los estilos del contenedor del boton */
 .switch {
 	position: relative;
 	display: inline-block;
 	width: 55px;
 	height: 23px;
 }
-/* los estilos del input */
 .switch input {
 	opacity: 0;
 	width: 0;
 	height: 0;
 }
-/* los estilos del fondo del boton*/
 .slider {
 	position: absolute;
 	cursor: pointer;
@@ -336,7 +332,6 @@ input:focus {
 	bottom: 0;
 	background-color: #ccc;
 }
-/* los estilos del punto dentro del boton*/
 .slider:before {
 	position: absolute;
 	content: "";
@@ -348,18 +343,17 @@ input:focus {
 	transition: 0.4s;
 	border-radius: 50%;
 }
-/* cuando esta activado el fondo del boton esta amarillo */
 input:checked + .slider {
 	background-color: #e8cc5a;
 }
 input:checked + .slider:before {
 	transform: translateX(26px);
 }
-/* hace el boton redondo */
 .slider.round {
 	border-radius: 34px;
 }
 .botonGuardarCerrar {
+	cursor: pointer;
 	width: 89px;
 	height: 25px;
 	background: #f2ecec;
@@ -376,6 +370,7 @@ input:checked + .slider:before {
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
 }
 .botonAgregarEliminar {
+	cursor: pointer;
 	width: 19px;
 	height: 20px;
 	padding: 0px;
@@ -565,6 +560,7 @@ table tbody::-webkit-scrollbar-thumb {
 	align-items: center;
 	width: 80%;
 	padding-bottom: 15px;
+	height: 400px;
 }
 .formNeumaticos {
 	display: flex;
@@ -572,6 +568,7 @@ table tbody::-webkit-scrollbar-thumb {
 	height: 86px;
 }
 .botonMirarTendido {
+	cursor: pointer;
 	border: none;
 	background: white;
 }
@@ -590,9 +587,11 @@ table tbody::-webkit-scrollbar-thumb {
 	align-items: center;
 	justify-content: center;
 	width: 85%;
+	height: 200px;
 }
 .imagenTendido img {
 	width: 100%;
+	height: 97%;
 }
 @media screen and (max-width: 1040px) {
 	.tablasControl {
@@ -616,18 +615,11 @@ table tbody::-webkit-scrollbar-thumb {
 		width: 97%;
 		padding: 10px 0px 10px 0px;
 	}
-	.tablasMantenimiento::-webkit-scrollbar {
+	.tablasMantenimiento::-webkit-scrollbar,.tablasControl::-webkit-scrollbar {
 		width: 6px;
 		background: #dbdbdb;
 	}
-	.tablasMantenimiento::-webkit-scrollbar-thumb {
-		background: #676565;
-	}
-	.tablasControl::-webkit-scrollbar {
-		width: 6px;
-		background: #dbdbdb;
-	}
-	.tablasControl::-webkit-scrollbar-thumb {
+	.tablasMantenimiento::-webkit-scrollbar-thumb, .tablasControl::-webkit-scrollbar-thumb {
 		background: #676565;
 	}
 	.seccionFormMantenimiento {
