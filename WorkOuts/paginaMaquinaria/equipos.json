@@ -1,0 +1,41 @@
+[
+	{
+		"codigo": 1,
+		"nombreEquipo": "Grua 45M",
+		"tarifaPCR": 85644,
+		"tarifaRI": 56565,
+		"calendario": {
+			"1": {
+				"dia": "lunes",
+				"habil": false,
+				"valor": "T1"
+			}
+		}
+	},
+	{
+		"codigo": 2,
+		"nombreEquipo": "Equipo 2",
+		"tarifaPCR": 68655,
+		"tarifaRI": 321548,
+		"calendario": {
+			"1": {
+				"dia": "lunes",
+				"habil": false,
+				"valor": "T1"
+			}
+		}
+	},
+	{
+		"codigo": 3,
+		"nombreEquipo": "Equipo 3",
+		"tarifaPCR": 968765,
+		"tarifaRI": 112208,
+		"calendario": {
+			"1": {
+				"dia": "lunes",
+				"habil": false,
+				"valor": "T1"
+			}
+		}
+	}
+]

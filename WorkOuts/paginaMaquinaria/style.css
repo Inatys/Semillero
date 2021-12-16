@@ -4,6 +4,9 @@
 	font-weight: normal;
 	box-sizing: border-box;
 }
+img {
+	cursor: pointer;
+}
 body {
 	font-family: "Roboto";
 	display: flex;
@@ -18,16 +21,18 @@ header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding: 0px 10px 0px 10px;
 }
-.lineaHeader{
-    width: 100%;
-    background: #2267a0;;
-    height: 5px;
+.lineaHeader {
+	width: 100%;
+	background: #2267a0;
+	height: 2px;
 }
 h1 {
 	font-size: 36px;
 	color: #2267a0;
 }
+
 main {
 	width: 100%;
 	height: 594px;
@@ -40,7 +45,14 @@ main {
 	height: 78px;
 	background: #f7f7f7;
 	display: flex;
-	justify-content: space-around;
+	align-items: center;
+	justify-content: flex-start;
+	padding-left: 10px;
+}
+form{
+	width: 85%;
+	display: flex;
+	justify-content: space-between;
 	align-items: center;
 }
 label {
@@ -50,55 +62,108 @@ label {
 	flex-direction: column;
 	justify-content: center;
 }
-input,select {
+b{
+	color: red;
+}
+input,
+select {
 	border-radius: 4px;
-	height: 25px;
+	height: 27px;
 	border: 1px solid #e5e5e5;
-    width: 76%;
+	width: 76%;
+	outline: none;
 }
 button {
 	width: 116px;
 	height: 35px;
-	background: #2267a0;
+	background: #115892;
 	color: white;
 	border-radius: 10px;
 	border: none;
+	cursor: pointer;
+}
+button:hover {
+	background: #083961;
+}
+.alertaConsultar{
+	display: none;
+	align-items: center;
+    justify-content: center;
+	position: absolute;
+width: 293px;
+height: 22px;
+right: 106px;
+top: 63px;
+font-size: 10px;
+background: rgba(255, 0, 0, 0.28);
 }
 .consulta {
 	width: 97%;
 	height: 478px;
-	
 }
 .headerConsulta {
 	background: #5e9ed4;
 	color: white;
+	height: 42px;
 }
-.informacionTarifa{
-    position: absolute;
-    background: white;
-    color: black;
-    right: 30px;
-    top: 190px;
+
+h4 {
+	width: 100%;
+	text-align: center;
+}
+ h5{
+	font-size: 16px;
+} 
+ h6{
+	font-size: 13px;
+} 
+#botonInformacion {
+	cursor: pointer;
+}
+table {
+	position: absolute;
+	background: white;
+	color: black;
+	right: 27px;
+	top: 175px;
+	display: none;
+	text-align: left;
+	font-size: 12px;
+	border-collapse: collapse;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+thead {
+	background: #2267a0;
+	color: white;
+}
+th,
+td {
+	padding: 2px 5px 2px 5px;
 }
 .datos {
 	width: 100%;
 	height: 404px;
 	display: flex;
 }
-.imagenCalendario{
-    width: 100%;
+.imagenCalendario {
+	width: 100%;
+	display: block;
+	cursor:unset;
 }
 .filtroCalendario {
-	width: 283px;
-	height: 398px;
-    box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.25)
+	width: 266px;
+	height: 100%;
+	box-shadow: 5.99986px 0.0416151px 6px rgba(0, 0, 0, 0.1);
+	z-index: 1;
 }
-.encabezadoFiltro{
-    background: #E0E0E0;
-    padding: 5px 0px 5px 0px;
+.encabezadoFiltro {
+	background: #e0e0e0;
+	padding: 5px 0px 5px 0px;
+	text-align: center;
 }
 .calendario {
-	width: 1018px;
+	width: 536px;
+	/* width: 1018px; */
 	height: 398px;
 }
 
@@ -109,12 +174,98 @@ select {
 	background-image: url(./icons/search.svg);
 	background-repeat: no-repeat;
 	background-position: 98%;
+	padding: 5px;
 	cursor: pointer;
 }
+
 input[type="month"]::-webkit-calendar-picker-indicator {
 	background-image: url(./icons/calendario.svg);
-	width: 22px;
+	width: 13px;
 	height: 100%;
 	background-size: auto;
 	background-position: center;
+	cursor: pointer;
+}
+
+.colorBlack {
+	color: black;
+}
+
+.modalAgregar {
+	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding-bottom: 15px;
+	border-radius: 6px;
+	display: none;
+	position: absolute;
+	left: 2.4%;
+	top: 204px;
+	width: 220px;
+	background: white;
+	z-index: 2;
+}
+.headerModalAgregar {
+	height: 40px;
+}
+.modalAgregar button {
+	height: 25px;
+	margin-top: 10px;
+}
+
+.informacionCalendario {
+	display: none;
+	width: 100%;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+.divEquipo {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 48px;
+	background: #f6f6f6;
+	padding: 0px 5px 0px 5px;
+}
+.divTarifas {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 100%;
+	height: 48px;
+	background: #f6f6f6;
+	
+}
+span {
+	display: flex;
+	justify-content: center;
+    align-items: center;
+	width: 75px;
+	height: 28px;
+	background: #ffffff;
+	border: 0.5px solid #a19995;
+	border-radius: 2px;
+	font-size: 13px;
+}
+.tarifas {
+	min-width: 175px;
+	height: 398px;
+	box-shadow: 5.99986px 0.0416151px 6px rgba(0, 0, 0, 0.1);
+	display: none;
+}
+
+.tituloTarifas {
+	background-color: #e0e0e0;
+	width: 100%;
+	height: 13.3%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	padding-left: 9px;
+}
+
+.ocultar {
+	display: none;
 }
