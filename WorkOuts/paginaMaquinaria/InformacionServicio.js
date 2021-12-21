@@ -275,3 +275,5 @@ let informacion = {
         }
     ]
 }
+
+export { informacion };
