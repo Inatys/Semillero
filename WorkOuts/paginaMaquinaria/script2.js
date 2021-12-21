@@ -1,4 +1,10 @@
 import { informacion } from "./InformacionServicio.js";
+/* console.log(informacion.table1[14])
+console.log(informacion.table1[14].infoEquipo)
+let datosCadena=informacion.table1[14].infoEquipo
+console.log(datosCadena)
+let datosTransformados=JSON.parse(datosCadena)
+console.log(datosTransformados[1].Estado) */
 
 let tablaInformacionTarifas = document.getElementById("tablaInformacionTarifas");
 let botonInformacion = document.getElementById("botonInformacion");
@@ -64,6 +70,7 @@ let botonEliminarEquipo
 function agregarEquipos() {
 	let selectDatoCalendario;
 	let filaTarifas;
+	let nombresEquipos
 	let equipos = JSON.parse(localStorage.getItem("equipos"));
 	if (equipos != null) {
 		seccionesEquipos.innerHTML = "";
@@ -77,8 +84,10 @@ function agregarEquipos() {
 		    </div>
                  
             `;
+			
 			botonEliminarEquipo=document.querySelectorAll("#eliminarEquipo")
 			informacion.table2.forEach((data) => {
+				nombresEquipos=data.equipo
 				if (nombreEquipo === data.equipo) {
 					seccionesTarifas.innerHTML += `
 					<div class="divTarifas">
@@ -104,10 +113,15 @@ function agregarEquipos() {
 			});
 		}
 		selectDatoCalendario = document.querySelectorAll("#selectDatoCalendario");
+		let datosTransformados 
 		for (let i = 0; i < selectDatoCalendario.length; i++) {
+			console.log(selectDatoCalendario.length)
 			informacion.table1.forEach((data2) => {
-				console.log(data2.infoEquipo)
-				if (data2.infoEquipo === null) {
+				console.log(nombresEquipos)
+				let datosCadena=data2.infoEquipo;
+				datosTransformados=JSON.parse(datosCadena);				
+				
+				if (datosTransformados === null) {
 					selectDatoCalendario[i].innerHTML = `
 					<option  value="" disabled selected>Tarifas</option>
 					<option>M</option>
@@ -118,12 +132,21 @@ function agregarEquipos() {
 					<option>A</option>			
 				`;
 				} else {
-					selectDatoCalendario[i].innerHTML += `
-					<option>${data2.infoEquipo.EquipoMaq}</option>	
-				`;
+					datosTransformados.forEach((data3)=>{
+						if(nombresEquipos.indexOf(data3.Equipo)){
+							console.log("contiene el id")
+							console.log(data3.Estado);
+							selectDatoCalendario[i].innerHTML += `
+							<option>${data3.Estado}</option>	
+						`;
+						} 
+						
+					})			
 				}
 			});
+			
 		}
+		
 	}
 }
 agregarEquipos();
@@ -146,7 +169,7 @@ let informacionCalendario = document.querySelector(".informacionCalendario");
 let inputFecha = document.getElementById("inputFecha");
 let selectObra = document.getElementById("selectObra");
 let alertaConsultar = document.querySelector(".alertaConsultar");
-/* botonConsultar.addEventListener("click", mostrarSeccionCalendario);
+botonConsultar.addEventListener("click", mostrarSeccionCalendario);
 function mostrarSeccionCalendario(e) {
 	if (inputFecha.value != "" && selectObra.value != 0) {
 		imagenCalendario.style.display = "none"; 
@@ -159,7 +182,7 @@ function mostrarSeccionCalendario(e) {
 	}
 	e.preventDefault();
 }
- */
+
 
 let cabeceraTabla = document.getElementById("cabeceraTabla");
 

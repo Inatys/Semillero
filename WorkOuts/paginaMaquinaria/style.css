@@ -48,6 +48,7 @@ main {
 	align-items: center;
 	justify-content: flex-start;
 	padding-left: 10px;
+	margin: 5px 0px 5px 0px
 }
 form{
 	width: 85%;
@@ -174,6 +175,11 @@ h4 {
 	padding: 5px 0px 6px 0px;
 	text-align: center;
 }
+#cabeceraTabla {
+	position: sticky;
+	top: 20px;
+}
+
 .seccionesEquipos{
 	overflow: auto;
 	height:335px;
@@ -334,6 +340,9 @@ span {
 	background-position: 98%;
 	cursor: pointer;
 	padding: 5px;
+}
+#selectDatoCalendario:focus{
+border:2px solid #72A9D8
 }
 .dias{
 	font-weight: 600;
