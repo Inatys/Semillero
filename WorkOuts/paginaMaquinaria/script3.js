@@ -1,6 +1,14 @@
 const traerDatosJson=()=>{
 	return fetch("./InformacionServicio.json").then((data)=>data.json())
 }
+const pintarDatosJson=async()=>{
+	let informacionServicio=await traerDatosJson()
+	pintarDivsEquipos(informacionServicio);
+	pintarDatosCalendario(informacionServicio);
+    pintarDivsTarifas(informacionServicio);
+    pintarFilasEnBodyCalendario(informacionServicio);
+}
+pintarDatosJson();	
 
 let botonInformacion = document.getElementById("botonInformacion");
 botonInformacion.addEventListener("mouseenter", mostrarInformacionTarifas);
@@ -60,24 +68,30 @@ let seccionesTarifas = document.querySelector(".seccionesTarifas");
         })
  }
 
- function pintarFilasEnBodyCalendario(mostrarDatosJson,nombreEquipo){
+  function pintarFilasEnBodyCalendario(mostrarDatosJson){
      let filaTarifas
+     let datosCalendarioTransformados
+     let conversionDatosCalendario
     mostrarDatosJson.forEach(datos => {
-        bodyCalendario.innerHTML += `
+         bodyCalendario.innerHTML += `
                 <tr id="filaTarifas"></tr>			
                 `;
-                filaTarifas = document.querySelectorAll("#filaTarifas");
-                
-         if(datos.codigo!=-1){
-             let datosCalendarioCadena=datos.calendario             
-                let datosCalendarioTransformados=JSON.parse(datosCalendarioCadena)
-        console.log(datosCalendarioTransformados)   
-         }
-     });
-      console.log(filaTarifas)
-      mostrarDatosJson.forEach(datos => {
-     for (let i = 0; i < filaTarifas.length; i++) {       
-            filaTarifas[i].innerHTML += `
+                filaTarifas = document.querySelectorAll("#filaTarifas");             
+                if(datos.codigo!=-1){           
+                    let datosCalendarioCadena=datos.calendario          
+                       datosCalendarioTransformados=JSON.parse(datosCalendarioCadena)   
+                        conversionDatosCalendario=Object.keys(datosCalendarioTransformados).map((key) => [Number(key), datosCalendarioTransformados[key]]);    
+                                            
+                }
+     });      
+      
+     for (let i = 0; i < conversionDatosCalendario.length; i++) {
+        for (let i = 0; i < filaTarifas.length; i++) {  
+            
+            let todosSelectCalendario=document.querySelectorAll("#selectDatoCalendario")
+            console.log(conversionDatosCalendario[i][1].Editable)     
+            
+                filaTarifas[i].innerHTML += `
                 <td>
                     <select id="selectDatoCalendario">
                         <option  value="" disabled selected>Tarifas</option>
@@ -90,32 +104,33 @@ let seccionesTarifas = document.querySelector(".seccionesTarifas");
                     </select>
                 </td>				
                 `;
+           
+           
         
-    } })
- }
+    
+    }   }
+     
+ } 
 
 function pintarDatosCalendario(datosCalendario) {
-	datosCalendario.forEach((element) => {
-		if (element.codigo === -1) {
-			calendario.forEach(element => {
-				console.log(element)
-			});
-				
-		/* 	cabeceraTabla.innerHTML += `
-				<th><p class="dias">${element.calendario[1].DescripcionDia}</p></th>
-		`;  */
-	};
-});
+    datosCalendario.forEach(data=>{
+        
+        if(data.codigo===-1){           
+            let dias=data.calendario
+            let conversionDatosCalendario=Object.keys(dias).map((key) => [Number(key), dias[key]]);              
+            for (let i = 0; i < conversionDatosCalendario.length; i++) {
+                cabeceraTabla.innerHTML += `
+				<th><p class="dias">${conversionDatosCalendario[i][1].DescripcionDia.substring(0, 2)}</p><p>${conversionDatosCalendario[i][1].Fecha.substring(0, 2)}</p></th>
+			`;
+                
+            }
+               
+        }
+    })
+       
+
 }
 
-const pintarDatosJson=async()=>{
-	let informacionServicio=await traerDatosJson()
-	pintarDivsEquipos(informacionServicio);
-	pintarDatosCalendario(informacionServicio);
-    pintarDivsTarifas(informacionServicio);
-    pintarFilasEnBodyCalendario(informacionServicio);
-}
-pintarDatosJson();	
 
 let inputFiltrarEquipo = document.getElementById("inputFiltrarEquipo");
 inputFiltrarEquipo.addEventListener("keyup", filtrar);
@@ -135,3 +150,12 @@ function filtrar() {
 		}
 	}
 }
+
+seccionesEquipos.addEventListener("scroll",hizoScroll)
+let scroll=document.querySelector(".scroll")
+let seccionTarifas=document.querySelector(".seccionesTarifas")
+function hizoScroll(){
+	let scrollTopSeccionesEquipos=seccionesEquipos.scrollTop
+	scroll.scrollTop=scrollTopSeccionesEquipos
+	seccionTarifas.scrollTop=scrollTopSeccionesEquipos
+} 
