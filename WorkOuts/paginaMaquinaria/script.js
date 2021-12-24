@@ -75,8 +75,7 @@ function agregarEquipos() {
             <div class="divEquipo">
                 <h6>${nombreEquipo}</h6>
                 <img id="eliminarEquipo" onclick="eliminarEquipo('${nombreEquipo}')" src="./icons/eliminarEquipo.svg" alt="">
-		    </div>
-                 
+		    </div>                 
             `;			
 			fi = document.querySelectorAll(".divEquipo");
 		

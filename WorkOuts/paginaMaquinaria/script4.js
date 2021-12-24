@@ -6,105 +6,101 @@ const pintarDatosJson = async () => {
   let informacionServicio = await traerDatosJson();
   pintarDivsEquipos(informacionServicio);
   pintarDiasCalendario(informacionServicio);
-  pintarDivsTarifas(informacionServicio);
-  pintarFilasEnBodyCalendario(informacionServicio);
   agregarOpcionesSelectEquipo(informacionServicio);
 };
 pintarDatosJson();
 
+
+
 let seccionesEquipos = document.querySelector(".seccionesEquipos");
+let seccionesTarifas = document.querySelector(".seccionesTarifas");
+let tarifaPGR;
+let tarifaRI;
+let idEquipos;
+let conversionDatosCalendario;
+
 function pintarDivsEquipos(mostrarDatosJson) {
   mostrarDatosJson.forEach((dato) => {
-    seccionesEquipos.innerHTML += `
-            <div class="divEquipo">
-                <h6 id = ''>${dato.nombreEquipo}</h6>
-                <img id="eliminarEquipo" onclick="eliminarEquipo('${dato.nombreEquipo}')" src="./icons/eliminarEquipo.svg" alt="">
-		    </div>                 
-            `;
-  });
-  
-}
+    if (dato.codigo != -1) {
+      seccionesEquipos.innerHTML += `
+              <div class="divEquipo">
+                  <h6 id='${dato.codigo}'>${dato.nombreEquipo}</h6>
+                  <img id="eliminarEquipo" onclick="eliminarEquipo('${dato.nombreEquipo}')" src="./icons/eliminarEquipo.svg" alt="">
+              </div>                 
+              `;
+      seccionesTarifas.innerHTML += `
+              <div class="divTarifas">
+                  <span>$ ${dato.tarifaPGR}</span>
+                  <span>$ ${dato.tarifaRI}</span>
+              </div>                     
+              `;
+      tarifaPGR = dato.tarifaPGR;
+      tarifaRI = dato.tarifaRI;
 
-let seccionesTarifas = document.querySelector(".seccionesTarifas");
-let tarifaPGR
-let tarifaRI
-function pintarDivsTarifas(mostrarDatosJson) {
-  mostrarDatosJson.forEach((data) => {
-    seccionesTarifas.innerHTML += `
-                <div class="divTarifas">
-                    <span>$ ${data.tarifaPGR}</span>
-                    <span>$ ${data.tarifaRI}</span>
-                </div>                     
-                `;   
-                tarifaPGR=data.tarifaPGR
-                tarifaRI=data.tarifaRI
-  });
-}
-
-function pintarFilasEnBodyCalendario(mostrarDatosJson) {
-  let filaTarifas;
-  let datosCalendarioTransformados;
-  let conversionDatosCalendario;
-  mostrarDatosJson.forEach((datos) => {
-    bodyCalendario.innerHTML += `
-                <tr id="filaTarifas"></tr>			
-                `;
-    filaTarifas = document.querySelectorAll("#filaTarifas");
-    if (datos.codigo != -1) {
-      let datosCalendarioCadena = datos.calendario;
-      datosCalendarioTransformados = JSON.parse(datosCalendarioCadena);
+      let datosCalendarioCadena = dato.calendario;
+      let datosCalendarioTransformados = JSON.parse(datosCalendarioCadena);
       conversionDatosCalendario = Object.keys(datosCalendarioTransformados).map(
-        (key) => [Number(key), datosCalendarioTransformados[key]]        
+        (key) => [Number(key), datosCalendarioTransformados[key]]
       );
-      console.log(conversionDatosCalendario)
-     
+      let textoh6;
+      let losHseis = document.querySelectorAll("h6");
+      losHseis.forEach((element) => {
+        textoh6 = element.textContent;
+      });
+      bodyCalendario.innerHTML += `
+              <tr id="filaTarifas"></tr>			
+              `;
+      filaTarifas = document.querySelectorAll("#filaTarifas");
     }
   });
- 
-  for (let i = 0; i < conversionDatosCalendario.length; i++) {    
-    for (let i = 0; i < filaTarifas.length; i++) {
-      let todosSelectCalendario = document.querySelectorAll(
-        "#selectDatoCalendario"
-      );    
-
-      filaTarifas[i].innerHTML += `
-                <td>
-                    <select id="selectDatoCalendario">
-                        <option  value="" disabled selected>Tarifas</option>
-                        <option>M</option>
-                        <option>I</option>
-                        <option>T1</option>
-                        <option>T2</option>
-                        <option>TP</option>
-                        <option>A</option>
-                    </select>
-                </td>				
-                `; 
-                console.log(conversionDatosCalendario[i][1].Editable)
-                if (conversionDatosCalendario[i][1].Editable=='0') {
-                  console.log("editable");  
-                }else if(conversionDatosCalendario[i][1].Editable=='1'){
-                  console.log("no editable"); 
-                }
+  filaTarifas.forEach((fila) => {
+    console.log(fila);
+    console.log(conversionDatosCalendario);
+    for (let i = 0; i < conversionDatosCalendario.length; i++) {
+      fila.innerHTML += `
+                              <td>
+                                <select id="selectDatoCalendario"> 
+                                    <option  value="" disabled selected>Tarifas</option>
+                                    <option>M</option>
+                                    <option>I</option>
+                                    <option>T1</option>
+                                    <option>T2</option>
+                                    <option>TP</option>
+                                    <option>A</option>
+                                </select>
+                              </td>		
+                              `;
     }
-   
-  } 
-
+  });
 }
+
 
 function pintarDiasCalendario(mostrarDatosJson) {
   mostrarDatosJson.forEach((data) => {
     if (data.codigo === -1) {
       let dias = data.calendario;
-      let conversionDatosCalendario = Object.keys(dias).map((key) => [Number(key),dias[key]]);
+      let conversionDatosCalendario = Object.keys(dias).map((key) => [
+        Number(key),
+        dias[key],
+      ]);
       for (let i = 0; i < conversionDatosCalendario.length; i++) {
         cabeceraTabla.innerHTML += `
-				<th><p class="dias">${conversionDatosCalendario[i][1].DescripcionDia.substring(0,2)}</p><p>${conversionDatosCalendario[i][1].Fecha.substring(0,2)}</p></th>
-			`;
+                  <th><p class="dias">${conversionDatosCalendario[
+                    i
+                  ][1].DescripcionDia.substring(
+                    0,
+                    2
+                  )}</p><p>${conversionDatosCalendario[i][1].Fecha.substring(
+          0,
+          2
+        )}</p></th>
+              `;
       }
     }
   });
 }
+
+
 
 let botonInformacion = document.getElementById("botonInformacion");
 let tablaInformacionTarifas = document.getElementById(
@@ -132,12 +128,15 @@ function asignacionEventos() {
   botonCerrarModalAgregar.addEventListener("click", ocultarModalAgregarEquipos);
   botonMostrarTarifas.addEventListener("click", mostrarSeccionTarifas);
   botonCerrarTarifas.addEventListener("click", ocultarSeccionTarifas);
-  botonAgregarNuevoEquipo.addEventListener("click", crearNuevoEquipos); 
+  botonAgregarNuevoEquipo.addEventListener("click", crearNuevoEquipos);
   botonConsultar.addEventListener("click", mostrarSeccionCalendario);
   inputFiltrarEquipo.addEventListener("keyup", filtrar);
   seccionesEquipos.addEventListener("scroll", hizoScroll);
 }
 asignacionEventos();
+
+
+
 
 function mostrarInformacionTarifas() {
   tablaInformacionTarifas.style.display = "block";
@@ -161,6 +160,8 @@ function ocultarSeccionTarifas() {
   botonMostrarTarifas.style.display = "inline";
 }
 
+
+
 function mostrarSeccionCalendario(e) {
   if (inputFecha.value != "" && selectObra.value != 0) {
     imagenCalendario.style.display = "none";
@@ -174,8 +175,12 @@ function mostrarSeccionCalendario(e) {
   e.preventDefault();
 }
 
-function filtrar() {
-  var filter,
+
+
+
+function filtrar() {    
+  let filter,
+  divTarifas,
     seccionFiltro,
     divEntreSeccionFiltro,
     textosFiltrar,
@@ -195,38 +200,48 @@ function filtrar() {
   }
 }
 
+
+
+
 function hizoScroll() {
   let scrollTopSeccionesEquipos = seccionesEquipos.scrollTop;
   scroll.scrollTop = scrollTopSeccionesEquipos;
   seccionesTarifas.scrollTop = scrollTopSeccionesEquipos;
 }
 
+
+
+
 let selectEquipo = document.querySelectorAll(".selectEquipos");
+
 function agregarOpcionesSelectEquipo(mostrarDatosJson) {
-    for (let i = 0; i < selectEquipo.length; i++) {
-		mostrarDatosJson.forEach((data) => {
-            selectEquipo[i].innerHTML += `		
-                        <option >${data.nombreEquipo}</option>
-                    `;
-          });
-	}  
+  for (let i = 0; i < selectEquipo.length; i++) {
+    mostrarDatosJson.forEach((data) => {
+      selectEquipo[i].innerHTML += `		
+                          <option >${data.nombreEquipo}</option>
+                      `;
+    });
+  }
 }
+
+
 
 const todosDatos = [];
 fetch("./InformacionServicio.json")
   .then((blob) => blob.json())
   .then((data) => todosDatos.push(...data));
-function crearNuevoEquipos(){
-    let selectAgregarEquipo = document.getElementById("SelectAgregarEquipo");
-    let nombreEquipo = selectAgregarEquipo.options[selectAgregarEquipo.selectedIndex].innerText;
-     seccionesEquipos.innerHTML += `
-            <div class="divEquipo">
-                <h6>${nombreEquipo}</h6>
-                <img id="eliminarEquipo" onclick="eliminarEquipo('${nombreEquipo}')" src="./icons/eliminarEquipo.svg" alt="">
-		    </div>                 
-            `;
-            pintarDivsTarifas(todosDatos)
-            pintarFilasEnBodyCalendario(todosDatos)
-            let nuevoEquipo={nombreEquipo,tarifaPGR,tarifaRI}
-            todosDatos.push(nuevoEquipo)            
+
+function crearNuevoEquipos() {
+  let selectAgregarEquipo = document.getElementById("SelectAgregarEquipo");
+  let nombreEquipo =
+    selectAgregarEquipo.options[selectAgregarEquipo.selectedIndex].innerText;
+  seccionesEquipos.innerHTML += `
+              <div class="divEquipo">
+                  <h6>${nombreEquipo}</h6>
+                  <img id="eliminarEquipo" onclick="eliminarEquipo('${nombreEquipo}')" src="./icons/eliminarEquipo.svg" alt="">
+              </div>                 
+              `;
+  pintarDivsEquipos(todosDatos);
+  let nuevoEquipo = { nombreEquipo, tarifaPGR, tarifaRI };
+  todosDatos.push(nuevoEquipo);
 }

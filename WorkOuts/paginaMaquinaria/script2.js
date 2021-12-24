@@ -294,3 +294,5 @@ function hizoScroll(){
 	scroll.scrollTop=scrollTopSeccionesEquipos
 	seccionTarifas.scrollTop=scrollTopSeccionesEquipos
 } 
+
+
