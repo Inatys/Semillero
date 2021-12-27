@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Kripto</title>
+	</head>
+	<body>
+		<nav>
+			<b>Kripto</b>
+			<input type="text" id="inputSerch" onkeyup="filtrar()" placeholder="Search" />
+		</nav>
+		<div class="scroll">
+			<table id="table">
+				<thead id="thead">
+					<td>UUID</td>
+					<td>BTC</td>
+					<td>Rank</td>
+					<td>Tier</td>
+					<td>Icon</td>
+					<td>Name</td>
+					<td>Price</td>
+					<td>Symbol</td>
+				</thead>
+				<tbody id="tbody"></tbody>
+			</table>
+		</div>
+		<br />
+		<button>¿INVERTIR?</button>
+		<script src="script.js"></script>
+	</body>
+</html>
