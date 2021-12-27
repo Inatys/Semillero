@@ -1,0 +1,106 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header{
+    background-image: url(./images/bg-header-desktop.svg);
+    background-size: cover;
+    background-color: #5DA5A4;
+    height: 150px;
+    width: 100%;
+}
+
+section{
+    background-color: #F0FAFB;
+    height: 818px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.busqueda{
+    background-color: white;
+    
+    width:  57%;
+    z-index: 3;
+    top: 70px;
+    position: absolute;
+   padding: 30px;
+   
+}
+.borrar{
+    float: right;
+    width: 80px;
+    height:  40px;
+    font-size: 16px;
+    color: #56A5A0;
+    background-color: white;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
+}
+.cajas{
+    width:  60%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.caja{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width:  100%;
+background-color: white;
+}
+
+.cajaInvisible{
+display: none;
+}
+
+.perfil{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 454px;
+height: 149px;
+
+}
+.texto{
+    width: 299px;
+}
+    .etiquetas{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 523px;
+height: 90px;
+    }
+    input{
+        background-color:#EFF7F5; 
+        padding: 10px;
+        border: none;
+        color: #56A5A0;
+        margin-left: 5px;
+    }
+    h3{
+        color: #56A5A0;
+        margin: 0px;
+    }
+    h4{
+        color: gray;
+        margin: 0px;
+    }
+    @media screen and (max-width: 1659px) {
+
+        section{
+            height: 1118px;
+        }
+        
+    }
