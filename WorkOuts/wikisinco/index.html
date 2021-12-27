@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>WikiSinco</title>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body id="body">
+		<div id="principal">
+			<header>
+				<img class="logo" src="./img/logo.svg" alt="" />
+				<div class="ayuda">
+					<img src="./img/ayuda.svg" alt="" onclick="mostrarMensaje()" />
+					<p class="mensaje">
+						Esta pagina te permite agregar conceptos y ejemplos, para que tengas tu propio
+						documento de estudio o te puedas guiar de los conceptos que ya existen.
+					</p>
+				</div>
+			</header>
+			<main>
+				<input
+					type="text"
+					id="inputSerch"
+					class="search"
+					onkeyup="mostrarLista()"
+					placeholder="Buscar el concepto"
+				/>
+				<div id="boxSearch">
+					<!-- <button id="li" onclick="seleccionaTema()"><p id="texto">Form</p></button>
+					<button id="li"><p id="texto">List</p></button> -->
+				</div>				
+			</main>
+		</div>
+		
+		<button class="botonAgregar" onclick="mostrarFormularioAgregar()">
+			<img src="./img/iconoAgregarTexto.svg" alt="" />
+		</button>
+		<div class="contenedorAgregar">
+			<div class="agregar">
+				<div class="encabezado">
+					<h4>Agrega un nuevo concepto</h4>
+					<div class="cerrar" onclick="cerrar()">X</div>
+				</div>				
+				<form action="" id="formulario">
+					<div class="conceptoDefinicion">
+						<label for="">
+							<h6>Concepto</h6>
+							<input id="concepto" type="text">
+						</label>
+						
+						<label for="">
+							<h6>Definicion</h6>						
+							<textarea name="" id="definicion" cols="30" rows="10"></textarea>
+						</label>
+					</div>													
+				<label for="">
+					<h6>Ejemplo</h6>					
+					<textarea name="" id="ejemplo" cols="30" rows="15"></textarea>
+				</label>
+				
+				</form>
+				<br>
+				<button onclick="agregarConceptos()" class="guardar">GUARDAR	</button>
+			</div>
+		</div>
+		 
+		<script src="script.js"></script>
+	</body>
+</html>

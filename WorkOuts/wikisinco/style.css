@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto");
+body {
+	width: 100%;
+	background-color: white;
+	height: 100%;
+	overflow: hidden;
+	font-family: "Roboto";
+	margin: 0px;
+}
+header {
+	width: 100%;
+	height: 331px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.logo {
+	width: 90%;
+}
+.ayuda {
+	position: absolute;
+	top: 10px;
+	right: 2px;
+
+}
+.ayuda img {
+	position: absolute;
+	right: 2px;
+	cursor: pointer;
+}
+.mensaje {
+	display: none;
+	position: relative;
+	top: 20px;
+	right: 55px;
+	padding: 10px;
+	width: 240px;
+	height: 108px;
+	background: #fbfbfb;
+}
+main {
+	width: 100%;
+	height: 330px;
+	display: flex;
+	justify-content: center;
+}
+.search {
+	width: 626px;
+	height: 46px;
+	border: 1px solid #aab9c5;
+	outline: none;
+	color: #3b3c3c;
+	font-size: 18px;
+	background-image: url(./img/lupa.svg);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+.search::placeholder {
+	color: #949494;
+}
+#boxSearch {
+	position: fixed;
+	z-index: 8;
+	top: 381px;
+	background-color: white;
+	width: 629px;
+	border: 1px solid #aab9c5;
+	list-style: none;
+	padding: 0px;
+	display: none;
+}
+#boxSearch #li {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 9px 5px 9px;
+	text-align: start;
+	background-color: white;
+	border: none;
+	font-size: 18px;
+	margin: 0px;
+}
+#boxSearch #li:hover {
+	background: #365179;
+	color: white;
+}
+.botonAgregar {
+	position: absolute;
+	padding: 0px;
+	width: 155px;
+	height: 40px;
+	border: none;
+	right: 20px;
+	bottom: 30px;
+	cursor: pointer;
+}
+.botonAgregar img {
+	width: 150px;
+}
+.header2 {
+	width: 100%;
+	height: 121px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.logo2 {
+	width: 300px;
+}
+#boxSearch2 {
+	position: absolute;
+	z-index: 8;
+	top: 84px;
+	background-color: white;
+	width: 631px;
+	border: 1px solid #aab9c5;
+	list-style: none;
+	padding: 0px;
+	right: 221px;
+	display: none;
+}
+#boxSearch2 #li {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 9px 5px 9px;
+	text-align: start;
+	background-color: white;
+	border: none;
+	font-size: 18px;
+	margin: 0px;
+}
+#boxSearch2 #li:hover {
+	background: #365179;
+	color: white;
+}
+.main2 {
+	width: 100%;
+	height: 743px;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	align-items: center;
+}
+.ejemplo {
+	border: 1px solid #e5e5e5;
+	padding: 10px;
+}
+h1 {
+	color: #365179;
+}
+h4 {
+	color: #3b3c3c;
+}
+.contenedorAgregar {
+	position: absolute;
+	top: 0px;
+	background: rgba(148, 148, 148, 0.53);
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+.agregar {
+	position: relative;
+	width: 722px;
+	height: 400px;
+	background-color: white;
+	top: 180px;
+	left: 90px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.encabezado{
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: space-between;
+    align-items: center;
+}
+.cerrar{
+	padding: 8px;
+	color: white;
+	background: #365179;
+	cursor: pointer;
+}
+form{
+	display: flex;
+	width: 711px;
+height: 281px;
+justify-content: space-around;
+}
+.conceptoDefinicion{
+	display: flex;
+	flex-direction: column;
+    justify-content: space-between;
+}
+h6{
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+.guardar{
+	width: 110px;
+height: 35px;
+background: #365179;
+border-radius: 5px;
+color: white;
+border: none;
+cursor: pointer;
+}
