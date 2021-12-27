@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Prueba CodeWars</title>
+		<style>
+			.scroll {
+				
+				width: 100%;
+				background-color: white;
+				overflow: auto;
+			}
+			.divtbody{
+				display: flex;
+				height: 60px;
+			}
+			#tablaGeneral {
+				display: flex;
+				border: solid;
+				flex-direction: column;
+				width: 540px;
+			}
+p{
+	margin:0px;
+}
+.divEquipo {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 48px;
+	background: #f6f6f6;
+	padding: 0px 5px 0px 5px;
+}
+.divTarifas {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 100%;
+	height: 48px;
+	background: #f6f6f6;
+	
+}
+span {
+	display: flex;
+	justify-content: center;
+    align-items: center;
+	width: 75px;
+	height: 28px;
+	background: #ffffff;
+	border: 0.5px solid #a19995;
+	border-radius: 2px;
+	font-size: 13px;
+}
+.bodyCalendario{
+	max-height: 80px;
+}
+.dias{
+	width:65px;
+}
+#theadDias{
+	display: flex;
+	width:100%;
+	justify-content: space-between;
+}
+		</style>
+	</head>
+	<body>
+		<button>probar</button>
+
+		<div id="tablaGeneral">
+			<table>
+				<thead>
+					<th>equipos</th>
+					<th>tarifas1</th>
+					<th>tarifas2</th>
+					<th>DICIEMBRE 2021</th>
+				</thead>
+			</table>
+			<div class="scroll">
+				<div class="divtbody">
+				<table>
+					<tbody>
+						<tr class="divEquipo">
+						</tr>
+						<tr class="divEquipo">
+							<td>Grua</td>
+						</tr>
+						<tr class="divEquipo">
+							<td>Equipo 2</td>
+						</tr>
+					</tbody>
+				</table>
+				<table>
+					<tbody>
+						<tr class="divTarifas">
+						</tr>
+						<tr class="divTarifas">
+							<td><span>5656</span></td>
+							<td><span>5656</span></td>
+						</tr>
+						<tr class="divTarifas">
+							<td><span>5656</span></td>
+							<td><span>5656</span></td>
+						</tr>
+					</tbody>
+				</table>
+				<table id="tabla">
+					 <thead >
+						<tr id="theadDias">
+							<th class="dias">
+								<p>L</p>
+								<p>1</p>
+							</th>
+							<th class="dias">
+								<p>M</p>
+								<p>2</p>
+							</th>
+							<th class="dias">
+								<p>M</p>
+								<p>3</p>
+							</th>
+							<th class="dias">
+								<p>J</p>
+								<p>4</p>
+							</th>
+						</tr>
+					</thead> 
+					<tbody id="bodyCalendario">
+						<tr class="divEquipo">
+							<td>
+								<select id="selectDatoCalendario">
+									<option value="" disabled selected>Tarifas</option>
+									<option>M</option>
+									<option>I</option>
+									<option>T1</option>
+									<option>T2</option>
+									<option>TP</option>
+									<option>A</option>
+								</select>
+							</td>
+							<td>
+								<select id="selectDatoCalendario">
+									<option value="" disabled selected>Tarifas</option>
+									<option>M</option>
+									<option>I</option>
+									<option>T1</option>
+									<option>T2</option>
+									<option>TP</option>
+									<option>A</option>
+								</select>
+							</td>
+							<td>
+								<select id="selectDatoCalendario">
+									<option value="" disabled selected>Tarifas</option>
+									<option>M</option>
+									<option>I</option>
+									<option>T1</option>
+									<option>T2</option>
+									<option>TP</option>
+									<option>A</option>
+								</select>
+							</td>
+							<td>
+								<select id="selectDatoCalendario">
+									<option value="" disabled selected>Tarifas</option>
+									<option>M</option>
+									<option>I</option>
+									<option>T1</option>
+									<option>T2</option>
+									<option>TP</option>
+									<option>A</option>
+								</select>
+							</td>
+						</tr>
+						<tr class="divEquipo">
+							<td>
+								<select id="selectDatoCalendario">
+									<option value="" disabled selected>Tarifas</option>
+									<option>M</option>
+									<option>I</option>
+									<option>T1</option>
+									<option>T2</option>
+									<option>TP</option>
+									<option>A</option>
+								</select>
+							</td>
+							<td>
+								<select id="selectDatoCalendario">
+									<option value="" disabled selected>Tarifas</option>
+									<option>M</option>
+									<option>I</option>
+									<option>T1</option>
+									<option>T2</option>
+									<option>TP</option>
+									<option>A</option>
+								</select>
+							</td>
+							<td>
+								<select id="selectDatoCalendario">
+									<option value="" disabled selected>Tarifas</option>
+									<option>M</option>
+									<option>I</option>
+									<option>T1</option>
+									<option>T2</option>
+									<option>TP</option>
+									<option>A</option>
+								</select>
+							</td>
+							<td>
+								<select id="selectDatoCalendario">
+									<option value="" disabled selected>Tarifas</option>
+									<option>M</option>
+									<option>I</option>
+									<option>T1</option>
+									<option>T2</option>
+									<option>TP</option>
+									<option>A</option>
+								</select>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		</div>
+		<script src="prueba.js"></script>
+	</body>
+</html>
