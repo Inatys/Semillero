@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .buscador{    
+    padding: 3px;
+    margin-top: 7px;
+    margin-bottom: 6px;
+}
+.inputBuscar{
+    width: 70%;
+    margin-top: 4px;
+}
+.scroll{
+	overflow-y: scroll;
+	width: 99%;
+	height: 224px;	
+    box-shadow: 0px 0px 1px rgba(173, 173, 173, 0.377);
+}
+.lista{    
+    height: 120%;
+}
+.dato{    
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    padding: 7px 9px 7px 9px;
+    text-align: start;
+    background-color: white;
+    border:none;
+}
+.dato:hover{
+    background-color: #DEEAFF;
+}
+    </style>
+</head>
+<body>
+    <input type="button" id="ReserveerButton1" value="save" onclick="save()"/>
+<input type="checkbox" name='favorites' id="checkbox1zaal1" >1e film </input>
+<input type="checkbox" name='favorites' id="checkbox1zaal1" >1e film van de dag</input>
+
+<div class="busqueda">
+    <div class="buscador">
+        <h4>Nivel acceso</h4>
+        <input type="text" id="myInput" class="inputBuscar"  onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+    </div>
+    <div class="scroll">
+        <div class="lista" id="lista">
+            <button id="botonAcceso" class="dato">
+                <h5 id="textoAcceso">Adele</h5> 
+                <h6>cantidad</h6>
+            </button>
+            <button id="botonAcceso" class="dato">
+                <h5 id="textoAcceso">ac</h5>
+                <h6>cantidad</h6>
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    checkboxes=document.querySelectorAll("input[name='favorites']");
+    function save(){
+        let estachecked = [];
+        for(let i=0;i<checkboxes.length;i++){
+            console.log(checkboxes[i])
+            console.log(checkboxes[i].checked)
+            if(checkboxes[i].checked==true){     
+                estachecked.push(checkboxes[i].checked)
+                console.log(estachecked)
+                
+                localStorage.setItem('checkeds', estachecked);
+                console.log("guardo")
+            }else{
+                console.log(" no esta check")
+            }
+        }
+}
+
+function load(){    
+    let checkeds = JSON.parse(localStorage.getItem("checkeds"));    
+    console.log(checkeds)   
+    for(let i=0; i<checkeds.length; i++){
+        console.log("si") 
+            if (checkeds === true) {
+			console.log("mantener");
+	}
+            checkboxes.checked=true;
+        }
+} 
+
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    console.log(input);
+    filter = input.value.toUpperCase();
+    console.log(filter);
+    ul = document.getElementById("#lista");
+    console.log(ul);
+    li = document.querySelectorAll("#botonAcceso");
+    console.log(li);
+    for (i = 0; i < li.length; i++) {
+        a = li[i].querySelectorAll("#textoAcceso")[0];
+        console.log(a);
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+
+
+load(); 
+</script>
+</html>

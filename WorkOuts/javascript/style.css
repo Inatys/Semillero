@@ -1,0 +1,53 @@
+.contenedor1 {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+    justify-content: center;
+	border: solid;
+	width: 400px;
+	height: 200px;
+}
+.contenedor2 {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+    align-items: center;
+	border: solid;
+	width: 400px;
+	height: 200px;
+}
+.uno {
+	width: 150px;
+    height: 90px;
+	border: solid green;
+}
+.dos {
+	width: 120px;
+	height: 80px;
+	border: solid blue;
+}
+
+input{
+    width: 140px;
+    height: 20px;
+    border: 1px solid gray;
+}
+
+button{
+    width: 60px;
+    height: 20px;
+    background-color: greenyellow;
+}
+
+button:hover{
+    background-color: green;
+}
+
+img{
+    width: 150px;
+    height: 90px;
+}
+.texto{
+    color: rgb(43, 142, 153);
+}
+

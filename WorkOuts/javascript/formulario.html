@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="formulario.css" />
+	</head>
+
+	<body>
+		<form action="" id="formulario">
+            <!-- validar -->
+			<div class="grupos" id="grupo_nombre">
+				<label for="nombre">First Name</label>
+               <!--  conteerror -->
+				<div class="grupo_input" id="nombre">
+					<input type="text" name="nombre" placeholder="First Name" />
+					<img class="validacion" src="./images/icon-error.svg" alt="" />
+				</div>
+				<p id="error">First Name cannot by empty</p>
+			</div>
+
+			<div class="grupos" id="grupo_apellido">
+				<label for="apellido">Last Name</label>
+				<div class="grupo_input" id="apellido">
+					<input type="text" name="apellido" placeholder="Last Name" />
+					<img class="validacion" src="./images/icon-error.svg" alt="" />
+				</div>
+				<p id="error">Last Name cannot by empty</p>
+			</div>
+
+			<div class="grupos" id="grupo_email">
+				<label for="email">Email</label>
+				<div class="grupo_input" id="email">
+					<input type="email" name="email" placeholder="Email Address" />
+					<img class="validacion" src="./images/icon-error.svg" alt="" />
+				</div>
+				<p id="error">Looks like this is not an email</p>
+			</div>
+
+			<div class="grupos" id="grupo_password">
+				<label for="password">Password</label>
+				<div class="grupo_input" id="password">
+					<input type="password" name="password" placeholder="Password" id="password1"/>
+					<img class="validacion" src="./images/icon-error.svg" alt="" />
+				</div>
+				<p id="error">Password cannot by empty</p>
+			</div>
+
+			<div class="grupos" id="grupo_confirm_password">
+				<label for="confirm_password">Confirm password</label>
+				<div class="grupo_input" id="confirm_password">
+					<input type="password" name="confirm_password" placeholder="Confirm password" id="password2"/>
+					<img class="validacion" src="./images/icon-error.svg" alt="" />
+				</div>
+				<p id="error">Password cannot by empty</p>
+			</div>
+
+			<div class="mensaje_error" id="mensaje_error">
+                <img src="./images/cancel.svg" alt="" />
+				<b>Diligencia el formulario correctamente</b>			
+			</div>
+
+			<button type="submit">
+				<b>ENVIAR</b>
+			</button>
+
+            <div class="mensaje_correcto" id="mensaje_correcto">
+                <img src="./images/checked.svg" alt="" />
+				<b>Se envio el formulario con exito</b>			
+			</div>
+		</form>
+		
+	</body>
+	<script src="validar.js"></script>
+</html>

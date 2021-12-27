@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Configuracion riesgo</title>
+        <link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header><h1>CONFIGURACION DE RIESGO</h1></header>
+		<main>
+            <div class="botones">
+				<a href="./impacto.html"><button class="opcion">IMPACTOS</button></a>
+				<a href="./probabilidad.html"><button class="opcion">PROBABILIDADES</button></a>
+				<a href="./tipo.html"><button class="opcion">TIPOS DE RIESGO</button></a>
+				<a href="./evaluacion.html"><button class="opcion">EVALUACION DEL RIESGO</button></a>
+			</div>
+			
+            <section class="mostarTabla">
+				<div class="nuevo">
+					<h3>IMPACTOS</h3>
+					<button id="nuevo" class="agrega">Nuevo</button>
+				</div>
+			<table>
+				<thead>
+					<tr>
+						<th>Codigo</th>
+						<th>Descripcion</th>
+					</tr>
+				</thead>
+				<tbody id="equipos-tabla"></tbody>
+			</table>
+        </section>
+        <div class="nuevoElemento" id="agregaElemento">
+            <section class="agregarNuevo">
+                <div class="nuevoEncabezado">
+                    <h3>CREAR</h3>
+                    <button id="cerrar">x</button>
+                </div>
+                <div class="formulario">
+            <form id="nuevo-equipo" action="">
+				<input id="equipo" type="text" value="equipo" />
+				<input id="puntos"  type="text" value="puntos" />
+				<input type="submit" value="enviar"/>				
+			</form>
+        </section>
+    </div>
+		</main>
+		<script src="prueba.js"></script>
+	</body>
+</html>
