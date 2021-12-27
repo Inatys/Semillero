@@ -60,22 +60,35 @@ function pintarFilasEnBodyCalendario(mostrarDatosJson) {
       conversionDatosCalendario = Object.keys(datosCalendarioTransformados).map(
         (key) => [Number(key), datosCalendarioTransformados[key]]        
       );
-      /* console.log(conversionDatosCalendario) */
+     /*  console.log(conversionDatosCalendario)  */
       for (let i = 0; i < conversionDatosCalendario.length; i++) {   
-        trFilaCalendario.innerHTML += `
-        <td>
-        <select id="selectDatoCalendario">
-            <option  value="" disabled selected>Tarifas</option>
-            <option>M</option>
-            <option>I</option>
-            <option>T1</option>
-            <option>T2</option>
-            <option>TP</option>
-            <option>A</option>
-        </select>
-    </td>				
-                    `;
+        let disable ;          
+                  if(conversionDatosCalendario[i][1].Editable=="1"){
+                      disable = "disabled" 
+                      
+                    }
+                    else{
+                      disable = "" 
+                    }
+
+
+                    trFilaCalendario.innerHTML += `
+                    <td>
+                    <select id="selectDatoCalendario" `+disable+`>
+                        <option  value="" disabled selected>Tarifas</option>
+                        <option>M</option>
+                        <option>I</option>
+                        <option>T1</option>
+                        <option>T2</option>
+                        <option>TP</option>
+                        <option>A</option>
+                    </select>
+                </td>				
+                                `; 
+
+                    
         }
+        
     }
   });
 /*  
