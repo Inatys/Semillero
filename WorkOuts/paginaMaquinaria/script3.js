@@ -15,14 +15,16 @@ pintarDatosJson();
 let seccionesEquipos = document.querySelector(".seccionesEquipos");
 function pintarDivsEquipos(mostrarDatosJson) {
   mostrarDatosJson.forEach((dato) => {
+     
+    if (dato.codigo != -1) {
     seccionesEquipos.innerHTML += `
             <div class="divEquipo">
                 <h6 id = ''>${dato.nombreEquipo}</h6>
                 <img id="eliminarEquipo" onclick="eliminarEquipo('${dato.nombreEquipo}')" src="./icons/eliminarEquipo.svg" alt="">
-		    </div>                 
+		        </div>                 
             `;
+    }
   });
-  
 }
 
 let seccionesTarifas = document.querySelector(".seccionesTarifas");
@@ -30,6 +32,7 @@ let tarifaPGR
 let tarifaRI
 function pintarDivsTarifas(mostrarDatosJson) {
   mostrarDatosJson.forEach((data) => {
+    if (data.codigo != -1) {
     seccionesTarifas.innerHTML += `
                 <div class="divTarifas">
                     <span>$ ${data.tarifaPGR}</span>
@@ -38,6 +41,7 @@ function pintarDivsTarifas(mostrarDatosJson) {
                 `;   
                 tarifaPGR=data.tarifaPGR
                 tarifaRI=data.tarifaRI
+    }
   });
 }
 
@@ -46,21 +50,35 @@ function pintarFilasEnBodyCalendario(mostrarDatosJson) {
   let datosCalendarioTransformados;
   let conversionDatosCalendario;
   mostrarDatosJson.forEach((datos) => {
-    bodyCalendario.innerHTML += `
-                <tr id="filaTarifas"></tr>			
-                `;
+    let trFilaCalendario=document.createElement("tr")
+    bodyCalendario.appendChild(trFilaCalendario)
     filaTarifas = document.querySelectorAll("#filaTarifas");
+
     if (datos.codigo != -1) {
       let datosCalendarioCadena = datos.calendario;
       datosCalendarioTransformados = JSON.parse(datosCalendarioCadena);
       conversionDatosCalendario = Object.keys(datosCalendarioTransformados).map(
         (key) => [Number(key), datosCalendarioTransformados[key]]        
       );
-      console.log(conversionDatosCalendario)
-     
+      /* console.log(conversionDatosCalendario) */
+      for (let i = 0; i < conversionDatosCalendario.length; i++) {   
+        trFilaCalendario.innerHTML += `
+        <td>
+        <select id="selectDatoCalendario">
+            <option  value="" disabled selected>Tarifas</option>
+            <option>M</option>
+            <option>I</option>
+            <option>T1</option>
+            <option>T2</option>
+            <option>TP</option>
+            <option>A</option>
+        </select>
+    </td>				
+                    `;
+        }
     }
   });
- 
+/*  
   for (let i = 0; i < conversionDatosCalendario.length; i++) {    
     for (let i = 0; i < filaTarifas.length; i++) {
       let todosSelectCalendario = document.querySelectorAll(
@@ -80,7 +98,7 @@ function pintarFilasEnBodyCalendario(mostrarDatosJson) {
                     </select>
                 </td>				
                 `; 
-                console.log(conversionDatosCalendario[i][1].Editable)
+                /* console.log(conversionDatosCalendario[i][1].Editable) *//*
                 if (conversionDatosCalendario[i][1].Editable=='0') {
                   console.log("editable");  
                 }else if(conversionDatosCalendario[i][1].Editable=='1'){
@@ -88,7 +106,7 @@ function pintarFilasEnBodyCalendario(mostrarDatosJson) {
                 }
     }
    
-  } 
+  }  */
 
 }
 
@@ -179,19 +197,30 @@ function filtrar() {
     seccionFiltro,
     divEntreSeccionFiltro,
     textosFiltrar,
+    divSeccionTarifas,
+    divFilaCalendario,
     valorTextoFiltrado;
   filter = inputFiltrarEquipo.value.toUpperCase();
   seccionFiltro = document.querySelector(".seccionesEquipos");
   divEntreSeccionFiltro = document.querySelectorAll(".divEquipo");
-  divTarifas = document.querySelectorAll(".divTarifas");
+  divSeccionTarifas = document.querySelectorAll(".divTarifas");
+  divFilaCalendario = document.querySelectorAll("#filaTarifas");
   for (let i = 0; i < divEntreSeccionFiltro.length; i++) {
+    for (let i = 0; i < divSeccionTarifas.length; i++) {
+      for (let i = 0; i < divFilaCalendario.length; i++) {
     textosFiltrar = divEntreSeccionFiltro[i].querySelectorAll("h6")[0];
     valorTextoFiltrado = textosFiltrar.textContent;
     if (valorTextoFiltrado.toUpperCase().indexOf(filter) > -1) {
       divEntreSeccionFiltro[i].style.display = "";
+      divSeccionTarifas[i].style.display = "";
+      divFilaCalendario[i].style.display = "";
     } else {
       divEntreSeccionFiltro[i].style.display = "none";
+      divSeccionTarifas[i].style.display = "none";
+      divFilaCalendario[i].style.display = "none";
     }
+  }
+}
   }
 }
 
@@ -223,10 +252,21 @@ function crearNuevoEquipos(){
             <div class="divEquipo">
                 <h6>${nombreEquipo}</h6>
                 <img id="eliminarEquipo" onclick="eliminarEquipo('${nombreEquipo}')" src="./icons/eliminarEquipo.svg" alt="">
-		    </div>                 
+		        </div>                 
             `;
             pintarDivsTarifas(todosDatos)
             pintarFilasEnBodyCalendario(todosDatos)
             let nuevoEquipo={nombreEquipo,tarifaPGR,tarifaRI}
             todosDatos.push(nuevoEquipo)            
 }
+
+/* function eliminarEquipo(nombreEquipo) {
+	todosDatos.forEach((datos=>{
+    if (equipos[i].nombreEquipo === nombreEquipo) {
+      equipos.splice(i, 1);
+      
+}
+  })
+	
+}
+ */
