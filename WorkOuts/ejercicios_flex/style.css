@@ -1,0 +1,74 @@
+.contenedor1 {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	/*flex-wrap: nowrap; si no se pone nowrap los elementos se encojen de tamaño el height es mas pequeño que los elementos dentro de el*/
+	border: solid;
+	width: 400px;
+	/*height: 50px;si esta en wrap y se reduce el tamaño de height el ultimo elemento se pone al lado*/
+	height: 200px;
+
+	/*alinea los elementos de manera vertical arriba centro abajo */
+	/*justify-content: flex-start; /*alinea los elementos en la parte superior a lo largo*/
+	/*justify-content: flex-end; /*alinea los elementos en la parte inferior a lo largo*/
+	/*justify-content: center; /*alinea los elementos en la parte central a lo largo*/
+	/*justify-content: space-between; /*separa los elementos a lo largo sin dejar borde a*/
+	/*justify-content: space-around; /*separa los elementos a lo largo dejando borde*/
+	/*justify-content: space-evenly; /*separa los elementos a lo largo dejando todos con el mismo espaciado entre ellos*/
+
+	/*alinea los elementos de manera horizontal derecha centro izquierda */
+	/*align-items: flex-start;/*alinea los elementos en la parte izquierda*/
+	/*align-items: flex-end;/*alinea los elementos en la parte derecha*/
+	/*align-items: center;/*alinea los elementos en la parte central en horizontal:-> */
+	/*align-items: stretch;/*si los elementos de adentro no tienen width hace que tomen todo el ancho de este contenedor, si tienen width no hace nada*/
+
+	/*alinea los elementos de manera horizontal derecha centro izquierda */
+	/*align-content: flex-start; /*alinea los elementos en la parte izquierda*/
+	/*align-content: flex-end; /*alinea los elementos en la parte derecha*/
+	/*align-content: center; /*alinea los elementos en la parte central en horizontal:->*/
+	/*align-content: space-between; /*alinea los elementos en la parte izquierda*/
+	/*align-content: space-around; /*alinea los elementos en la parte central*/
+	/*align-content: stretch; /*si los elementos de adentro no tienen width hace que tomen todo el ancho de este contenedor, si tienen width no hace nada*/
+}
+.contenedor2 {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	/*flex-wrap: nowrap; si no se pone nowrap los elementos se encojen de tamaño cunado el width es mas pequeño que los elementos dentro de el*/
+	border: solid;
+	width: 400px;
+	/*width: 50px; si esta en wrap y se reduce el tamaño de width el ultimo elemento se pone debajo*/
+	height: 200px;
+
+	/*alinea los elementos de manera horizontal derecha centro izquierda */
+	/*justify-content: flex-start; /*alinea los elementos en la parte izquierda*/
+	/*justify-content: flex-end; /*alinea los elementos en la parte derecha*/
+	/*justify-content: center; /*alinea los elementos en la parte central en horizontal:-> */
+	/*justify-content: space-between; /*separa los elementos en horizontal:-> sin dejar borde*/
+	/*justify-content: space-around; /*separa los elementos en horizontal:-> dejando borde*/
+	/*justify-content: space-evenly; /*separa los elementos en horizontal:-> dejando todos con el mismo espaciado entre ellos*/
+
+	/*alinea los elementos de manera vertical arriba centro abajo */
+	/*align-items: flex-start; /*alinea los elementos en la parte superior a lo largo*/
+	/*align-items: flex-end; /*alinea los elementos en la parte inferior a lo largo*/
+	/*align-items: center; /*alinea los elementos en la parte central a lo largo*/
+	/*align-items: stretch;/*si los elementos de adentro no tienen height hace que tomen todo el largo de este contenedor, si tienen height no hace nada*/
+
+	/*alinea los elementos de manera vertical arriba centro abajo */
+	/*align-content: flex-start; /*alinea los elementos en la parte superior a lo largo*/
+	/*align-content: flex-end; /*alinea los elementos en la parte inferior a lo largo*/
+	/*align-content: center; /*alinea los elementos en la parte central a lo largo*/
+	/*align-content: space-between; /*alinea los elementos en la parte superior a lo largo*/
+	/*align-content: space-around; /*alinea los elementos en la parte central a lo largo*/
+	/*align-content: stretch; /*si los elementos de adentro no tienen height hace que tomen todo el largo de este contenedor, si tienen height no hace nada*/
+}
+.uno {
+	width: 50px;
+	height: 50px;
+	border: solid green;
+}
+.dos {
+	width: 50px;
+	height: 50px;
+	border: solid blue;
+}
