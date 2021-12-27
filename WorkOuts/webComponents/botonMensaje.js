@@ -23,7 +23,6 @@ class botonMensaje extends HTMLElement {
 	connectedCallback() {
 		this._textoMensaje = this.getAttribute("text");
 		this._botonShow = this.shadowRoot.querySelector("button");
-		this.shadowRoot.appendChild(this._botonShow);
 		this._botonShow.addEventListener("click", this._mostrarMensaje.bind(this));
 	}
 	_mostrarMensaje() {

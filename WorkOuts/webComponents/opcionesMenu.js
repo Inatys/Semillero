@@ -65,12 +65,11 @@ class opcionesMenu extends HTMLElement {
 	}
 	connectedCallback() {
 		this._divOpcionesMenu = this.shadowRoot.querySelector(".divOpcionesMenu");
-		this.shadowRoot.appendChild(this._divOpcionesMenu);
 
-		this._h6textoMensaje = this.shadowRoot.querySelector("h6");
-		this._divOpcionesMenu.appendChild(this._h6textoMensaje);
-		this._textoMensaje = this.getAttribute("text");
-		this._h6textoMensaje.textContent = this._textoMensaje;
+		this._h6NombreOpcion = this.shadowRoot.querySelector("h6");
+		this._divOpcionesMenu.appendChild(this._h6NombreOpcion);
+		this._textoNombreOpcion = this.getAttribute("nombreOpcion");
+		this._h6NombreOpcion.textContent = this._textoNombreOpcion;
 
 		this._lineaSeccionesMenu = this.shadowRoot.querySelector(".lineaSeccionesMenu");
 		this._divOpcionesMenu.appendChild(this._lineaSeccionesMenu);

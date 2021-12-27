@@ -5,9 +5,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
-		<script src="botonMensaje.js"></script>
 		<script src="mensajeHover.js"></script>
-		<script src="opcionesMenu.js"></script>
+		<script src="menuDesplegable.js"></script>
 		<style>
 			nav{
             width:150px;
@@ -18,19 +17,19 @@
 			}
 			section {
 				width: 20%;
+				border: solid;
 			}
 			aside{
 				width: 75%;
+				border: solid;
 				float: right;
 			}
+            
 		</style>
 	</head>
 	<body>
-		<ng-boton-mensaje text="more infos!"></ng-boton-mensaje>		
-		<section>
-			<ng-opciones-menu nombreOpcion="control"></ng-opciones-menu>
-			<ng-opciones-menu nombreOpcion="mantenimiento"></ng-opciones-menu>
-			<ng-opciones-menu nombreOpcion="combustible"></ng-opciones-menu>
-		</section>		
-	</body> 
+        
+		<ng-menu-desplegable></ng-menu-desplegable>
+		<ng-mensaje-hover text="We build this before new it is better!"></ng-mensaje-hover>
+	</body>
 </html>
