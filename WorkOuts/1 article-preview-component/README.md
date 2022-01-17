@@ -6,7 +6,7 @@
 ## Introduccion
 1. [Funcionalidades](#Funcionalidades)
 A list of technologies used within the project:
-* [Funcionalidades](#Funcionalidades): Version 12.3 
+ [Funcionalidades](#Funcionalidades): Version 12.3 
 * [Technologie name](https://example.com): Version 2.34
 * [Library name](https://example.com): Version 1234
 El diseño de la pagina se trabajo en html con versiones movil y escritorio. Tiene una funcionalidad en javascript para realizar hover al boton compartir.
