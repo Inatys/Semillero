@@ -4,8 +4,6 @@
 2. [Figma](#Figma)
 3. [Pantallazos](#Pantallazos)
 ## Introduccion
-1. [Funcionalidades](#Funcionalidades)
-A list of technologies used within the project:
 El diseño de la pagina se trabajo en html con versiones
  [Movil](#Movil) y
   [Escritorio](#Escritorio). Tiene una 
