@@ -12,6 +12,6 @@ El diseño de la pagina se trabajo en html con versiones
 https://www.figma.com/file/qzPrKGUdPc7xkiVqZNiorz/primera_pagina?node-id=0%3A1
 ## Pantallazos
 ### Escritorio
-(https://github.com/Inatys/Semillero/blob/main/WorkOuts/imagenesProyectos/1%20escritorio%20funcion.PNG)
+![Aquí la descripción de la imagen por si no carga](https://github.com/Inatys/Semillero/blob/main/WorkOuts/imagenesProyectos/1%20escritorio%20funcion.PNG)
 ### Movil
 ### Funcionalidad
