@@ -9,7 +9,7 @@ El diseño de la pagina se trabajo en html y css con versiones
   [Escritorio](#Escritorio). Tiene una 
  [Funcionalidad](#Funcionalidades) en javascript para realizar hover al boton compartir.
 ## Figma 
-https://www.figma.com/file/qzPrKGUdPc7xkiVqZNiorz/primera_pagina?node-id=0%3A1
+En esta pagina se realizo el prototipo https://www.figma.com/file/qzPrKGUdPc7xkiVqZNiorz/primera_pagina?node-id=0%3A1
 ## Pantallazos
 ### Escritorio
 ![Aquí la descripción de la imagen por si no carga](https://github.com/Inatys/Semillero/blob/main/WorkOuts/imagenesProyectos/1%20escritorio.PNG)
