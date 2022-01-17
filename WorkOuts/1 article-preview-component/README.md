@@ -4,7 +4,7 @@
 2. [Figma](#Figma)
 3. [Pantallazos](#Pantallazos)
 ## Introduccion
-* [versiones movil](#versiones movil)
+1. [Funcionalidades](#Funcionalidades)
 
 El diseño de la pagina se trabajo en html con versiones movil y escritorio. Tiene una funcionalidad en javascript para realizar hover al boton compartir.
 ## Figma 
