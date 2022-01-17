@@ -4,7 +4,7 @@
 2. [Figma](#Figma)
 3. [Pantallazos](#Pantallazos)
 ## Introduccion
-El diseño de la pagina se trabajo en html con versiones
+El diseño de la pagina se trabajo en html y css con versiones
  [Movil](#Movil) y
   [Escritorio](#Escritorio). Tiene una 
  [Funcionalidad](#Funcionalidades) en javascript para realizar hover al boton compartir.
