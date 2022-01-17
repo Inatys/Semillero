@@ -1,4 +1,4 @@
-# Primer diseño de página web y móvil 
+# 1 article-preview-component 
 ## Table of Contents
 1. [Introduccion](#Introduccion)
 2. [Figma](#Figma)
