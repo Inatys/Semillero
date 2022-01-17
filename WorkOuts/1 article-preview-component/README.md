@@ -7,7 +7,7 @@
 El diseño de la pagina se trabajo en html con versiones
  [Movil](#Movil) y
   [Escritorio](#Escritorio). Tiene una 
- [Funcionalidad](#Funcionalidad) en javascript para realizar hover al boton compartir.
+ [Funcionalidad](#Funcionalidades) en javascript para realizar hover al boton compartir.
 ## Figma 
 https://www.figma.com/file/qzPrKGUdPc7xkiVqZNiorz/primera_pagina?node-id=0%3A1
 ## Pantallazos
@@ -15,6 +15,6 @@ https://www.figma.com/file/qzPrKGUdPc7xkiVqZNiorz/primera_pagina?node-id=0%3A1
 ![Aquí la descripción de la imagen por si no carga](https://github.com/Inatys/Semillero/blob/main/WorkOuts/imagenesProyectos/1%20escritorio.PNG)
 ### Movil
 ![Aquí la descripción de la imagen por si no carga](https://github.com/Inatys/Semillero/blob/main/WorkOuts/imagenesProyectos/1%20movil.PNG)
-### Funcionalidad
+### Funcionalidades
 ![Aquí la descripción de la imagen por si no carga](https://github.com/Inatys/Semillero/blob/main/WorkOuts/imagenesProyectos/1%20escritorio%20funcion.PNG)
 ![Aquí la descripción de la imagen por si no carga](https://github.com/Inatys/Semillero/blob/main/WorkOuts/imagenesProyectos/1%20movil%20funcion.PNG)
