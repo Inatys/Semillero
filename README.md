@@ -1,7 +1,6 @@
 
 # Semillero 
 
-  
 
 ## Proyecto Figma 
 
